@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>芳塔洛斯</title>
+    <link rel="Shortcut Icon" href="image/icon/logo.png" />
+    <!--style-->
+    <link rel="stylesheet" href="css/loading.css"><!--加载动画css-->
+    <link rel="stylesheet" href="css/background.css"><!--背景一切css，包含square方块组件和snow组件-->
+    <!--js-->
+    <script src="lib/jQuery/jquery-3.5.1.min.js"></script><!--loading组件与background组件-->
+    <script src="lib/particles/particles.min.js"></script><!--snow组件-->
+    <script src="js/snow.js"></script><!--snow组件一切控制js-->
+
+    <!--index-->
+    <link rel="stylesheet" href="css/index/news.css">
+    <link rel="stylesheet" href="css/index/card-box.css">
+</head>
+
+<body style="height: 200vh;"><!--页面长度-->
+    <header>
+
+    </header>
+    <main>
+        <div id="news">
+            <p>News</p>
+            <ul>
+                <li>
+                    <h1>03</h1>
+                    <span>something test</span>
+                    <a href="#"><span>Click here</span></a>
+                </li>
+                <li>
+                    <h1>02</h1>
+                    <span>something test</span>
+                    <a href="#"><span>Click here</span></a>
+                </li>
+                <li>
+                    <h1>01</h1>
+                    <span>something test</span>
+                    <a href="#"><span>Click here</span></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card-box" style="top: 70vh;">
+            <p class="topic">Course</p>
+            <a class="more">More</a>
+            <div class="cards">
+                <div class="card">
+                    <div class="content">
+                        <h2>Rust</h2>
+                        <p>简单的Rust教程(持续更新中)</p>
+                        <a href="resource/course/rust.html" target="_blank">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2>2</h2>
+                        <p>none</p>
+                        <a href="#" target="_blank">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2>3</h2>
+                        <p>none</p>
+                        <a href="#" target="_blank">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2>4</h2>
+                        <p>none</p>
+                        <a href="#" target="_blank">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--background组件-->
+    <div class="background">
+        <!--snow雪花组件-->
+        <div id="snow"></div>
+        <!--square背景方块组件-->
+        <div class="bubbles">
+            <span class="one"></span>
+            <span class="two"></span>
+            <span class="three"></span>
+            <span class="four"></span>
+            <span class="five"></span>
+            <span class="six"></span>
+            <span class="seven"></span>
+            <span class="seven"></span>
+        </div>
+        <div class="bubbles">
+            <span class="one"></span>
+            <span class="two"></span>
+            <span class="three"></span>
+            <span class="four"></span>
+            <span class="five"></span>
+            <span class="six"></span>
+            <span class="seven"></span>
+            <span class="seven"></span>
+        </div>
+        <div class="bubbles">
+            <span class="one"></span>
+            <span class="two"></span>
+            <span class="three"></span>
+            <span class="four"></span>
+            <span class="five"></span>
+            <span class="six"></span>
+            <span class="seven"></span>
+            <span class="seven"></span>
+        </div>
+        <div class="bubbles">
+            <span class="one"></span>
+            <span class="two"></span>
+            <span class="three"></span>
+            <span class="four"></span>
+            <span class="five"></span>
+            <span class="six"></span>
+            <span class="seven"></span>
+            <span class="seven"></span>
+        </div>
+    </div>
+    <!--loading组件-->
+    <script>
+        $(window).on("load", function () {
+            $(".loading").fadeOut("slow");
+            setTimeout(function () {$(".loading").css("z-index","-10")},2000);
+        });
+    </script>
+    <div class="loading">
+        <div class="wrapper">
+            <div class="line line1">
+                <span class="circle circle-top"></span>
+                <div class="dotted">
+                    <span class="dot dot-top"></span>
+                    <span class="dot dot-middle-top"></span>
+                    <span class="dot dot-middle-bottom"></span>
+                    <span class="dot dot-bottom"></span>
+                </div>
+                <span class="circle circle-bottom"></span>
+            </div>
+            <div class="line line2">
+                <span class="circle circle-top"></span>
+                <div class="dotted">
+                    <span class="dot dot-top"></span>
+                    <span class="dot dot-middle-top"></span>
+                    <span class="dot dot-middle-bottom"></span>
+                    <span class="dot dot-bottom"></span>
+                </div>
+                <span class="circle circle-bottom"></span>
+            </div>
+            <div class="line line3">
+                <span class="circle circle-top"></span>
+                <div class="dotted">
+                    <span class="dot dot-top"></span>
+                    <span class="dot dot-middle-top"></span>
+                    <span class="dot dot-middle-bottom"></span>
+                    <span class="dot dot-bottom"></span>
+                </div>
+                <span class="circle circle-bottom"></span>
+            </div>
+            <div class="line line4">
+                <span class="circle circle-top"></span>
+                <div class="dotted">
+                    <span class="dot dot-top"></span>
+                    <span class="dot dot-middle-top"></span>
+                    <span class="dot dot-middle-bottom"></span>
+                    <span class="dot dot-bottom"></span>
+                </div>
+                <span class="circle circle-bottom"></span>
+            </div>
+            <div class="line line5">
+                <span class="circle circle-top"></span>
+                <div class="dotted">
+                    <span class="dot dot-top"></span>
+                    <span class="dot dot-middle-top"></span>
+                    <span class="dot dot-middle-bottom"></span>
+                    <span class="dot dot-bottom"></span>
+                </div>
+                <span class="circle circle-bottom"></span>
+            </div>
+            <div class="line line6">
+                <span class="circle circle-top"></span>
+                <div class="dotted">
+                    <span class="dot dot-top"></span>
+                    <span class="dot dot-middle-top"></span>
+                    <span class="dot dot-middle-bottom"></span>
+                    <span class="dot dot-bottom"></span>
+                </div>
+                <span class="circle circle-bottom"></span>
+            </div>
+            <div class="line line7">
+                <span class="circle circle-top"></span>
+                <div class="dotted">
+                    <span class="dot dot-top"></span>
+                    <span class="dot dot-middle-top"></span>
+                    <span class="dot dot-middle-bottom"></span>
+                    <span class="dot dot-bottom"></span>
+                </div>
+                <span class="circle circle-bottom"></span>
+            </div>
+            <div class="line line8">
+                <span class="circle circle-top"></span>
+                <div class="dotted">
+                    <span class="dot dot-top"></span>
+                    <span class="dot dot-middle-top"></span>
+                    <span class="dot dot-middle-bottom"></span>
+                    <span class="dot dot-bottom"></span>
+                </div>
+                <span class="circle circle-bottom"></span>
+            </div>
+            <div class="line line9">
+                <span class="circle circle-top"></span>
+                <div class="dotted">
+                    <span class="dot dot-top"></span>
+                    <span class="dot dot-middle-top"></span>
+                    <span class="dot dot-middle-bottom"></span>
+                    <span class="dot dot-bottom"></span>
+                </div>
+                <span class="circle circle-bottom"></span>
+            </div>
+            <div class="line line10">
+                <span class="circle circle-top"></span>
+                <div class="dotted">
+                    <span class="dot dot-top"></span>
+                    <span class="dot dot-middle-top"></span>
+                    <span class="dot dot-middle-bottom"></span>
+                    <span class="dot dot-bottom"></span>
+                </div>
+                <span class="circle circle-bottom"></span>
+            </div>
+            <div class="line line11">
+                <span class="circle circle-top"></span>
+                <div class="dotted">
+                    <span class="dot dot-top"></span>
+                    <span class="dot dot-middle-top"></span>
+                    <span class="dot dot-middle-bottom"></span>
+                    <span class="dot dot-bottom"></span>
+                </div>
+                <span class="circle circle-bottom"></span>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

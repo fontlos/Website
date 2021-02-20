@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* height: 1000vh; */
+  width: 100%;
+  background-image: url("../image/background/basebg.jpg");
+  background-repeat: no-repeat;
+  background-attachment:fixed;/*悬浮*/
+  background-size: cover;
+}
+
+#snow {
+  /*snow*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*雪在第二下层*/
+}
+
+.bubbles {
+  position: fixed;/*悬浮*/
+  bottom: -120px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  width: 100%;
+  justify-content: space-around;
+  z-index: -10;/*方块在最下面*/
+}
+
+.bubbles span {
+  height: 60px;
+  width: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: move 10s linear infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes move {
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+.bubbles span.one {
+  animation-delay: 2.2s;
+  transform: scale(2.15)
+}
+
+.bubbles span.two {
+  animation-delay: 3.5s;
+  transform: scale(1.55)
+}
+
+.bubbles span.three {
+  animation-delay: 0.2s;
+  transform: scale(0.35)
+}
+
+.bubbles span.four {
+  animation-delay: 6s;
+  transform: scale(2.15)
+}
+
+.bubbles span.five {
+  animation-delay: 7s;
+  transform: scale(0.5)
+}
+
+.bubbles span.six {
+  animation-delay: 4s;
+  transform: scale(2.5)
+}
+
+.bubbles span.seven {
+  animation-delay: 3;
+  transform: scale(1.5)
+}
+
+.bubbles span:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 40%;
+  transform: skew(45deg) translateX(150px);
+  background: rgba(255, 255, 255, 0.15);
+  animation: mirror 3s linear infinite;
+}
+
+@keyframes mirror {
+  100% {
+    transform: translateX(-450px);
+  }
+}
+
+.bubbles span.one:before {
+  animation-delay: 1.5s;
+}
+
+.bubbles span.two:before {
+  animation-delay: 3.5s;
+}
+
+.bubbles span.three:before {
+  animation-delay: 2.5s;
+}
+
+.bubbles span.four:before {
+  animation-delay: 7.5s;
+}
+
+.bubbles span.five:before {
+  animation-delay: 4.5s;
+}
+
+.bubbles span.six:before {
+  animation-delay: 0.5s;
+}
+
+.bubbles span.seven:before {
+  animation-delay: 6s;
+}
+
+/*滚动条设置*/
+::-webkit-scrollbar{
+  width: 12px;/*宽度*/
+  background-color: rgb(255, 255, 255);/*背景颜色*/
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(transparent,#63b8fa);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(transparent,#f1e252);
+}

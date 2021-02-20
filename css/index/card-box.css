@@ -1,0 +1,97 @@
+.card-box{
+    position: absolute;
+    left: 13%;
+    height: 380px;
+    width: 1200px;
+    background:rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    /* backdrop-filter: blur(3px); 毛玻璃 */
+    z-index: 20;
+}
+.card-box p.topic{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    font-size: 2em;
+    color: #9c9c9c;
+}
+.card-box a.more{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    font-size: 2em;
+    color: #9c9c9c;
+}
+.cards{
+	font-family: 'Poppins', sans-serif;
+	max-width: 1000px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+    transition: 0.5s;
+    top: 10%;/*卡片整体距顶*/
+    left: 100px;
+}
+.cards .card{
+    position: relative;
+	width: 250px;
+	height: 300px;
+	background:rgba(255, 255, 255, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+}
+.cards:hover .card{
+	/* filter: blur(5px); 毛玻璃 */
+	transform: scale(.7);
+}
+.cards .card:hover{
+	/* filter: blur(0px); 毛玻璃 */
+	transform: scale(1);
+}
+.cards .card:before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background:rgba(255, 255, 255, 0.5);
+	z-index: 1;
+	transition: 0.5s;
+}
+.cards .card:hover:before{
+	background: rgba(0, 0, 0, 0.8);
+	transform: scaleY(1.15);
+	box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+.cards .card .content{
+    position: absolute;
+    top: 0;/*内容距顶*/
+    height: 300px;
+	text-align: center;
+	z-index: 2;
+	padding: 0 20px;
+	transition: 0.5s;
+}
+.cards .card:hover .content{
+	color: #fff;
+}
+.cards .card .content h2{
+	font-size: 3em;
+}
+.cards .card .content p{
+	font-size: 0.9em;
+}
+.cards .card .content a{
+	display: inline-block;
+	margin-top: 15px;
+	padding: 5px 10px;
+	background: #262626;
+	color: #fff;
+	text-decoration: none;
+}
+.cards .card:hover .content a{
+	background: #2196f3;
+}
