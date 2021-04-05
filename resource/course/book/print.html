@@ -653,7 +653,7 @@ assert_eq!(s.pop(), Some('o'));
 assert_eq!(s.pop(), Some('f'));
 assert_eq!(s.pop(), None);
 </code></pre>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="24结构体与枚举"><a class="header" href="#24结构体与枚举">2.4.结构体与枚举</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="结构体与枚举"><a class="header" href="#结构体与枚举">结构体与枚举</a></h1>
 <h1 id="结构体"><a class="header" href="#结构体">结构体</a></h1>
 <p><strong>结构体</strong> 是一种记录类型，所包含的每个 <strong>域</strong> 都有一个名称。 每个结构体也都有一个名称，通常以 <strong>大写字母</strong> 开头，使用 <strong>驼峰命名法</strong>。元组结构体是由 <strong>元组</strong> 和 <strong>结构体</strong> 混合构成，元组结构体有名称，但是它的域没有。当元组结构体只有一个域时，称为新类型。没有域的结构体，称为类单元结构体 。结构体中的值默认是不可变的，需要给结构体加上mut使其可变</p>
 <pre><code class="language-Rust">struct Student {
@@ -778,7 +778,7 @@ fn main() {
 }
 </code></pre>
 <p><a href="2_quickly_start/./list.html">链表</a></p>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="25控制流"><a class="header" href="#25控制流">2.5.控制流</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="控制流"><a class="header" href="#控制流">控制流</a></h1>
 <h1 id="if"><a class="header" href="#if">if</a></h1>
 <p><code>If</code>是分支的一种，可以与<code>else</code>和<code>else if</code>连用。条件不需要小括号括，但条件后面必须跟一个代码块。Rust中的if是一个表达式，可以赋给一个变量</p>
 <pre><code class="language-Rust">let x = 5;
@@ -903,7 +903,7 @@ while let Some(i) = b{
   }
 } 
 </code></pre>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="26函数与方法"><a class="header" href="#26函数与方法">2.6.函数与方法</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="函数与方法"><a class="header" href="#函数与方法">函数与方法</a></h1>
 <h1 id="函数"><a class="header" href="#函数">函数</a></h1>
 <p>声明函数与<code>fn</code>关键字</p>
 <pre><code class="language-Rust">fn function(x:i32)-&gt;i32{
@@ -1053,7 +1053,7 @@ fn main() {
     println!(&quot;这个矩形的长是：{}，宽是：{}&quot;,g.get_width(),g.get_height());
 }
 </code></pre>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="27特性泛型与多态"><a class="header" href="#27特性泛型与多态">2.7.特性、泛型与多态</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="特性泛型与多态"><a class="header" href="#特性泛型与多态">特性、泛型与多态</a></h1>
 <h1 id="特性与接口"><a class="header" href="#特性与接口">特性与接口</a></h1>
 <p>为了描述类型可以实现的抽象接口，Rust引入了特性 <code>trait</code> 来定义<strong>函数类型签名</strong>，特性就相当于其他语言中的接口</p>
 <pre><code class="language-Rust">//通过trait关键字定义特性
@@ -1223,7 +1223,7 @@ let graph = SimpleGraph;
 let object = Box::new(graph) as Box&lt;Graph&lt;N=Node, E=Edge&gt;&gt;;
 </code></pre>
 <p>关于泛型我们会在<a href="https://www.wolai.com/nHJfi5qDQP2mKKANBASDTg">9.泛型</a>中详细讲解</p>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="28注释与文档"><a class="header" href="#28注释与文档">2.8.注释与文档</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="注释与文档"><a class="header" href="#注释与文档">注释与文档</a></h1>
 <h1 id="注释"><a class="header" href="#注释">注释</a></h1>
 <p>Rust中有三种注释，前两种分别为：</p>
 <ol>
@@ -1254,7 +1254,7 @@ let object = Box::new(graph) as Box&lt;Graph&lt;N=Node, E=Edge&gt;&gt;;
 <p><code>cargo doc</code></p>
 </li>
 </ol>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="29输入输出流"><a class="header" href="#29输入输出流">2.9.输入输出流</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="输入输出流"><a class="header" href="#输入输出流">输入输出流</a></h1>
 <p>输入输出流需要用到标准库中的内容，关于包与模块我们将在<a href="https://www.wolai.com/7PtSd1io4AxPY15qkcdNnT">14.模块和包</a>这一章中详细讲解</p>
 <h1 id="控制台输入"><a class="header" href="#控制台输入">控制台输入</a></h1>
 <pre><code class="language-Rust">use std::io;//导入IO库
@@ -1365,7 +1365,7 @@ fn main() {
 <p>到这里，快速入门阶段就结束了，是时候通过更加系统的知识来熟悉读写 Rust 代码了。</p>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="基本程序结构"><a class="header" href="#基本程序结构">基本程序结构</a></h1>
 <p>Rust 是多范式语言，当然支持命令式编程风格。本章讲解 Rust 中的几种基本程序结构，经过前面的粗略介绍，相信您在这里会有新的理解</p>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="41注释"><a class="header" href="#41注释">4.1.注释</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="注释-1"><a class="header" href="#注释-1">注释</a></h1>
 <p>前面我们已经介绍过Rust的两种注释了。</p>
 <p>Rust中有三种常见注释</p>
 <ul>
@@ -1422,7 +1422,7 @@ fn add_one(x: i32) -&gt; i32 {
 <p>模块注释使用<code>//!</code>,用于说明本模块的功能，一般位于模块顶</p>
 <pre><code class="language-Rust">//! 这是一个模块
 </code></pre>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="42条件分支语句"><a class="header" href="#42条件分支语句">4.2.条件分支语句</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="条件分支语句"><a class="header" href="#条件分支语句">条件分支语句</a></h1>
 <ul>
 <li>
 <p>if</p>
@@ -1508,7 +1508,7 @@ let c = match a {
 };
 </code></pre>
 <p>这个特性可以使条件判断的时候，直接做一次模式匹配，方便代码书写，使代码更紧凑</p>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="43循环语句"><a class="header" href="#43循环语句">4.3.循环语句</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="循环语句"><a class="header" href="#循环语句">循环语句</a></h1>
 <ul>
 <li>
 <p>while</p>
@@ -1632,14 +1632,9 @@ let a = loop {
   }
 }
 </code></pre>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="5类型运算符与字符串"><a class="header" href="#5类型运算符与字符串">5.类型、运算符与字符串</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="类型运算符与字符串"><a class="header" href="#类型运算符与字符串">类型、运算符与字符串</a></h1>
 <p>本章讲解 Rust 中的类型相关基础知识、运算符相关知识和字符串的基本知识</p>
-<p><a href="4_type_operator_string/5.1.%E5%8E%9F%E7%94%9F%E7%B1%BB%E5%9E%8B/5.1.%E5%8E%9F%E7%94%9F%E7%B1%BB%E5%9E%8B.html">5.1.原生类型</a></p>
-<p><a href="4_type_operator_string/5.2.%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B/5.2.%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B.html">5.2.复合类型</a></p>
-<p><a href="4_type_operator_string/5.3.%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B/5.3.%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B.html">5.3.字符串类型</a></p>
-<p><a href="4_type_operator_string/5.4.%E5%9F%BA%E7%A1%80%E8%BF%90%E7%AE%97%E7%AC%A6/5.4.%E5%9F%BA%E7%A1%80%E8%BF%90%E7%AE%97%E7%AC%A6.html">5.4.基础运算符</a></p>
-<p><a href="4_type_operator_string/5.5.%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/5.5.%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96.html">5.5.字符串格式化</a></p>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="51原生类型"><a class="header" href="#51原生类型">5.1.原生类型</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="原生类型-1"><a class="header" href="#原生类型-1">原生类型</a></h1>
 <p>作为一种系统级编程语言，Rust提供了一系列基础的类型，我们一般称之为原生类型。其强大的类型系统就是建立在这些原生类型之上的。下面就让我们来学习这些原生类型</p>
 <h1 id="bool"><a class="header" href="#bool">bool</a></h1>
 <h1 id="char"><a class="header" href="#char">char</a></h1>
