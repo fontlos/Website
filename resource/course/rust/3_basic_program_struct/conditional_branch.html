@@ -177,7 +177,10 @@
 </ul>
 <h1 id="if"><a class="header" href="#if">if</a></h1>
 <p>在Rust中，<code>if</code>表达式基本形式如下</p>
-<pre><code class="language-Rust">//形式1
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//形式1
 if case1 {
   code
 }
@@ -197,9 +200,13 @@ if case3 {
 } else {
   code
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>可以看出Rust中的if不需要小括号把条件括起来。而且我们上面也说到了，if是一个表达式而不是语句，这也就是说if有返回值，所以我们可以有这样的代码</p>
-<pre><code class="language-Rust">let a = 0;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = 0;
 let b = if a == 0 {
   0
 } else {
@@ -207,10 +214,14 @@ let b = if a == 0 {
 };//注意，因为let是一个语句，所以这里需要分号
 //也可以写成一行，即
 //let b = if a == 0 {0} else {1}; 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="match"><a class="header" href="#match">match</a></h1>
 <p>当某个条件会有多个分支时，可能会出现大量的<code>else if</code>，为了应对这种情况，Rust提供了一个强大的匹配模式—<code>match</code></p>
-<pre><code class="language-Rust">let a = 10;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = 10;
 match a {
   1=&gt;{
     print!(&quot;a is:&quot;);//分支可以是一个语句块
@@ -220,11 +231,15 @@ match a {
   _=&gt;println!(&quot;something else&quot;),
   //match会进行穷举性检查，必须包含所有可能的匹配项，当匹配项过多或我们只需要其中几个匹配项时，可以用通配符_来匹配所有剩余项
 } 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>match的功能远不止这些，以后的章节会慢慢讲到，match也是一个表达式。关于match会在<a href="https://www.wolai.com/cLgBuT752udmXPme8oBaTp">7.匹配模式</a>这一章专门论述。</p>
 <h1 id="if-let"><a class="header" href="#if-let">if let</a></h1>
 <p>有的时候，虽然一个条件有多个分支，但我们只关心其中几个，用match就显得有些繁琐了，这时就可以用match的简化用法—<code>if let</code>，直接上例子</p>
-<pre><code class="language-Rust">let a = Some(1);
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = Some(1);
 
 if let Some(b) = a {
     println!(&quot;{}&quot;, b);      // 这里输出为：5
@@ -247,7 +262,8 @@ let c = match a {
     Some(b) =&gt; b,
     None =&gt; 0
 };
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>这个特性可以使条件判断的时候，直接做一次模式匹配，方便代码书写，使代码更紧凑</p>
 
                     </main>

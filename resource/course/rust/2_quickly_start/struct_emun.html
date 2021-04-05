@@ -166,7 +166,10 @@
                         <h1 id="结构体与枚举"><a class="header" href="#结构体与枚举">结构体与枚举</a></h1>
 <h1 id="结构体"><a class="header" href="#结构体">结构体</a></h1>
 <p><strong>结构体</strong> 是一种记录类型，所包含的每个 <strong>域</strong> 都有一个名称。 每个结构体也都有一个名称，通常以 <strong>大写字母</strong> 开头，使用 <strong>驼峰命名法</strong>。元组结构体是由 <strong>元组</strong> 和 <strong>结构体</strong> 混合构成，元组结构体有名称，但是它的域没有。当元组结构体只有一个域时，称为新类型。没有域的结构体，称为类单元结构体 。结构体中的值默认是不可变的，需要给结构体加上mut使其可变</p>
-<pre><code class="language-Rust">struct Student {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Student {
         name: String,
         grade: i8,
         class: i8,
@@ -194,11 +197,15 @@ let Inches(integer_length) = length;
 
 struct EmptyStruct;
 let empty = EmptyStruct;
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>关于结构体的更多知识，我们将在后面的章节继续讲</p>
 <h1 id="枚举"><a class="header" href="#枚举">枚举</a></h1>
 <p><strong>枚举</strong> 是一种代表一系列子数据类型的集合，可用于分类，通过 <code>::</code>来获得每个元素的名称</p>
-<pre><code class="language-Rust">enum Book {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Book {
         Pbook(u32),
         Ebook { url: String }, //枚举无法访问结构体内字段
     }
@@ -218,13 +225,14 @@ match book {
         }
     }
 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>多通过 <code>match</code>对枚举进行预处理，关于match的知识，我们将在<a href="https://www.wolai.com/ok8S8UqwJvM5KGhy2cuLY6">2.5.控制流</a>中讲到</p>
 <p>与结构体一样，枚举中的元素默认不能使用关系运算符进行比较 (如<code>==</code>, <code>!=</code>, <code>&gt;=</code>)， 也不支持像<code>+</code>和<code>*</code>这样的双目运算符，需要自己实现，或者使用<code>match</code>进行匹配。</p>
 <p>枚举默认也是私有的，如果使用<code>pub</code>使其变为公有，则它的元素也都是默认公有的，这一点与结构体不同。 <strong>注意</strong>：即使结构体是公有的，它的域仍然是默认私有的。这里的共有/私有仍然 是针对其定义所在的模块之外</p>
 <h1 id="use引入作用域"><a class="header" href="#use引入作用域">Use引入作用域</a></h1>
 <p>使用 <code>use</code> 声明的话，就可以不写出名称的完整路径了，关于<code>use</code>的更多内容见<a href="https://www.wolai.com/p5UoZr3hGq2beycMbHTNXo">14.1.mod与crate</a></p>
-<pre><code class="language-Rust">// 该属性用于隐藏对未使用代码的警告。
+<pre><pre class="playground"><code class="language-rust">// 该属性用于隐藏对未使用代码的警告。
 #![allow(dead_code)]
 
 enum People {
@@ -261,10 +269,10 @@ fn main() {
     }
 }
 
-</code></pre>
+</code></pre></pre>
 <h1 id="c语言风格的枚举"><a class="header" href="#c语言风格的枚举">C语言风格的枚举</a></h1>
 <p>Rust的枚举也可以像C语言那样</p>
-<pre><code class="language-Rust">// 拥有隐式辨别值（implicit discriminator，从 0 开始）的 enum
+<pre><pre class="playground"><code class="language-rust">// 拥有隐式辨别值（implicit discriminator，从 0 开始）的 enum
 enum Number {
     Zero,
     One,
@@ -286,7 +294,7 @@ fn main() {
     println!(&quot;玫瑰是 #{:06x} 色的&quot;, Color::Red as i32);
     println!(&quot;天空是 #{:06x} 色的&quot;, Color::Blue as i32);
 }
-</code></pre>
+</code></pre></pre>
 <p><a href="./list.html">链表</a></p>
 
                     </main>

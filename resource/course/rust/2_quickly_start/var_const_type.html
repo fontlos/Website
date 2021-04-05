@@ -167,7 +167,7 @@
 <h1 id="变量绑定"><a class="header" href="#变量绑定">变量绑定</a></h1>
 <p>Rust 通过静态类型确保类型安全。变量绑定可以在声明时说明类型，不过在多数情况下， 编译器能够从上下文推导出变量的类型，从而大大减少了类型说明的工作。</p>
 <p>使用 <code>let</code> 绑定操作可以将<strong>值</strong>绑定（bind）到<strong>变量</strong></p>
-<pre><code class="language-Rust">fn main() {
+<pre><pre class="playground"><code class="language-rust">fn main() {
   let a = 5;//类型推断
   let b: i32 = 10;//显式声明
   let c = 10i32;//另一种显式声明，value+type
@@ -178,10 +178,10 @@
   // 编译器会对未使用的变量绑定产生警告；可以给变量名加上下划线前缀来消除警告。
   let _unused = 3u32;
 }
-</code></pre>
+</code></pre></pre>
 <h1 id="可变绑定"><a class="header" href="#可变绑定">可变绑定</a></h1>
 <p>虽然变量默认不可变，但不可以把不可变变量理解为常量。在变量名前加上 <code>mut</code>关键字，即可让变量变为可变变量</p>
-<pre><code class="language-Rust">fn main() {
+<pre><pre class="playground"><code class="language-rust">fn main() {
   let mut a :f64 = 2.0;
   pritnln!(&quot;{}&quot;,a);
   //改变a的绑定
@@ -190,7 +190,7 @@
   //重新将a绑定为不可变
   let a = a;//这是Rust的遮蔽特性，允许声明同名变量来遮蔽先前的变量
 }
-</code></pre>
+</code></pre></pre>
 <h1 id="常量"><a class="header" href="#常量">常量</a></h1>
 <p>Rust 有两种常量，可以在任意作用域声明，包括全局作用域。它们都需要显式的类型声明：</p>
 <ul>
@@ -202,7 +202,7 @@
 </li>
 </ul>
 <p>有个特例就是 <code>&quot;string&quot;</code> 字面量。它可以不经改动就被赋给一个 <code>static</code> 变量，因为它 的类型标记：<code>&amp;'static str</code> 就包含了所要求的生命周期 <code>'static</code>。其他的引用类型都 必须特地声明，使之拥有<code>'static</code> 生命周期。这两种引用类型的差异似乎也无关紧要，因 为无论如何，<code>static</code> 变量都得显式地声明。（将会在<a href="https://www.wolai.com/aVx4WUi4SBNJJFFWDiueUB">10.可变性、所有权、租借和生命周期</a>中详细讲解）</p>
-<pre><code class="language-Rust">// 全局变量是在在所有其他作用域之外声明的。
+<pre><pre class="playground"><code class="language-rust">// 全局变量是在在所有其他作用域之外声明的。
 static LANGUAGE: &amp;'static str = &quot;Rust&quot;;
 const  THRESHOLD: i32 = 10;
 
@@ -223,15 +223,15 @@ fn main() {
     THRESHOLD = 5;
     //^ 注释掉此行
 }
-</code></pre>
+</code></pre></pre>
 <h1 id="let解构"><a class="header" href="#let解构">let解构</a></h1>
 <p>let不只是用于声明变量、绑定变量，实际上let是一种匹配模式，拥有十分强大的功能</p>
 <p><strong>例如：</strong></p>
-<pre><code class="language-Rust">fn main() {
+<pre><pre class="playground"><code class="language-rust">fn main() {
   let (a, mut b): (bool, bool) = (true, false);
   println!(&quot;a = {:?}, b = {:?}&quot;, a, b);
 }
-</code></pre>
+</code></pre></pre>
 <h1 id="原生类型"><a class="header" href="#原生类型">原生类型</a></h1>
 <p>在上面的例子中，我们见到了 <code>i32</code> <code>f64</code> <code>bool</code>等数据类型，它们是Rust的原生类型，Rust的原生类型有以下几类：</p>
 <ul>
@@ -266,7 +266,7 @@ fn main() {
 <p>元类型：其唯一的值是 <code>()</code></p>
 </li>
 </ul>
-<pre><code class="language-Rust">//如果没有必要，以后的示例将不会有 fn main() {} 等
+<pre><pre class="playground"><code class="language-rust">//如果没有必要，以后的示例将不会有 fn main() {} 等
 //下面按顺序展示一下这些类型
 let t = true;
 let f: bool = false;
@@ -300,7 +300,7 @@ fn func(x:i32) -&gt; i32 {
   x
 } 
 let function: fn(i32) -&gt; i32 = func; 
-</code></pre>
+</code></pre></pre>
 <p>有几点是需要特别注意的：</p>
 <ul>
 <li>
@@ -328,13 +328,17 @@ let function: fn(i32) -&gt; i32 = func;
 <p>可以使用<code>type</code>关键字定义某个类型的别名，并且应该采用驼峰命名法，这在解决非常长的变量名时非常有用，最常见的时<code>impl</code>块中的<code>Self</code>别名。</p>
 </li>
 </ul>
-<pre><code class="language-Rust">let decimal = 65.4321_f32;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let decimal = 65.4321_f32;
 let integer = decimal as u8;
 let character = integer as char;
 
 type Color = (u8, u8, u8);
 type Point = (u8, u8);
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 
                     </main>
 

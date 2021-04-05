@@ -166,9 +166,13 @@
                         <h1 id="控制流"><a class="header" href="#控制流">控制流</a></h1>
 <h1 id="if"><a class="header" href="#if">if</a></h1>
 <p><code>If</code>是分支的一种，可以与<code>else</code>和<code>else if</code>连用。条件不需要小括号括，但条件后面必须跟一个代码块。Rust中的if是一个表达式，可以赋给一个变量</p>
-<pre><code class="language-Rust">let x = 5;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 5;
 let y = if x==5{true}else{false} 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Rust是基于表达式和语句的语言</p>
 <ul>
 <li>
@@ -179,59 +183,90 @@ let y = if x==5{true}else{false}
 </li>
 </ul>
 <p>所以以下代码会报错</p>
-<pre><code class="language-Rust">let a = (let b = 5);
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = (let b = 5);
 let c = if true {10;}else{5;}; 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>赋值语句如<code>x=1</code>也是表达式，返回值为<code>()</code></p>
 <h1 id="for"><a class="header" href="#for">for</a></h1>
 <p><code>for</code>的抽象结构如下</p>
-<pre><code class="language-Rust">for 值 in 迭代器{
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>for 值 in 迭代器{
   code
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>关于迭代器，先举几个简单的例子</p>
 <p><code>1..10</code> <code>1..=10</code> <code>[1,2,3].iter()</code></p>
 <h1 id="while"><a class="header" href="#while">While</a></h1>
-<pre><code class="language-Rust">while 布尔表达式{
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>while 布尔表达式{
   code
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="loop"><a class="header" href="#loop">Loop</a></h1>
 <p><code>loop</code>是rust中专门的无限循环</p>
-<pre><code class="language-Rust">loop{
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>loop{
   code
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="跳出循环与标签"><a class="header" href="#跳出循环与标签">跳出循环与标签</a></h1>
 <p>对于循环，可以使用<code>break</code>强制退出循环，也可以使用<code>continue</code>结束本次循环并进入下一次循环，这两个关键字后面也可以跟一个返回值。</p>
 <p>也可以使用标签退出指定循环</p>
-<pre><code class="language-Rust">'outer: loop{
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>'outer: loop{
   'inner: loop{
     println!(&quot;退出外部循环&quot;)；
     break 'outer
   }
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="match"><a class="header" href="#match">Match</a></h1>
 <p>match是一个强大的匹配模式，我们将在<a href="https://www.wolai.com/w8BKEkDopqAqWLiKaWKqYs">7.1.match关键字</a>中详细讲解，接下来我们看几个例子</p>
-<pre><code class="language-Rust">let day = 5;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let day = 5;
 
 match day {
   0|6=&gt;println!(&quot;休息日&quot;)，
   1...5=&gt;println!(&quot;工作日&quot;)，
   _=&gt;println!(&quot;none&quot;),
 } 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p><code>|</code>用于匹配多个值，<code>...</code>用于匹配一个范围，包括开头结尾，因为<code>match</code>进行的是穷举性匹配，所以需要一个<code>_</code>匹配剩下的所有值</p>
 <p>可以使用<code>@</code>来绑定一个变量</p>
-<pre><code class="language-Rust">let a = 1;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = 1;
 match a{
   b @ 1...3=&gt;println!(&quot;a={}&quot;,b),
   _=&gt;println!(&quot;a不在区间[1,3]中&quot;),
 }  
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>可以使用<code>ref</code>获得一个引用</p>
-<pre><code class="language-Rust">let a = 1;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = 1;
 let mut b = 2;
 match a{
   ref x=&gt;println!(x),
@@ -239,18 +274,26 @@ match a{
 match b{
   ref mut x=&gt;println!(x),
 } 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>match可用于解构复合类型，如元组</p>
-<pre><code class="language-Rust">let point = (0,2);
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let point = (0,2);
 match point{
   (0,y)=&gt;println!(&quot;这个点在y轴上，纵坐标为 {}&quot;，y),
   (x,0)=&gt;println!(&quot;这个点在x轴上，横坐标为 {}&quot;，x),
   (0,0)=&gt;println!(&quot;这个点是原点&quot;),
   _=&gt;println!(&quot;这个点不在坐标轴上&quot;),
 }  
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>解构 结构体，可以使用<code>..</code>来忽略变量</p>
-<pre><code class="language-Rust">struct Point{
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Point{
   x:i32,
   y:i32,
 }
@@ -269,10 +312,14 @@ match value{
   Int::Value(..)=&gt;println!(&quot;是一个数字&quot;),
   Int::N=&gt;println!(&quot;不是数字&quot;),
 } 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="if-let-与while-let"><a class="header" href="#if-let-与while-let">if let 与while let</a></h1>
 <p>if let 与 while let 相当于精简版的match，用于解决一些匹配项很少或者只关心其中几个值时的匹配,<code>Some</code>与<code>None</code>是<code>Option</code>枚举唯二的两个变体，用于表示一个值是否存在，<code>Option</code>会在<a href="https://www.wolai.com/gbgLL5qtfLSB4nv8TaAR5k">15.错误处理</a>中详细讲解</p>
-<pre><code class="language-Rust">let a = Some(1);
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = Some(1);
 let mut b = Some(0); 
 
 if let Some(i) = a{
@@ -287,7 +334,8 @@ while let Some(i) = b{
     b = Some(i+1);
   }
 } 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 
                     </main>
 

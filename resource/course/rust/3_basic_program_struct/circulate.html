@@ -183,12 +183,19 @@
 </ul>
 <h1 id="while"><a class="header" href="#while">while</a></h1>
 <p>关于循环，首先是大家熟悉的<code>while</code>循环，当条件为真时执行循环体，当您不确定应该循环几次时，您应该使用while</p>
-<pre><code class="language-Rust">while expression {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>while expression {
   code
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>举一个简单的例子</p>
-<pre><code class="language-Rust">let mut a = 1;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut a = 1;
 let mut exp = true;
 while exp {
   a += 1;
@@ -197,36 +204,53 @@ while exp {
     exp = false
   }
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="loop"><a class="header" href="#loop">loop</a></h1>
 <p>有的时候，我们可能需要一个无限循环，这时我们会很自然的想到<code>while true</code>，但我不推荐您这样用，Rust针对这种情况专门<strong>优化</strong>并提供了一个关键字，loop，即</p>
-<pre><code class="language-Rust">loop {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>loop {
   code
 } 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p><code>loop</code> 与 <code>while true</code> 的主要区别在编译阶段的静态分析。这个微小的区别也会影响生命周期分析，所以如果需要用到无限循环，选择loop就对了</p>
 <h1 id="for"><a class="header" href="#for">for</a></h1>
 <p>有学过C的朋友可能会熟悉<code>for</code>的三元循环语句，就像这样</p>
-<pre><code class="language-C">for (a = 0;a &lt; 10;a++) {
+<pre><code class="language-c">for (a = 0;a &lt; 10;a++) {
   printf(&quot;%d\n&quot;, x);
 }
 </code></pre>
 <p>而在Rust中，for用于遍历一个迭代器。</p>
-<pre><code class="language-Rust">for var in iterator {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>for var in iterator {
   code
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Rust 迭代器返回一系列的元素，每个元素是循环中的一次重复。然后它的值与 var 绑定，它在循环体中有效。每当循环体执行完后，我们从迭代器中取出下一个值，然后我们再重复一遍。当迭代器中不再有值时，for 循环结束退出，上面的C代码就等价于</p>
-<pre><code class="language-Rust">for a in 0..10 {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>for a in 0..10 {
   println!(&quot;{}&quot;,a);
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>这样的设计不仅可以减少运行时边界检查，提高效率，更是简化了边界条件确定，减少出错。比如如果你要用while来遍历一个数组，那你就不得不考虑边界问题，而for，就像是迭代器的一个语法糖。</p>
 <p>for当然也可以返回元素的索引，只需要一个<code>.enumerate()</code>函数，比如</p>
-<pre><code class="language-Rust">for (a,b) in (1..=3).enumerate() {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>for (a,b) in (1..=3).enumerate() {
     println!(&quot;索引为{}的元素是{}&quot;, a, b);
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>输出</p>
 <pre><code class="language-纯文本">索引为0的元素是1
 索引为1的元素是2
@@ -234,14 +258,18 @@ while exp {
 </code></pre>
 <p>Rust中迭代器的索引是从0开始的</p>
 <p>再举一个例子</p>
-<pre><code class="language-Rust">let lines = &quot;第一行
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let lines = &quot;第一行
 第二行
 第三行
 第四行&quot;.lines();
 for (linenumber, line) in lines.enumerate() {
     println!(&quot;{}: {}&quot;, linenumber, line);
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="break--continue"><a class="header" href="#break--continue">break &amp; continue</a></h1>
 <ul>
 <li>
@@ -252,7 +280,10 @@ for (linenumber, line) in lines.enumerate() {
 </li>
 </ul>
 <p>while中的那个例子，可以优化为</p>
-<pre><code class="language-Rust">let mut a = 1;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut a = 1;
 loop {
   a+=1;
   println!(&quot;{}&quot;,a);
@@ -260,33 +291,46 @@ loop {
     break;
   }
 } 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>下面是continue的例子，用于打印奇数</p>
-<pre><code class="language-Rust">for a in 0..10 {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>for a in 0..10 {
   if a % 2 == 0 {
     continue;
   }
   println!(&quot;{}&quot;,a);
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>众多循环语句都可以作为表达式，break和continue可用来提前返回一个值</p>
-<pre><code class="language-Rust">let mut times = 0;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut times = 0;
 let a = loop {
   times+=1;
   if times == 10 {
     break times*2;
   }
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="label"><a class="header" href="#label">label</a></h1>
 <p>很多时候，我们会将循环嵌套使用，但break和continue默认对当前循环起作用，假如想在内循环跳出外循环，可以使用<strong>标签</strong></p>
-<pre><code class="language-Rust">'outer loop {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>'outer loop {
   'inner for a in 1..3 {
     if a == 2{break 'outer}
     println!(&quot;{}&quot;,a);
   }
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 
                     </main>
 

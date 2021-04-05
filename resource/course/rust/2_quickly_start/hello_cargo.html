@@ -215,7 +215,7 @@ cargo run --release   同上
 <p><code>cargo.toml</code>是cargo特有的项目数据描述文件，存储了项目的所有信息</p>
 <p><code>cargo.lock</code>不需要直接修改，是cargo工具根据同一项目的toml文件生成的项目依赖详细清单文件</p>
 <p><em>Cargo.toml</em></p>
-<pre><code class="language-纯文本">[package]
+<pre><code class="language-toml">[package]
 name = &quot;hello_cargo&quot;
 version = &quot;0.1.&quot;
 authors = [&quot;YourName &quot;]
@@ -238,7 +238,7 @@ authors = [&quot;YourName &quot;]
 </li>
 </ul>
 <p>简单的示例：</p>
-<pre><code class="language-纯文本">[dependencies]
+<pre><code class="language-toml">[dependencies]
 typemap = &quot;0.3&quot;
 plugin = &quot;0.2*&quot;
 hammer = { version = &quot;0.5.0&quot;}
@@ -247,7 +247,7 @@ geometry = { path = &quot;crates/geometry&quot; }
 </code></pre>
 <h3 id="定义集成测试用例"><a class="header" href="#定义集成测试用例">定义集成测试用例</a></h3>
 <p>cargo另一个重要的功能，即将软件开发过程中必要且非常重要的测试环节进行集成，并通过代码属性声明或者toml文件描述来对测试进行管理。其中，单元测试主要通过在项目代码的测试代码部分前用#[test]属性来描述，而集成测试，则一般都会通过toml文件中的[[test]]段落进行描述。 例如，假设集成测试文件均位于tests文件夹下，则toml可以这样来写</p>
-<pre><code class="language-纯文本">[[test]]
+<pre><code class="language-toml">[[test]]
 name = &quot;test1&quot;
 path = &quot;tests/test1.rs&quot;
 
@@ -266,7 +266,7 @@ path = &quot;tests/test2.rs&quot;
 </ol>
 <h3 id="定义示例和可执行文件"><a class="header" href="#定义示例和可执行文件">定义示例和可执行文件</a></h3>
 <p>example用例的描述以及bin用例的描述也是cargo的常用功能</p>
-<pre><code class="language-纯文本">[[example]]
+<pre><code class="language-toml">[[example]]
 name = &quot;examlpe1&quot;
 path = &quot;examples/examlpe1.rs&quot;
 

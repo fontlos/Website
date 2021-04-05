@@ -186,40 +186,56 @@
 <p>注释不会影响程序的运行</p>
 <h1 id="行注释"><a class="header" href="#行注释">行注释</a></h1>
 <p><code>//</code>后的，知道行尾，都属于行注释，</p>
-<pre><code class="language-Rust">// 创建一个绑定
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 创建一个绑定
 let x = 5;
 
 let y = 6; // 创建另一个绑定
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="块注释"><a class="header" href="#块注释">块注释</a></h1>
 <p>这是C语言风格的注释</p>
-<pre><code class="language-Rust">/*这是一段块注释*/let a = 1;/*块注释不影响块以外的代码*/
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>/*这是一段块注释*/let a = 1;/*块注释不影响块以外的代码*/
 /*
 块注释可以有很多行
 */ 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="文档注释"><a class="header" href="#文档注释">文档注释</a></h1>
 <p>文档注释使用<code>///</code>，一般用于函数，结构体或枚举的说明，值域说明对象上方，支持<strong>makedown</strong>语法，可用<code>rustdoc</code>或<code>cargo doc</code>命令自动提取文档</p>
-<pre><code class="language-Rust">/// 给数字加一
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>/// 给数字加一
 ///
 /// # 示例
 ///
-/// ```
+/// 
 /// let one = 1;
 ///
 /// assert_eq!(2, add_one(one));
 /// # fn add_one(x: i32) -&gt; i32 {
 /// #     x + 1
 /// # }
-/// ```
+/// 
 fn add_one(x: i32) -&gt; i32 {
     x + 1
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="模块注释"><a class="header" href="#模块注释">模块注释</a></h1>
 <p>模块注释使用<code>//!</code>,用于说明本模块的功能，一般位于模块顶</p>
-<pre><code class="language-Rust">//! 这是一个模块
-</code></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//! 这是一个模块
+<span class="boring">}
+</span></code></pre></pre>
 
                     </main>
 

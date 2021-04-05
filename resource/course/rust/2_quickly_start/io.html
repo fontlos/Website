@@ -166,7 +166,7 @@
                         <h1 id="输入输出流"><a class="header" href="#输入输出流">输入输出流</a></h1>
 <p>输入输出流需要用到标准库中的内容，关于包与模块我们将在<a href="https://www.wolai.com/7PtSd1io4AxPY15qkcdNnT">14.模块和包</a>这一章中详细讲解</p>
 <h1 id="控制台输入"><a class="header" href="#控制台输入">控制台输入</a></h1>
-<pre><code class="language-Rust">use std::io;//导入IO库
+<pre><pre class="playground"><code class="language-rust">use std::io;//导入IO库
 
 fn read_input() -&gt; io::Result&lt;()&gt; {
     //创建空字符串
@@ -178,9 +178,9 @@ fn read_input() -&gt; io::Result&lt;()&gt; {
 fn main() {
     read_input();
 }
-</code></pre>
+</code></pre></pre>
 <p>因为读取可能会发生错误，所以本例中使用了<code>try!</code> 宏。这个宏会返回 <code>Result&lt;(), io::Error&gt;</code> 类型，所以需要单独使用一个 <code>read_input</code> 函数来接收这个类型，而不是在 <code>main</code> 函数里</p>
-<pre><code class="language-Rust">use std::io;
+<pre><pre class="playground"><code class="language-rust">use std::io;
 fn main() {
     let mut input = String::new();
 
@@ -188,9 +188,9 @@ fn main() {
 
     println!(&quot;You typed: {}&quot;, input.trim());
 }
-</code></pre>
+</code></pre></pre>
 <p>本例使用了 <code>Result&lt;(), io::Error&gt;</code> 类型的 <code>unwrap</code> 方法来接收 <code>io::stdin().read_line</code> 的返回类型。如果发生错误如果发生错误，则调用<code>panic</code>，更好的办法是使用<code>expect</code>方法，这个方法可以自定义返回内容</p>
-<pre><code class="language-Rust">use std::io;
+<pre><pre class="playground"><code class="language-rust">use std::io;
 fn main() {
     let mut input = String::new();
 
@@ -198,22 +198,30 @@ fn main() {
 
     println!(&quot;You typed: {}&quot;, input.trim());
 }
-</code></pre>
+</code></pre></pre>
 <p>如果发生了错误，则返回<code>expect</code>中的内容并调用<code>panic</code></p>
 <h1 id="控制台输出"><a class="header" href="#控制台输出">控制台输出</a></h1>
 <p>Rust 里面常见的标准输出宏有 <code>print!</code> 和 <code>println!</code>。后者比前者在末尾多输出一个换行符</p>
-<pre><code class="language-Rust">print!(&quot;这些文字&quot;);
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>print!(&quot;这些文字&quot;);
 print!(&quot;将被打印在同一行&quot;);
 
 print!(&quot;这行文字用了转义字符来换行\n&quot;);
 
 println!(&quot;还是这样直接换行方便&quot;); 
-</code></pre>
-<pre><code class="language-Rust">println!(&quot;这是rust的 {} 输出&quot;, &quot;格式化&quot;);
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>println!(&quot;这是rust的 {} 输出&quot;, &quot;格式化&quot;);
+<span class="boring">}
+</span></code></pre></pre>
 <p>这里两个例子都比较简单。<code>{}</code> 会被 <code>&quot;格式化&quot;</code> 所替换。这是 rust 里面的一种格式化输出。</p>
 <p>标准化的输出是<strong>行缓冲</strong>的,这就导致标准化的输出在遇到一个新行之前并不会被隐式刷新。 换句话说 <code>print!</code> 和 <code>println!</code> 二者的效果并不总是相同的。 比如：</p>
-<pre><code class="language-Rust">use std::io;
+<pre><pre class="playground"><code class="language-rust">use std::io;
 fn main() {
     print!(&quot;请输入：&quot;);
     let mut input = String::new();
@@ -222,11 +230,11 @@ fn main() {
         .expect(&quot;读取失败&quot;);
     print!(&quot;您输入的是：{}\n&quot;, input);
 }
-</code></pre>
+</code></pre></pre>
 <p>在这段代码运行时则不会先出现预期的提示字符串，因为行没有被刷新。 如果想要达到预期的效果就要显示的刷新，即在提示字符串下加入一行<code>io::stdout().flush().unwrap();</code></p>
 <h1 id="文件输入"><a class="header" href="#文件输入">文件输入</a></h1>
 <p>文件输入流指向了文件而不是控制台，一般通过match处理潜在错误</p>
-<pre><code class="language-Rust">use std::error::Error;
+<pre><pre class="playground"><code class="language-rust">use std::error::Error;
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
@@ -250,10 +258,10 @@ fn main() {
         Ok(_) =&gt; print!(&quot;{} 的内容为:\n{}&quot;, display, s),
     }
 }
-</code></pre>
+</code></pre></pre>
 <h1 id="文件输出"><a class="header" href="#文件输出">文件输出</a></h1>
 <p>文件输出流重定向到文件中</p>
-<pre><code class="language-Rust">static LOREM_IPSUM: &amp;'static str =&quot;输出文本&quot;;
+<pre><pre class="playground"><code class="language-rust">static LOREM_IPSUM: &amp;'static str =&quot;输出文本&quot;;
 
 use std::error::Error;
 use std::io::prelude::*;
@@ -269,7 +277,7 @@ fn main() {
         Err(err) =&gt; panic!(&quot;无法写入 {}，错误: {}&quot;,display,Error::description(&amp;err)),
         Ok(file) =&gt; file,
     };
-</code></pre>
+</code></pre></pre>
 <hr />
 <p>到这里，快速入门阶段就结束了，是时候通过更加系统的知识来熟悉读写 Rust 代码了。</p>
 

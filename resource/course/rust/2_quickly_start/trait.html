@@ -166,7 +166,10 @@
                         <h1 id="特性泛型与多态"><a class="header" href="#特性泛型与多态">特性、泛型与多态</a></h1>
 <h1 id="特性与接口"><a class="header" href="#特性与接口">特性与接口</a></h1>
 <p>为了描述类型可以实现的抽象接口，Rust引入了特性 <code>trait</code> 来定义<strong>函数类型签名</strong>，特性就相当于其他语言中的接口</p>
-<pre><code class="language-Rust">//通过trait关键字定义特性
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//通过trait关键字定义特性
 trait HasArea {//这个特性使area函数必须接受一个&amp;eslf类型，返回一个f64类型
     fn area(&amp;self) -&gt; f64;
 }
@@ -198,9 +201,13 @@ impl HasArea for Square {
 fn print_area&lt;T: HasArea&gt;(shape: T) {
     println!(&quot;This shape has an area of {}&quot;, shape.area());
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>其中函数<code>print_area()</code>中的<strong>泛型参数</strong><code>T</code>（<a href="https://www.wolai.com/k8F6paRKSbf3mPoeWd7TZF">泛型与多态</a>）被添加了一个名为<code>HasArea</code>的<strong>特性约束</strong>， 用以确保任何实现了<code>HasArea</code>的类型将拥有一个.area()方法。 如果需要多个<strong>特性限定</strong>，可以使用<code>+</code>操作符</p>
-<pre><code class="language-Rust">use std::fmt::Debug;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::fmt::Debug;
 
 fn foo&lt;T: Clone, K: Clone + Debug&gt;(x: T, y: K) {
     x.clone();
@@ -216,10 +223,14 @@ fn bar&lt;T, K&gt;(x: T, y: K)
     y.clone();
     println!(&quot;{:?}&quot;, y);
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>其中第二个例子使用了更灵活的<code>where</code>从句，它还允许限定的左侧可以是任意类型， 而不仅仅是类型参数</p>
 <p>定义在特性中的方法称为<strong>默认方法</strong>，可以被该特性的实现<strong>覆盖</strong>。 此外，特性之间也可以存在<strong>继承</strong></p>
-<pre><code class="language-Rust">trait Foo {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait Foo {
     fn foo(&amp;self);
 
     // 默认方法
@@ -240,14 +251,19 @@ impl Foo for Baz {
 impl FooBar for Baz {
     fn foobar(&amp;self) { println!(&quot;foobar&quot;); }
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>如果两个不同特性的方法具有相同的名称，可以使用<strong>通用函数调用语法</strong></p>
-<pre><code class="language-Rust">// 短形式
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 短形式
 Trait::method(args);
 
 // 展开形式
 &lt;Type as Trait&gt;::method(args);
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>关于实现特性的几条限制：</p>
 <ul>
 <li>
@@ -263,17 +279,28 @@ Trait::method(args);
 <h1 id="泛型与多态"><a class="header" href="#泛型与多态">泛型与多态</a></h1>
 <p><strong>泛型</strong>在类型理论中称作<strong>参数多态</strong>，即对于给定参数可以有多种形式的函数或类型</p>
 <p><code>Option</code>枚举是rust类型系统中的一部分，用于表示不存在的值，其定义如下<code>&lt;T&gt;</code>就是一个泛型，Rust程序员习惯使用<code>&lt;T&gt;</code>作为泛型</p>
-<pre><code class="language-Rust">enum Option&lt;T&gt; {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Option&lt;T&gt; {
     Some(T),
     None,
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>Option的典型用法</p>
-<pre><code class="language-Rust">let a: Option&lt;i32&gt; = Some(1);
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a: Option&lt;i32&gt; = Some(1);
 let b: Option&lt;f64&gt; = Some(1.0f64);
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>泛型参数也可以用于函数参数和结构体</p>
-<pre><code class="language-Rust">fn point&lt;T, U&gt;(a: T, b: U) -&gt; (T, U) {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn point&lt;T, U&gt;(a: T, b: U) -&gt; (T, U) {
     (a, b)
 }
 let couple = point(1, 2.0);
@@ -284,10 +311,14 @@ struct Point&lt;T&gt; {
 }
 let int_origin = Point { x: 0, y: 0 };
 let float_origin = Point { x: 0.0, y: 0.0 };
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>对于多态函数，有两种<strong>派分</strong>机制：<strong>静态派分</strong>和<strong>动态派分</strong>。 前者类似于C++的模板，Rust会生成适用于指定类型的特殊函数，然后在被调用的位置进行替换， 好处是允许函数被内联调用，运行比较快，但是会导致<strong>代码膨胀</strong>； 后者类似于Go的interface，Rust通过引入<strong>特性对象</strong>来实现， 在运行期查找<strong>虚表</strong>来选择执行的方法。特性对象&amp;Foo具有和特性Foo相同的名称， 通过<strong>转换</strong>或者强制<strong>多态化</strong>一个指向具体类型的指针来创建</p>
 <p>特性也可以接受泛型参数。但更好的处理方式往往是使用<strong>关联类型</strong></p>
-<pre><code class="language-Rust">//泛型参数
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//泛型参数
 trait Graph&lt;N, E&gt; {
     fn has_edge(&amp;self, &amp;N, &amp;N) -&gt; bool;
     fn edges(&amp;self, &amp;N) -&gt; Vec&lt;E&gt;;
@@ -331,7 +362,8 @@ impl Graph for SimpleGraph {
 
 let graph = SimpleGraph;
 let object = Box::new(graph) as Box&lt;Graph&lt;N=Node, E=Edge&gt;&gt;;
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>关于泛型我们会在<a href="https://www.wolai.com/nHJfi5qDQP2mKKANBASDTg">9.泛型</a>中详细讲解</p>
 
                     </main>

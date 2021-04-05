@@ -166,24 +166,39 @@
                         <h1 id="函数与方法"><a class="header" href="#函数与方法">函数与方法</a></h1>
 <h1 id="函数"><a class="header" href="#函数">函数</a></h1>
 <p>声明函数与<code>fn</code>关键字</p>
-<pre><code class="language-Rust">fn function(x:i32)-&gt;i32{
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn function(x:i32)-&gt;i32{
   x
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>其中函数参数的类型不能省略，可以有多个参数，但是最多只能返回一个值， 提前返回使用<code>return</code>关键字否则默认将最后一行的表达式返回，关于表达式和语句我们在<a href="https://www.wolai.com/f5r4ZNSJGu1JwUGfsj9F3z">Rust是基于表达式和语句的语言</a>中讲到过。</p>
 <p>Rust编译器会对未使用的函数提出警告， 可以使用属性<code>#[allow(dead_code)]</code>禁用无效代码检查</p>
 <p>Rust有一个特殊特性适用于发散函数 (diverging function)，它不返回</p>
-<pre><code class="language-Rust">fn diverges() -&gt; ! {
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn diverges() -&gt; ! {
     panic!(&quot;这个函数永不返回&quot;);
 }
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p><code>panic!</code>是一个宏，会使当前执行线程 <em>panic</em>并打印给定信息。返回类型<code>!</code>可用作任何类型</p>
-<pre><code class="language-Rust">let x: i32 = diverges();
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x: i32 = diverges();
 let y: String = diverges();
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="匿名函数"><a class="header" href="#匿名函数">匿名函数</a></h1>
 <p>Rust使用闭包 (closure) 创建匿名函数</p>
-<pre><code class="language-Rust">let out = 12;//闭包可使用外部变量
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let out = 12;//闭包可使用外部变量
 let num1 = |i,j|i+j+out;//闭包可根据上下文自动推导类型
 let num2 = |i:i32,j:i32|i*j+out;//也可以指定类型
 let a = 1;
@@ -191,9 +206,13 @@ let b = 2;
 let c = num1(a,b);
 let d = num2(a,b);
 println!(&quot;{},{}&quot;,c,d);
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p>其中<code>||</code>之间是闭包的参数，其后是函数的主体，闭包<code>num1</code>借用了它作用域中的<code>let</code>绑定<code>out</code>。如果要让闭包获得所有权， 可以使用<code>move</code>关键字</p>
-<pre><code class="language-Rust">let mut num = 5;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut num = 5;
 
 {
     let mut add = move |x: i32| num += x;   // 闭包通过move获取了num的所有权
@@ -201,10 +220,11 @@ println!(&quot;{},{}&quot;,c,d);
 }
 // 下面的num在被move之后还能继续使用是因为其实现了Copy特性
 assert_eq!(5, num);
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="高阶函数"><a class="header" href="#高阶函数">高阶函数</a></h1>
 <p>Rust支持高阶函数，允许闭包作为参数，高阶函数会在<a href="https://www.wolai.com/35pfc2mANWfB6wZMJDCLCf">6.4.高阶函数</a>中继续讲解</p>
-<pre><code class="language-Rust">fn add_one(x: i32) -&gt; i32 { x + 1 }
+<pre><pre class="playground"><code class="language-rust">fn add_one(x: i32) -&gt; i32 { x + 1 }
 
 fn apply&lt;F&gt;(f: F, y: i32) -&gt; i32//接受一个类型F与i32，返回i32
     where F: Fn(i32) -&gt; i32//对类型F的约束，下一节会有提到
@@ -242,7 +262,7 @@ fn main() {
     let z2 = apply(translate, 2);
     println!(&quot;{}, {}, {}&quot;, z0, z1, z2);
 }
-</code></pre>
+</code></pre></pre>
 <h1 id="方法"><a class="header" href="#方法">方法</a></h1>
 <p>Rust通过<code>impl</code>关键字在<code>struct</code>、<code>enum</code>或者<code>trait</code>对象的上下文实现方法调用语法，一个对象可以有多个 <code>impl</code>块 。 关联函数的第一个参数通常为<code>self</code>参数，有3种变体：</p>
 <ul>
@@ -256,7 +276,7 @@ fn main() {
 <p><code>&amp;mut self</code>，允许实现者修改对象但不允许移动，对应的闭包特性为<code>FnMut</code></p>
 </li>
 </ul>
-<pre><code class="language-Rust">/// 矩形结构体
+<pre><pre class="playground"><code class="language-rust">/// 矩形结构体
 struct Rectangular{
     width:u32,
     height:u32,
@@ -312,7 +332,7 @@ fn main() {
     let g = Rectangular::new(10,40);
     println!(&quot;这个矩形的长是：{}，宽是：{}&quot;,g.get_width(),g.get_height());
 }
-</code></pre>
+</code></pre></pre>
 
                     </main>
 

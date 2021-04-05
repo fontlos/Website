@@ -168,16 +168,20 @@
 <h2 id="数组和动态数组"><a class="header" href="#数组和动态数组">数组和动态数组</a></h2>
 <h3 id="数组与切片"><a class="header" href="#数组与切片">数组与切片</a></h3>
 <p>数组用于储存相同类型的数据集，[T; N] 表示一个T类型，N个元素的数组，数组的大小必须固定，需要在编译的时候确定下来</p>
-<pre><code class="language-Rust">let mut array :[i32; 3]= [0; 3];
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut array :[i32; 3]= [0; 3];
 array[1] = 1;
 array[2] = 2;
 for x in &amp;array {
   println!(&quot;{}&quot;,x);
 } 
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <p><code>array[1] = 2</code>的意思是将索引为 <em>1</em>的元素的值改为 <em>2</em>，需要注意的是，Rust中，数组第一个元素的索引为 <strong>0</strong>。 <code>for x in &amp;array {...}</code>是一个循环，这个循环将会打印 <em>0 1 2</em>，关于循环的内容将会在<a href="https://www.wolai.com/ok8S8UqwJvM5KGhy2cuLY6">2.5.控制流</a>提到</p>
 <p>切片（slice）类型和数组类似，但其大小在编译时是不确定的。切片是一个<strong>双字对象</strong>，第一个字是一个指向数据的<strong>指针</strong>，第二个字是切片的<strong>长度</strong>。这 个“字”的宽度和 usize 相同，slice 可以用来借用数组的一部分。slice 的类型标记为 <code>&amp;[T]</code></p>
-<pre><code class="language-Rust">use std::mem;
+<pre><pre class="playground"><code class="language-rust">use std::mem;
 
 // 此函数借用一个 slice
 fn analyze_slice(slice: &amp;[i32]) {
@@ -214,10 +218,13 @@ fn main() {
     println!(&quot;{}&quot;, xs[5]);
 }
 
-</code></pre>
+</code></pre></pre>
 <h2 id="动态数组vec"><a class="header" href="#动态数组vec">动态数组Vec</a></h2>
 <p>动态数组是一种基于堆内存申请的连续动态数据类型，拥有 O(1) 时间复杂度的索引、压入（push）、弹出（pop)</p>
-<pre><code class="language-Rust">//创建空Vec
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//创建空Vec
 let v: Vec&lt;i32&gt; = Vec::new();
 //使用宏创建空Vec
 let v: Vec&lt;i32&gt; = vec![];
@@ -235,17 +242,25 @@ let two = v.pop();
 let mut v = vec![1, 2, 3];
 let three = v[2];
 v[1] = v[1] + 5;
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h1 id="字符串"><a class="header" href="#字符串">字符串</a></h1>
 <p>Rust里有两种字符串类型， <code>String</code>和 <code>str</code></p>
 <h2 id="str"><a class="header" href="#str">&amp;str</a></h2>
 <p><code>str</code>类型很少使用， <code>&amp;str</code>类型使用的较多，本质是 <code>[u8]</code>类型的切片 <code>&amp;[u8]</code>，是一种大小固定的类型，常见的的字符串字面值就是 <code>&amp;'static str</code>类型，这是一种带有 <code>'static</code>生命周期的 <code>&amp;str</code>类型，在这里您不必深入了解</p>
-<pre><code class="language-Rust">let hello = &quot;Hello, world!&quot;;
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let hello = &quot;Hello, world!&quot;;
 let hello: &amp;'static str = &quot;Hello, world!&quot;;
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 <h2 id="string"><a class="header" href="#string">String</a></h2>
 <p><code>String</code>是一个带有的 <code>vec:Vec&lt;u8&gt;</code>成员的结构体，您可以理解为 <code>str</code>类型的动态形式。 它们的关系相当于 <code>[T]</code>和 <code>Vec&lt;T&gt;</code>的关系。所以 String 类型也有压入和弹出</p>
-<pre><code class="language-Rust">// 创建一个空的字符串
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 创建一个空的字符串
 let mut s = String::new();
 // 从 `&amp;str` 类型转化成 `String` 类型
 let mut hello = String::from(&quot;Hello, &quot;);
@@ -259,7 +274,8 @@ assert_eq!(s.pop(), Some('o'));
 assert_eq!(s.pop(), Some('o'));
 assert_eq!(s.pop(), Some('f'));
 assert_eq!(s.pop(), None);
-</code></pre>
+<span class="boring">}
+</span></code></pre></pre>
 
                     </main>
 
