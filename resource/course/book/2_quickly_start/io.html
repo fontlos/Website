@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>输入输出流 - Rust learning notes</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../1_env_config/env_config.html"><strong aria-hidden="true">1.</strong> Rust环境配置(Windows)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../1_env_config/rust-analyer.html"><strong aria-hidden="true">1.1.</strong> rust-analyer</a></li></ol></li><li class="chapter-item expanded "><a href="../2_quickly_start/quickly_start.html"><strong aria-hidden="true">2.</strong> 快速开始</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2_quickly_start/hello_rust.html"><strong aria-hidden="true">2.1.</strong> Hello Rust</a></li><li class="chapter-item expanded "><a href="../2_quickly_start/hello_cargo.html"><strong aria-hidden="true">2.2.</strong> Hello Cargo</a></li><li class="chapter-item expanded "><a href="../2_quickly_start/var_const_type.html"><strong aria-hidden="true">2.3.</strong> 变量、常量与原生类型</a></li><li class="chapter-item expanded "><a href="../2_quickly_start/array_vec_string.html"><strong aria-hidden="true">2.4.</strong> 数组、动态数组与字符串</a></li><li class="chapter-item expanded "><a href="../2_quickly_start/struct_emun.html"><strong aria-hidden="true">2.5.</strong> 结构体与枚举</a></li><li class="chapter-item expanded "><a href="../2_quickly_start/control_flow.html"><strong aria-hidden="true">2.6.</strong> 控制流</a></li><li class="chapter-item expanded "><a href="../2_quickly_start/fn_impl.html"><strong aria-hidden="true">2.7.</strong> 函数与方法</a></li><li class="chapter-item expanded "><a href="../2_quickly_start/trait.html"><strong aria-hidden="true">2.8.</strong> 特性、泛型与多态</a></li><li class="chapter-item expanded "><a href="../2_quickly_start/doc.html"><strong aria-hidden="true">2.9.</strong> 注释与文档</a></li><li class="chapter-item expanded "><a href="../2_quickly_start/io.html" class="active"><strong aria-hidden="true">2.10.</strong> 输入输出流</a></li></ol></li><li class="chapter-item expanded "><a href="../3_basic_program_struct/basic_program_struct.html"><strong aria-hidden="true">3.</strong> 基本程序结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../3_basic_program_struct/comment.html"><strong aria-hidden="true">3.1.</strong> 注释</a></li><li class="chapter-item expanded "><a href="../3_basic_program_struct/conditional_branch.html"><strong aria-hidden="true">3.2.</strong> 条件分支语句</a></li><li class="chapter-item expanded "><a href="../3_basic_program_struct/circulate.html"><strong aria-hidden="true">3.3.</strong> 循环语句</a></li></ol></li><li class="chapter-item expanded "><a href="../4_type_operator_string/type_operator_string.html"><strong aria-hidden="true">4.</strong> 类型、运算符与字符串</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../4_type_operator_string/native_type.html"><strong aria-hidden="true">4.1.</strong> 原生类型</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Rust learning notes</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="29输入输出流"><a class="header" href="#29输入输出流">2.9.输入输出流</a></h1>
+<p>输入输出流需要用到标准库中的内容，关于包与模块我们将在<a href="https://www.wolai.com/7PtSd1io4AxPY15qkcdNnT">14.模块和包</a>这一章中详细讲解</p>
+<h1 id="控制台输入"><a class="header" href="#控制台输入">控制台输入</a></h1>
+<pre><code class="language-Rust">use std::io;//导入IO库
+
+fn read_input() -&gt; io::Result&lt;()&gt; {
+    //创建空字符串
+    let mut input = String::new();
+    try!(io::stdin().read_line(&amp;mut input));
+    println!(&quot;你输入了: {}&quot;, input.trim());
+    Ok(())
+}
+fn main() {
+    read_input();
+}
+</code></pre>
+<p>因为读取可能会发生错误，所以本例中使用了<code>try!</code> 宏。这个宏会返回 <code>Result&lt;(), io::Error&gt;</code> 类型，所以需要单独使用一个 <code>read_input</code> 函数来接收这个类型，而不是在 <code>main</code> 函数里</p>
+<pre><code class="language-Rust">use std::io;
+fn main() {
+    let mut input = String::new();
+
+    io::stdin().read_line(&amp;mut input).unwrap();
+
+    println!(&quot;You typed: {}&quot;, input.trim());
+}
+</code></pre>
+<p>本例使用了 <code>Result&lt;(), io::Error&gt;</code> 类型的 <code>unwrap</code> 方法来接收 <code>io::stdin().read_line</code> 的返回类型。如果发生错误如果发生错误，则调用<code>panic</code>，更好的办法是使用<code>expect</code>方法，这个方法可以自定义返回内容</p>
+<pre><code class="language-Rust">use std::io;
+fn main() {
+    let mut input = String::new();
+
+    io::stdin().read_line(&amp;mut input).expect(&quot;错误&quot;);
+
+    println!(&quot;You typed: {}&quot;, input.trim());
+}
+</code></pre>
+<p>如果发生了错误，则返回<code>expect</code>中的内容并调用<code>panic</code></p>
+<h1 id="控制台输出"><a class="header" href="#控制台输出">控制台输出</a></h1>
+<p>Rust 里面常见的标准输出宏有 <code>print!</code> 和 <code>println!</code>。后者比前者在末尾多输出一个换行符</p>
+<pre><code class="language-Rust">print!(&quot;这些文字&quot;);
+print!(&quot;将被打印在同一行&quot;);
+
+print!(&quot;这行文字用了转义字符来换行\n&quot;);
+
+println!(&quot;还是这样直接换行方便&quot;); 
+</code></pre>
+<pre><code class="language-Rust">println!(&quot;这是rust的 {} 输出&quot;, &quot;格式化&quot;);
+</code></pre>
+<p>这里两个例子都比较简单。<code>{}</code> 会被 <code>&quot;格式化&quot;</code> 所替换。这是 rust 里面的一种格式化输出。</p>
+<p>标准化的输出是<strong>行缓冲</strong>的,这就导致标准化的输出在遇到一个新行之前并不会被隐式刷新。 换句话说 <code>print!</code> 和 <code>println!</code> 二者的效果并不总是相同的。 比如：</p>
+<pre><code class="language-Rust">use std::io;
+fn main() {
+    print!(&quot;请输入：&quot;);
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&amp;mut input)
+        .expect(&quot;读取失败&quot;);
+    print!(&quot;您输入的是：{}\n&quot;, input);
+}
+</code></pre>
+<p>在这段代码运行时则不会先出现预期的提示字符串，因为行没有被刷新。 如果想要达到预期的效果就要显示的刷新，即在提示字符串下加入一行<code>io::stdout().flush().unwrap();</code></p>
+<h1 id="文件输入"><a class="header" href="#文件输入">文件输入</a></h1>
+<p>文件输入流指向了文件而不是控制台，一般通过match处理潜在错误</p>
+<pre><code class="language-Rust">use std::error::Error;
+use std::fs::File;
+use std::io::prelude::*;
+use std::path::Path;
+
+fn main() {
+    // 创建一个文件路径
+    let path = Path::new(&quot;test.txt&quot;);
+    let display = path.display();
+
+    // 打开文件只读模式, 返回一个 `io::Result&lt;File&gt;` 类型
+    let mut file = match File::open(&amp;path) {
+        // 处理打开文件可能潜在的错误
+        Err(err) =&gt; panic!(&quot;无法打开 {}，错误: {}&quot;, display,Error::description(&amp;err)),
+        Ok(file) =&gt; file,
+    };
+
+    // 文件输入数据到字符串，并返回 `io::Result&lt;usize&gt;` 类型
+    let mut s = String::new();
+    match file.read_to_string(&amp;mut s) {
+        Err(err) =&gt; panic!(&quot;无法读取 {}，错误: {}&quot;, display,Error::description(&amp;err)),
+        Ok(_) =&gt; print!(&quot;{} 的内容为:\n{}&quot;, display, s),
+    }
+}
+</code></pre>
+<h1 id="文件输出"><a class="header" href="#文件输出">文件输出</a></h1>
+<p>文件输出流重定向到文件中</p>
+<pre><code class="language-Rust">static LOREM_IPSUM: &amp;'static str =&quot;输出文本&quot;;
+
+use std::error::Error;
+use std::io::prelude::*;
+use std::fs::File;
+use std::path::Path;
+
+fn main() {
+    let path = Path::new(&quot;out/test.txt&quot;);
+    let display = path.display();
+
+    // 用只写模式打开一个文件，并返回 `io::Result&lt;File&gt;` 类型
+    let mut file = match File::create(&amp;path) {
+        Err(err) =&gt; panic!(&quot;无法写入 {}，错误: {}&quot;,display,Error::description(&amp;err)),
+        Ok(file) =&gt; file,
+    };
+</code></pre>
+<hr />
+<p>到这里，快速入门阶段就结束了，是时候通过更加系统的知识来熟悉读写 Rust 代码了。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../2_quickly_start/doc.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../3_basic_program_struct/basic_program_struct.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../2_quickly_start/doc.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../3_basic_program_struct/basic_program_struct.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
