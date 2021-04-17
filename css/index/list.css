@@ -1,0 +1,37 @@
+.list-group{
+	position: absolute;
+	top: 70vh;
+	left: 15%;/*13*/
+}
+.list-group .title{
+    height: 50px;
+    width: 1200px;
+    background:rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    /* backdrop-filter: blur(3px); 毛玻璃 */
+    z-index: 20;
+}
+.list-group .title p{
+    position: absolute;
+    left: 1%;
+    font-size: 2em;
+    color: #ffffff;
+}
+.list-group .list{
+    position: relative;
+    top: 50px;
+    display: grid;
+	row-gap: 20px;
+    column-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.list-group .article{
+    height: 240px;
+    width: 291px;
+    background:rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    /* backdrop-filter: blur(3px); 毛玻璃 */
+    z-index: 20;
+}
