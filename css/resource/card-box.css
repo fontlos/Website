@@ -1,6 +1,11 @@
+.card-wrapper{
+	position: absolute;
+	top: 40vh;
+	left: 15%;/*13*/
+	display: grid;
+	row-gap: 20px;
+}
 .card-box{
-    position: absolute;
-    left: 13%;
     height: 380px;
     width: 1200px;
     background:rgba(255, 255, 255, 0.5);
@@ -11,14 +16,12 @@
 }
 .card-box p.topic{
     position: absolute;
-    top: 1%;
     left: 1%;
     font-size: 2em;
     color: #9c9c9c;
 }
 .card-box a.more{
     position: absolute;
-    top: 1%;
     right: 1%;
     font-size: 2em;
     color: #9c9c9c;

@@ -10,6 +10,8 @@
     <!--加载动画css-->
     <link rel="stylesheet" href="../css/background.css">
     <!--背景一切css，包含square方块组件和snow组件-->
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <!--侧边栏css-->
     <!--js-->
     <script src="../lib/jQuery/jquery-3.5.1.min.js"></script>
     <!--loading组件与background组件-->
@@ -24,7 +26,71 @@
 
 <body>
     <header>
+        <div class="sidebar">
+            <div class="logo-content">
+                <div class="logo">
+                    <img src="../image/icon/logo.png" width="50px" height="50px">
+                    <div class="logo-name">芳塔洛斯</div>
+                </div>
+                <img src="../image/icon/sidebar/menu.svg" class="menu" id="menu-btn">
+            </div>
+            <ul class="nav-list">
+                <!--导航列表-->
+                <li>
+                    <img src="../image/icon/sidebar/search.svg" class="search">
+                    <input type="text" placeholder="Search..">
+                    <span class="tooltip">Search</span>
+                </li>
+                <li>
+                    <a href="../">
+                        <img src="../image/icon/sidebar/home.svg">
+                        <span class="link-name">Home</span>
+                    </a>
+                    <span class="tooltip">Home</span>
+                </li>
+                <li>
+                    <a href="../resource/">
+                        <img src="../image/icon/sidebar/resource.svg">
+                        <span class="link-name">Resource</span>
+                    </a>
+                    <span class="tooltip">Resource</span>
+                </li>
+                <li>
+                    <a href="../blog/">
+                        <img src="../image/icon/sidebar/blog.svg">
+                        <span class="link-name">Blog</span>
+                    </a>
+                    <span class="tooltip">Blog</span>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="../image/icon/sidebar/about.svg">
+                        <span class="link-name">About</span>
+                    </a>
+                    <span class="tooltip">About</span>
+                </li>
+                <li>
+                    <a href="../contact/">
+                        <img src="../image/icon/sidebar/contact.svg">
+                        <span class="link-name">Contact</span>
+                    </a>
+                    <span class="tooltip">Contact</span>
+                </li>
+            </ul>
+        </div>
 
+        <script>
+            let btn = document.querySelector("#menu-btn");
+            let sidebar = document.querySelector(".sidebar");
+            let searchBtn = document.querySelector(".search");
+
+            btn.onclick = function () {
+                sidebar.classList.toggle("active")
+            }
+            searchBtn.onclick = function () {
+                sidebar.classList.toggle("active")
+            }
+        </script>
     </header>
     <main>
         <div class="about-card">
@@ -129,7 +195,7 @@
     <script>
         $(window).on("load", function () {
             $(".loading").fadeOut("slow");
-            setTimeout(function () {$(".loading").css("z-index","-10")},2000);
+            setTimeout(function () { $(".loading").css("z-index", "-10") }, 2000);
         });
     </script>
     <div class="loading">
