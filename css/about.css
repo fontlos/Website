@@ -45,7 +45,7 @@
 .about-card #c2 {
   left: -100%;
   z-index: 0;
-  background: linear-gradient(to bottom, #59476f 30%, #7b88d1 100%);
+  background: linear-gradient(to bottom, #7c7c7c 30%, #d6d6d6 100%);
   box-shadow: 0px 20px 100px #555;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .about-card #i2 {
-  background: linear-gradient(to bottom, #59476f 30%, #7b88d1 100%);
+  background: linear-gradient(to bottom, #7c7c7c 30%, #d6d6d6 100%);/*左*/
 }
 
 .about-card span {
@@ -80,79 +80,6 @@
   border-radius: 100%;
   background-color: #fff;
   z-index: 10;
-}
-
-.about-card .sun {
-  position: absolute;
-  top: 50%;
-  height: 50%;
-  left: 0%;
-  width: 100%;
-}
-
-.about-card .sun1 {
-  width: 50px;
-  height: 50px;
-  box-shadow: 0px 0px 10px #fff;
-}
-
-.about-card .st4 {
-  fill: #f8c56f;
-  opacity: 1;
-}
-
-.about-card .st5,
-.about-card .st7 {
-  fill: #fff;
-}
-
-.about-card #sh2 {
-  opacity: 0.5;
-}
-
-.about-card #sh3 {
-  opacity: 0.3;
-}
-
- .about-card .st6 {
-  fill: #59476f;
-}
-
-.about-card .st10 {
-  fill: #c5a7e5;
-  stroke: #222;
-}
-
-.about-card .st11 {
-  stroke: #212121;
-  opacity: 0.5;
-}
-
-.about-card #sh1 {
-  fill: #f8c56f;
-  opacity: 0.4;
-}
-
-.about-card .st0 {
-  fill: #a25a62;
-  stroke: none;
-  stroke-miterlimit: 10;
-}
-
-.about-card .st1 {
-  fill: none;
-  stroke: #a25a62;
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-}
-
-.about-card .st2 {
-  fill: #cd775c;
-}
-
-.about-card.st3 {
-  fill: #fff;
-  opacity: 0.3;
 }
 
 .about-card .story {
@@ -170,7 +97,7 @@
 }
 
 .about-card #s2 {
-  background: linear-gradient(to top, #5b62a2 0%, #7b88d1 120%);
+  background: linear-gradient(to top, #7c7c7c 0%, #d6d6d6 100%);
 }
 
 .about-card .info {
