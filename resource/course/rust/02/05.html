@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>结构体与枚举 - Rust learning notes</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../01/00.html"><strong aria-hidden="true">1.</strong> Rust环境配置(Windows)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01/01.html"><strong aria-hidden="true">1.1.</strong> rust-analyer</a></li></ol></li><li class="chapter-item expanded "><a href="../02/00.html"><strong aria-hidden="true">2.</strong> 快速开始</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02/01.html"><strong aria-hidden="true">2.1.</strong> Hello Rust</a></li><li class="chapter-item expanded "><a href="../02/02.html"><strong aria-hidden="true">2.2.</strong> Hello Cargo</a></li><li class="chapter-item expanded "><a href="../02/03.html"><strong aria-hidden="true">2.3.</strong> 变量、常量与原生类型</a></li><li class="chapter-item expanded "><a href="../02/04.html"><strong aria-hidden="true">2.4.</strong> 数组、动态数组与字符串</a></li><li class="chapter-item expanded "><a href="../02/05.html" class="active"><strong aria-hidden="true">2.5.</strong> 结构体与枚举</a></li><li class="chapter-item expanded "><a href="../02/06.html"><strong aria-hidden="true">2.6.</strong> 控制流</a></li><li class="chapter-item expanded "><a href="../02/07.html"><strong aria-hidden="true">2.7.</strong> 函数与方法</a></li><li class="chapter-item expanded "><a href="../02/08.html"><strong aria-hidden="true">2.8.</strong> 特性、泛型与多态</a></li><li class="chapter-item expanded "><a href="../02/09.html"><strong aria-hidden="true">2.9.</strong> 注释与文档</a></li><li class="chapter-item expanded "><a href="../02/10.html"><strong aria-hidden="true">2.10.</strong> 输入输出流</a></li></ol></li><li class="chapter-item expanded "><a href="../03/00.html"><strong aria-hidden="true">3.</strong> 类型、运算符与字符串</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03/01.html"><strong aria-hidden="true">3.1.</strong> 原生类型</a></li><li class="chapter-item expanded "><a href="../03/02.html"><strong aria-hidden="true">3.2.</strong> 复合类型</a></li><li class="chapter-item expanded "><a href="../03/03.html"><strong aria-hidden="true">3.3.</strong> Vec与HashMap</a></li><li class="chapter-item expanded "><a href="../03/04.html"><strong aria-hidden="true">3.4.</strong> 字符串</a></li><li class="chapter-item expanded "><a href="../03/05.html"><strong aria-hidden="true">3.5.</strong> 运算符</a></li></ol></li><li class="chapter-item expanded "><a href="../04/00.html"><strong aria-hidden="true">4.</strong> 所有权与生命周期</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04/01.html"><strong aria-hidden="true">4.1.</strong> 所有权</a></li><li class="chapter-item expanded "><a href="../04/02.html"><strong aria-hidden="true">4.2.</strong> 生命周期</a></li></ol></li><li class="chapter-item expanded "><a href="../05/00.html"><strong aria-hidden="true">5.</strong> 基本程序结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05/01.html"><strong aria-hidden="true">5.1.</strong> 注释</a></li><li class="chapter-item expanded "><a href="../05/02.html"><strong aria-hidden="true">5.2.</strong> 条件分支语句</a></li><li class="chapter-item expanded "><a href="../05/03.html"><strong aria-hidden="true">5.3.</strong> 循环语句</a></li><li class="chapter-item expanded "><a href="../05/04.html"><strong aria-hidden="true">5.4.</strong> 匹配模式</a></li></ol></li><li class="chapter-item expanded "><a href="../06/00.html"><strong aria-hidden="true">6.</strong> 函数</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../06/01.html"><strong aria-hidden="true">6.1.</strong> 参数</a></li><li class="chapter-item expanded "><a href="../06/02.html"><strong aria-hidden="true">6.2.</strong> 返回值</a></li><li class="chapter-item expanded "><a href="../06/03.html"><strong aria-hidden="true">6.3.</strong> 语句与表达式</a></li><li class="chapter-item expanded "><a href="../06/04.html"><strong aria-hidden="true">6.4.</strong> 高阶函数</a></li></ol></li><li class="chapter-item expanded "><a href="../07/00.html"><strong aria-hidden="true">7.</strong> 闭包</a></li><li class="chapter-item expanded "><a href="../08/00.html"><strong aria-hidden="true">8.</strong> Trait与泛型</a></li><li class="chapter-item expanded "><a href="../09/00.html"><strong aria-hidden="true">9.</strong> 迭代器</a></li><li class="chapter-item expanded "><a href="../10/00.html"><strong aria-hidden="true">10.</strong> 模块系统</a></li><li class="chapter-item expanded "><a href="../11/00.html"><strong aria-hidden="true">11.</strong> 错误处理</a></li><li class="chapter-item expanded "><a href="../12/00.html"><strong aria-hidden="true">12.</strong> I/O</a></li><li class="chapter-item expanded "><a href="../13/00.html"><strong aria-hidden="true">13.</strong> 宏系统</a></li><li class="chapter-item expanded "><a href="../14/00.html"><strong aria-hidden="true">14.</strong> 堆与栈</a></li><li class="chapter-item expanded "><a href="../15/00.html"><strong aria-hidden="true">15.</strong> 指针</a></li><li class="chapter-item expanded "><a href="../16/00.html"><strong aria-hidden="true">16.</strong> 并行与并发</a></li><li class="chapter-item expanded "><a href="../17/00.html"><strong aria-hidden="true">17.</strong> Unsafe</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Rust learning notes</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="结构体与枚举"><a class="header" href="#结构体与枚举">结构体与枚举</a></h1>
+<h1 id="结构体"><a class="header" href="#结构体">结构体</a></h1>
+<p><strong>结构体</strong> 是一种记录类型，所包含的每个 <strong>域</strong> 都有一个名称。 每个结构体也都有一个名称，通常以 <strong>大写字母</strong> 开头，使用 <strong>驼峰命名法</strong>。元组结构体是由 <strong>元组</strong> 和 <strong>结构体</strong> 混合构成，元组结构体有名称，但是它的域没有。当元组结构体只有一个域时，称为新类型。没有域的结构体，称为类单元结构体 。结构体中的值默认是不可变的，需要给结构体加上mut使其可变</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Student {
+        name: String,
+        grade: i8,
+        class: i8,
+        id: i8,
+}
+let mut bob = Student {
+        name: String::from(&quot;Bob&quot;),
+        class: 1,
+        grade: 2,
+        id: 123,
+};
+bob.grade = 1;
+
+struct Color(u8, u8, u8);
+let android_green = Color(0xa4, 0xc6, 0x39);
+let Color(red, green, blue) = android_green;
+
+struct Digit(i32);
+let v = vec![0, 1, 2];
+let d: Vec&lt;Digit&gt; = v.into_iter().map(Digit).collect();
+
+struct Inches(i32);
+let length = Inches(10);
+let Inches(integer_length) = length;
+
+struct EmptyStruct;
+let empty = EmptyStruct;
+<span class="boring">}
+</span></code></pre></pre>
+<p>关于结构体的更多知识，我们将在后面的章节继续讲</p>
+<h1 id="枚举"><a class="header" href="#枚举">枚举</a></h1>
+<p><strong>枚举</strong> 是一种代表一系列子数据类型的集合，可用于分类，通过 <code>::</code>来获得每个元素的名称</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Book {
+        Pbook(u32),
+        Ebook { url: String }, //枚举无法访问结构体内字段
+    }
+    let book = Book::Pbook(1010);
+    let _ebook = Book::Ebook {
+        url: String::from(&quot;https://xx.xx&quot;),
+    };
+match book {
+        //match可作为返回表达式，但需要保证每个语句返回值相同
+        Book::Pbook(i) =&gt; {
+            //元组属性此处需设置临时变量
+            println!(&quot;Pbook {}&quot;, i);
+        }
+        Book::Ebook { url } =&gt; {
+            //结构体属性此处应与结构体字段相同
+            println!(&quot;Ebook {}&quot;, url);
+        }
+    }
+
+<span class="boring">}
+</span></code></pre></pre>
+<p>多通过 <code>match</code>对枚举进行预处理，关于match的知识，我们将在<a href="06.html">2.6.控制流</a>中讲到</p>
+<p>与结构体一样，枚举中的元素默认不能使用关系运算符进行比较 (如<code>==</code>, <code>!=</code>, <code>&gt;=</code>)， 也不支持像<code>+</code>和<code>*</code>这样的双目运算符，需要自己实现，或者使用<code>match</code>进行匹配。</p>
+<p>枚举默认也是私有的，如果使用<code>pub</code>使其变为公有，则它的元素也都是默认公有的，这一点与结构体不同。 <strong>注意</strong>：即使结构体是公有的，它的域仍然是默认私有的。这里的共有/私有仍然 是针对其定义所在的模块之外</p>
+<h1 id="use引入作用域"><a class="header" href="#use引入作用域">Use引入作用域</a></h1>
+<p>使用 <code>use</code> 声明的话，就可以不写出名称的完整路径了，关于<code>use</code>的更多内容见<a href="../10/00.html">10.模块系统</a></p>
+<pre><pre class="playground"><code class="language-rust">// 该属性用于隐藏对未使用代码的警告。
+#![allow(dead_code)]
+
+enum People {
+    Rich,
+    Poor,
+}
+
+enum Work {
+    Farmer,
+    Soldier,
+}
+
+fn main() {
+    // 显式地 `use` 各个名称使他们直接可用，而不需要指定它们来自 `People`。
+    use People::{Poor, Rich};
+    // 自动地 `use` `Work` 内部的各个名称。
+    use Work::*;
+
+    // `Poor` 等价于 `People::Poor`。
+    let people = Poor;
+    // `Farmer` 等价于 `Work::Farmer`。
+    let work = Farmer;
+
+    match people {
+        // 注意这里没有用完整路径，因为上面显式地使用了 `use`。
+        Rich =&gt; println!(&quot;万恶的有钱人（笑）&quot;),
+        Poor =&gt; println!(&quot;可怜的穷人&quot;),
+    }
+
+    match work {
+        // 再次注意到没有用完整路径。
+        Farmer =&gt; println!(&quot;种地啦&quot;),
+        Soldier  =&gt; println!(&quot;打仗啦&quot;),
+    }
+}
+
+</code></pre></pre>
+<h1 id="c语言风格的枚举"><a class="header" href="#c语言风格的枚举">C语言风格的枚举</a></h1>
+<p>Rust的枚举也可以像C语言那样</p>
+<pre><pre class="playground"><code class="language-rust">// 拥有隐式辨别值（implicit discriminator，从 0 开始）的 enum
+enum Number {
+    Zero,
+    One,
+    Two,
+}
+
+// 拥有显式辨别值（explicit discriminator）的 enum
+enum Color {
+    Red = 0xff0000,
+    Green = 0x00ff00,
+    Blue = 0x0000ff,
+}
+
+fn main() {
+    // `enum` 可以转成整型。
+    println!(&quot;zero 是 {}&quot;, Number::Zero as i32);//as 用来类型转换
+    println!(&quot;one 是 {}&quot;, Number::One as i32);
+
+    println!(&quot;玫瑰是 #{:06x} 色的&quot;, Color::Red as i32);
+    println!(&quot;天空是 #{:06x} 色的&quot;, Color::Blue as i32);
+}
+</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../02/04.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../02/06.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../02/04.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../02/06.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
