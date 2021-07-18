@@ -1,0 +1,13 @@
+{
+  "name": "part2_bis",
+  "collaborators": [
+    "codec-abc"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "part2_bis_bg.wasm",
+    "part2_bis.js"
+  ],
+  "module": "part2_bis.js",
+  "sideEffects": false
+}
