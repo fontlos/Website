@@ -325,8 +325,8 @@ let a = loop {
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>'outer loop {
-  'inner for a in 1..3 {
+</span>'outer: loop {
+  'inner: for a in 1..3 {
     if a == 2{break 'outer}
     println!(&quot;{}&quot;,a);
   }
