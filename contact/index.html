@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>芳塔洛斯</title>
     <link rel="Shortcut Icon" href="../image/icon/logo.png" />
     <!--style-->
-    <link rel="stylesheet" href="../css/loading.css">
-    <!--加载动画css-->
-    <link rel="stylesheet" href="../css/background.css">
-    <!--背景一切css，包含square方块组件和snow组件-->
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <!--侧边栏css-->
+    <link rel="stylesheet" href="../css/loading.css"><!--加载动画css-->
+    <link rel="stylesheet" href="../css/background.css"><!--背景一切css，包含snow组件-->
+    
+    <link rel="stylesheet" href="../css/iconfont.css"><!--iconfont-->
+    <link rel="stylesheet" href="../css/nav.css"><!--导航栏-->
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/card.css">
+    
     <!--js-->
     <script src="../lib/jQuery/jquery-3.5.1.min.js"></script>
     <!--loading组件与background组件-->
@@ -19,79 +22,115 @@
     <!--snow组件-->
     <script src="../js/snow.js"></script>
     <!--snow组件一切控制js-->
-
-    
 </head>
 
-<body style="height: 200vh;">
+<body>
     <!--页面长度-->
     <header>
-        <div class="sidebar">
-            <div class="logo-content">
-                <div class="logo">
-                    <img src="../image/icon/logo.png" width="50px" height="50px">
-                    <div class="logo-name">芳塔洛斯</div>
-                </div>
-                <img src="../image/icon/sidebar/menu.svg" class="menu" id="menu-btn">
+        <div class="search-wrap">
+            <div class="searchBox">
+                <div class="shadow"></div>
+                <input type="text" placeholder="Search for...">
+                <span class="iconfont icon-search"></span>
             </div>
-            <ul class="nav-list">
-                <!--导航列表-->
-                <li>
-                    <img src="../image/icon/sidebar/search.svg" class="search">
-                    <input type="text" placeholder="Search..">
-                    <span class="tooltip">Search</span>
-                </li>
-                <li>
-                    <a href="../">
-                        <img src="../image/icon/sidebar/home.svg">
-                        <span class="link-name">Home</span>
-                    </a>
-                    <span class="tooltip">Home</span>
-                </li>
-                <li>
-                    <a href="../resource/">
-                        <img src="../image/icon/sidebar/resource.svg">
-                        <span class="link-name">Resource</span>
-                    </a>
-                    <span class="tooltip">Resource</span>
-                </li>
-                <li>
-                    <a href="../blog/">
-                        <img src="../image/icon/sidebar/blog.svg">
-                        <span class="link-name">Blog</span>
-                    </a>
-                    <span class="tooltip">Blog</span>
-                </li>
-                <li>
-                    <a href="../about/">
-                        <img src="../image/icon/sidebar/about.svg">
-                        <span class="link-name">About</span>
-                    </a>
-                    <span class="tooltip">About</span>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="../image/icon/sidebar/contact.svg">
-                        <span class="link-name">Contact</span>
-                    </a>
-                    <span class="tooltip">Contact</span>
-                </li>
-            </ul>
         </div>
-    
-        <script>
-            let btn = document.querySelector("#menu-btn");
-            let sidebar = document.querySelector(".sidebar");
-            let searchBtn = document.querySelector(".search");
-    
-            btn.onclick = function(){
-                sidebar.classList.toggle("active")
-            }
-            searchBtn.onclick = function(){
-                sidebar.classList.toggle("active")
-            }
-        </script>
     </header>
+    <nav>
+        <div class="nav-wrap">
+            <div class="nav">
+                <a class="icon" href="https://fangtaluosi.top">
+                    <div class="icon-img"><img src="../image/icon/logo-bg.png" alt=""></div>
+                    <div class="icon-con">
+                        <p>Good day</p>
+                        <h2>芳塔洛斯</h2>
+                    </div>
+                </a>
+                <div class="nav-line"></div>
+                <div class="title">
+                    <p>Page</p>
+                </div>
+                <div class="menu">
+                    <a class="item" href="https://fangtaluosi.top">
+                        <div class="light"></div>
+                        <div class="licon">
+                            <span class="iconfont icon-home_light"></span>
+                        </div>
+                        <div class="con">Home</div>
+                        <div class="ricon">
+                            <span class="iconfont icon-shezhi"></span>
+                        </div>
+                    </a>
+                    <a class="item" href = "https://fangtaluosi.top/resource/">
+                        <div class="light"></div>
+                        <div class="licon">
+                            <span class="iconfont icon-resource"></span>
+                        </div>
+                        <div class="con">Resource</div>
+                        <div class="ricon"></div>
+                    </a>
+                    <a class="item" href="https://fangtaluosi.top/blog/">
+                        <div class="light"></div>
+                        <div class="licon">
+                            <span class="iconfont icon-ego-blog"></span>
+                        </div>
+                        <div class="con">Blog</div>
+                        <div class="ricon"></div>
+                    </a>
+                    <a class="item" href="https://fangtaluosi.top/about/">
+                        <div class="light"></div>
+                        <div class="licon">
+                            <span class="iconfont icon-about"></span>
+                        </div>
+                        <div class="con">About</div>
+                        <div class="ricon"></div>
+                    </a>
+                    <a class="item" href="https://fangtaluosi.top/contact/">
+                        <div class="light"></div>
+                        <div class="licon">
+                            <span class="iconfont icon-link"></span>
+                        </div>
+                        <div class="con">Contact</div>
+                        <div class="ricon"></div>
+                    </a>
+                </div>
+
+                <div class="nav-line"></div>
+                <div class="title">
+                    <p>sever</p>
+                </div>
+                <div class="serve">
+                    <div class="item">
+                        <div class="light"></div>
+                        <div class="licon">
+                            <span class="iconfont icon-home_light"></span>
+                        </div>
+                        <div class="con">test</div>
+                        <div class="ricon"></div>
+                    </div>
+                    <div class="item">
+                        <div class="light"></div>
+                        <div class="licon">
+                            <span class="iconfont icon-home_light"></span>
+                        </div>
+                        <div class="con">test</div>
+                        <div class="ricon"></div>
+                    </div>
+                    <div class="item">
+                        <div class="light"></div>
+                        <div class="licon">
+                            <span class="iconfont icon-home_light"></span>
+                        </div>
+                        <div class="con">test</div>
+                        <div class="ricon"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <aside>
+
+    </aside>
     <main>
         
     </main>
@@ -99,169 +138,11 @@
     <div class="background">
         <!--snow雪花组件-->
         <div id="snow"></div>
-        <!--square背景方块组件-->
-        <div class="bubbles">
-            <span class="one"></span>
-            <span class="two"></span>
-            <span class="three"></span>
-            <span class="four"></span>
-            <span class="five"></span>
-            <span class="six"></span>
-            <span class="seven"></span>
-            <span class="seven"></span>
-        </div>
-        <div class="bubbles">
-            <span class="one"></span>
-            <span class="two"></span>
-            <span class="three"></span>
-            <span class="four"></span>
-            <span class="five"></span>
-            <span class="six"></span>
-            <span class="seven"></span>
-            <span class="seven"></span>
-        </div>
-        <div class="bubbles">
-            <span class="one"></span>
-            <span class="two"></span>
-            <span class="three"></span>
-            <span class="four"></span>
-            <span class="five"></span>
-            <span class="six"></span>
-            <span class="seven"></span>
-            <span class="seven"></span>
-        </div>
-        <div class="bubbles">
-            <span class="one"></span>
-            <span class="two"></span>
-            <span class="three"></span>
-            <span class="four"></span>
-            <span class="five"></span>
-            <span class="six"></span>
-            <span class="seven"></span>
-            <span class="seven"></span>
-        </div>
     </div>
     <!--loading组件-->
-    <script>
-        $(window).on("load", function () {
-            $(".loading").fadeOut("slow");
-            setTimeout(function () { $(".loading").css("z-index", "-10") }, 2000);
-        });
-    </script>
-    <div class="loading">
-        <div class="wrapper">
-            <div class="line line1">
-                <span class="circle circle-top"></span>
-                <div class="dotted">
-                    <span class="dot dot-top"></span>
-                    <span class="dot dot-middle-top"></span>
-                    <span class="dot dot-middle-bottom"></span>
-                    <span class="dot dot-bottom"></span>
-                </div>
-                <span class="circle circle-bottom"></span>
-            </div>
-            <div class="line line2">
-                <span class="circle circle-top"></span>
-                <div class="dotted">
-                    <span class="dot dot-top"></span>
-                    <span class="dot dot-middle-top"></span>
-                    <span class="dot dot-middle-bottom"></span>
-                    <span class="dot dot-bottom"></span>
-                </div>
-                <span class="circle circle-bottom"></span>
-            </div>
-            <div class="line line3">
-                <span class="circle circle-top"></span>
-                <div class="dotted">
-                    <span class="dot dot-top"></span>
-                    <span class="dot dot-middle-top"></span>
-                    <span class="dot dot-middle-bottom"></span>
-                    <span class="dot dot-bottom"></span>
-                </div>
-                <span class="circle circle-bottom"></span>
-            </div>
-            <div class="line line4">
-                <span class="circle circle-top"></span>
-                <div class="dotted">
-                    <span class="dot dot-top"></span>
-                    <span class="dot dot-middle-top"></span>
-                    <span class="dot dot-middle-bottom"></span>
-                    <span class="dot dot-bottom"></span>
-                </div>
-                <span class="circle circle-bottom"></span>
-            </div>
-            <div class="line line5">
-                <span class="circle circle-top"></span>
-                <div class="dotted">
-                    <span class="dot dot-top"></span>
-                    <span class="dot dot-middle-top"></span>
-                    <span class="dot dot-middle-bottom"></span>
-                    <span class="dot dot-bottom"></span>
-                </div>
-                <span class="circle circle-bottom"></span>
-            </div>
-            <div class="line line6">
-                <span class="circle circle-top"></span>
-                <div class="dotted">
-                    <span class="dot dot-top"></span>
-                    <span class="dot dot-middle-top"></span>
-                    <span class="dot dot-middle-bottom"></span>
-                    <span class="dot dot-bottom"></span>
-                </div>
-                <span class="circle circle-bottom"></span>
-            </div>
-            <div class="line line7">
-                <span class="circle circle-top"></span>
-                <div class="dotted">
-                    <span class="dot dot-top"></span>
-                    <span class="dot dot-middle-top"></span>
-                    <span class="dot dot-middle-bottom"></span>
-                    <span class="dot dot-bottom"></span>
-                </div>
-                <span class="circle circle-bottom"></span>
-            </div>
-            <div class="line line8">
-                <span class="circle circle-top"></span>
-                <div class="dotted">
-                    <span class="dot dot-top"></span>
-                    <span class="dot dot-middle-top"></span>
-                    <span class="dot dot-middle-bottom"></span>
-                    <span class="dot dot-bottom"></span>
-                </div>
-                <span class="circle circle-bottom"></span>
-            </div>
-            <div class="line line9">
-                <span class="circle circle-top"></span>
-                <div class="dotted">
-                    <span class="dot dot-top"></span>
-                    <span class="dot dot-middle-top"></span>
-                    <span class="dot dot-middle-bottom"></span>
-                    <span class="dot dot-bottom"></span>
-                </div>
-                <span class="circle circle-bottom"></span>
-            </div>
-            <div class="line line10">
-                <span class="circle circle-top"></span>
-                <div class="dotted">
-                    <span class="dot dot-top"></span>
-                    <span class="dot dot-middle-top"></span>
-                    <span class="dot dot-middle-bottom"></span>
-                    <span class="dot dot-bottom"></span>
-                </div>
-                <span class="circle circle-bottom"></span>
-            </div>
-            <div class="line line11">
-                <span class="circle circle-top"></span>
-                <div class="dotted">
-                    <span class="dot dot-top"></span>
-                    <span class="dot dot-middle-top"></span>
-                    <span class="dot dot-middle-bottom"></span>
-                    <span class="dot dot-bottom"></span>
-                </div>
-                <span class="circle circle-bottom"></span>
-            </div>
-        </div>
-    </div>
+    <div class="loading" id="loading"></div>
+    <script src="../js/template/loading.js"></script>
+    <!--加载加载动画的元素-->
     <footer>
 
     </footer>
