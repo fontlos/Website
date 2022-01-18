@@ -25,6 +25,13 @@
     }
 }
 
+/* 屏幕特别小时对搜索框进行缩放 */
+@media (max-width: 500px) {
+    .search-wrap .searchBox {
+        transform: scale(0.6,0.6);
+    }
+}
+
 .search-wrap .searchBox:hover {
     width: 400px;
 }

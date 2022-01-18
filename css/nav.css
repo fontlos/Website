@@ -11,11 +11,19 @@
     pointer-events: none;
 }
 
+/* 大小调整 */
 @media (max-width:1000px) and (min-height:1500px){
     .nav-wrap{
         display: block;
         top: 250px;
     }
+}
+
+@media (max-width:500px) {
+    .nav-wrap{
+        transform: scale(0.6,0.6);
+        left: 0px;
+    } 
 }
 
 .nav-wrap .nav {

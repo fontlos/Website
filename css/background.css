@@ -12,7 +12,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
   /* body最小 */
-  min-width: 700px;
   min-height: 1000px;
 }
 
