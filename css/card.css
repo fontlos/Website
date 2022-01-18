@@ -20,6 +20,7 @@ main .card-wrap {
 @media (max-width:1000px) {
     main .card-wrap {
         grid-template-columns: 400px;
+        width: 400px;
     }  
 }
 
