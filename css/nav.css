@@ -22,7 +22,7 @@
 @media (max-width:500px) {
     .nav-wrap{
         transform: scale(0.6,0.6);
-        left: 0px;
+        left: -10px;
     } 
 }
 
@@ -31,7 +31,7 @@
     /* 侧边栏最小、大高度 */
     max-height: 900px;
     /* 侧边栏相对高度 */
-    height: 90%;
+    height: 700px;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 20px;
     overflow: hidden;
