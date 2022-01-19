@@ -2,28 +2,13 @@
 .nav-wrap {
     /*浮动*/
     position: fixed;
-    display: flex;
+    display: grid;
     align-items: center;
     top: 0px;
     height: 100%;
     left: 20px;
     z-index: 20;
     pointer-events: none;
-}
-
-/* 大小调整 */
-@media (max-width:1000px) and (min-height:1500px){
-    .nav-wrap{
-        display: block;
-        top: 250px;
-    }
-}
-
-@media (max-width:500px) {
-    .nav-wrap{
-        transform: scale(0.6,0.6);
-        left: -10px;
-    } 
 }
 
 .nav-wrap .nav {
@@ -66,7 +51,9 @@
     margin-left: 25px;
     /*图片等距左*/
     margin-top: 20px;
-    display: flex;
+    /* 全面替换grid */
+    display: grid;
+    grid-template-columns: 4fr 7fr;
 }
 
 .nav-wrap .icon-img {
@@ -86,7 +73,6 @@
 
 .nav-wrap .icon-con {
     height: 60px;
-    margin-left: 25px;
 }
 
 .nav-wrap .nav-line {
@@ -129,7 +115,8 @@
 }
 
 .nav-wrap .item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 60px auto 60px;
     position: relative;
     transition: 0.5s;
     border-radius: 6px;
@@ -142,16 +129,16 @@
 .nav-wrap .licon {
     width: 60px;
     height: 50px;
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
 }
 
 .nav-wrap .con {
     width: 0;
     height: 50px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    justify-items: center;
     align-items: center;
     transition: 0.5s;
     overflow: hidden;
@@ -163,10 +150,7 @@
 /* 只在大屏上触发的侧边栏展开 */
 @media (min-width: 1000px) {
     .nav-wrap .nav:hover .con {
-        width: 160px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 90px;
         opacity: 1;
     }
 }
@@ -175,9 +159,9 @@
     width: 0;
     height: 50px;
     transition: 0.5s;
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
     overflow: hidden;
     opacity: 0;
 }
@@ -186,9 +170,6 @@
 @media (min-width: 1000px) {
     .nav-wrap .nav:hover .ricon {
         width: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         opacity: 1;
     }
 }

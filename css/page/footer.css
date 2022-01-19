@@ -1,0 +1,15 @@
+.footer-wrap {
+    height: 100%;
+}
+footer .flying-fish{
+    height: 200px;
+    position: relative;
+    bottom: 0;
+}
+footer p {
+    color: #fff;
+    text-align: center;
+    font-size: 1.1em;
+    position: relative;
+    top: 60px;
+}

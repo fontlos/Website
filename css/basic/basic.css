@@ -1,0 +1,16 @@
+/* 最基本的css */
+/* 去除超链接下划线 */
+a {
+    text-decoration: none;
+}
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 12px;
+    background:white;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent,#63b8fa);
+}
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent,#63b8fa);
+}

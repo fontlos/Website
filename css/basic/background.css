@@ -1,0 +1,18 @@
+/* 背景 */
+body {
+    background: url("../../image/background/basebg.jpg") no-repeat;
+    background-position: center center;
+    /*悬浮*/
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#snow {
+    /*snow*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*雪在第二下层*/
+}

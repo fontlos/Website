@@ -9,15 +9,8 @@
 }
 .loading .wrapper {
 	position: absolute;
-	left: 39%;
+	left: calc(50% - 180px);
 	top: 50%;
-}
-
-@media (max-width: 500px) {
-	.loading .wrapper {
-		left: 25%;
-		transform: scale(0.5,0.5);
-	}
 }
 
 .line {
