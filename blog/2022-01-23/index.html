@@ -149,42 +149,46 @@
 
     </aside>
     <main>
-<!-- 首页卡片 -->
-<link rel="stylesheet" href="https://fangtaluosi.top/css/index/card.css">
-<div class="card-wrap">
-    <div class="box">
-        <span></span>
-        <div class="content">
-            <h2>元素周期表</h2>
-            <p>一个动态可视化的元素周期表</p>
-            <a href="https://fangtaluosi.top/resource/PTE/" target="_blank">Read More</a>
-        </div>
-    </div>
-    <div class="box">
-        <span></span>
-        <div class="content">
-            <h2>Rust教程</h2>
-            <p>5.3 循环语句</p>
-            <a href="https://fangtaluosi.top/resource/course/rust/05/03.html" target="_blank">Read More</a>
-        </div>
-    </div>
-    <div class="box">
-        <span></span>
-        <div class="content">
-            <h2>Card Three</h2>
-            <p>something test</p>
-            <a href="">Read More</a>
-        </div>
-    </div>
-    <div class="box">
-        <span></span>
-        <div class="content">
-            <h2>Card Three</h2>
-            <p>something test</p>
-            <a href="">Read More</a>
-        </div>
-    </div>
+<div class="blog-page-wrap">
+    <h1 class="blog-title">
+        Zola使用教程(2) content
+    </h1>
+    <p class="blog-data"><strong>2022-01-23</strong></p>
+    <h1 id="content">Content</h1>
+<p>从这篇文章开始让我们更细致的学习zola，首先从content开始(长文警告)</p>
+<h2 id="zong-lan">总览</h2>
+<p>zola以目录结构确定站点结构</p>
+<pre data-lang="txt" style="background-color:#2b303b;color:#c0c5ce;" class="language-txt "><code class="language-txt" data-lang="txt"><span>└── content</span><span>
+</span><span>    ├── content</span><span>
+</span><span>    │   └── something.md // -&gt; https://mywebsite.com/content/something/</span><span>
+</span><span>    ├── blog</span><span>
+</span><span>    │   ├── first.md // -&gt; https://mywebsite.com/blog/first/</span><span>
+</span><span>    │   ├── _index.md // -&gt; https://mywebsite.com/blog/</span><span>
+</span><span>    │   └── second.md // -&gt; https://mywebsite.com/blog/second/</span><span>
+</span><span>    └── other</span><span>
+</span><span>        └── _index.md // -&gt; https://mywebsite.com/other/</span><span>
+</span></code></pre>
+<p>每个页面路径(base_url 之后的部分，例如 blog/first/)都可以通过更改页面的path或slug属性来自定义._index.md 用于存储section本身的元数据和内容，不作为页面。section可以无限嵌套。</p>
+<p>section目录不限于md文件。可以将页面和一些相关文件(例如图片或js)放在一起。构建站点时，所有非md文件都将与生成的页面一起复制，所以我们可以吃使用相对路径来调用它们。</p>
+<p>可以通过config.toml中的ignored_content来指定忽视某些文件，支持通配符，如<code>ignored_content = [&quot;*.xlsx&quot;]</code></p>
+<p>还可以将静态文件放置在static中。放在其中的任何文件都将直接复制到public中。</p>
+<h2 id="section">Section</h2>
+<h2 id="page">Page</h2>
+<h2 id="duan-dai-ma">短代码</h2>
+<h2 id="nei-bu-lian-jie-yu-shen-lian-jie">内部链接与深链接</h2>
+<h2 id="contentmu-lu">content目录</h2>
+<h2 id="yu-fa-gao-liang">语法高亮</h2>
+<h2 id="fen-lei-xi-tong">分类系统</h2>
+<h2 id="suo-yin">索引</h2>
+<h2 id="tu-pian-chu-li">图片处理</h2>
+
 </div>
+<style>
+    .blog-page-wrap{
+        z-index: 10;
+        position: relative;
+    }
+</style>
 
     </main>
     <!--snow雪花组件-->

@@ -1,220 +1,340 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-CN">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=2.0">
     <title>芳塔洛斯</title>
-    <link rel="Shortcut Icon" href="../image/icon/logo.png">
+    <link rel="Shortcut Icon" href="https://fangtaluosi.top/img/icon/logo.png">
 
     <!--style-->
     <!-- 基本css -->
     <!-- 最基本的css -->
-    <link rel="stylesheet" href="../css/basic/basic.css">
+    <link rel="stylesheet" href="https://fangtaluosi.top/css/basic/basic.css", trailing_slash=false)}}">
     <!--加载动画css-->
-    <link rel="stylesheet" href="../css/basic/loading.css">
+    <link rel="stylesheet" href="https://fangtaluosi.top/css/basic/loading.css">
     <!--背景css，包含snow组件-->
-    <link rel="stylesheet" href="../css/basic/background.css">
+    <link rel="stylesheet" href="https://fangtaluosi.top/css/basic/background.css">
     <!--iconfont字符组件-->
-    <link rel="stylesheet" href="../css/basic/iconfont.css">
+    <link rel="stylesheet" href="https://fangtaluosi.top/css/basic/iconfont.css">
 
     <!-- 主页css -->
     <!-- 主页基本css -->
-    <link rel="stylesheet" href="../css/page/index-basic.css">
+    <link rel="stylesheet" href="https://fangtaluosi.top/css/page/index-basic.css">
     <!--导航栏-->
-    <link rel="stylesheet" href="../css/page/nav.css">
+    <link rel="stylesheet" href="https://fangtaluosi.top/css/page/nav.css">
     <!-- 搜索栏 -->
-    <link rel="stylesheet" href="../css/page/search.css">
+    <link rel="stylesheet" href="https://fangtaluosi.top/css/page/search.css">
     <!-- 页脚 -->
-    <link rel="stylesheet" href="../css/page/footer.css">
+    <link rel="stylesheet" href="https://fangtaluosi.top/css/page/footer.css">
 
     <!-- 页面独立css -->
-    <!-- 首页卡片 -->
-    <link rel="stylesheet" href="../css/index/card.css">
 
     <!--js-->
     <!--loading组件与background组件-->
-    <script src="../lib/jQuery/jquery-3.5.1.min.js"></script>
+    <script src="https://fangtaluosi.top/lib/jQuery/jquery-3.5.1.min.js"></script>
     <!--snow组件-->
-    <script src="../lib/particles/particles.min.js"></script>
+    <script src="https://fangtaluosi.top/lib/particles/particles.min.js"></script>
     <!--snow组件-->
-    <script src="../js/snow.js"></script>
+    <script src="https://fangtaluosi.top/js/snow.js"></script>
     <!-- 页脚飞鱼 -->
-    <script src='../js/fish.js'></script>
+    <script src='https://fangtaluosi.top/js/fish.js'></script>
 </head>
 
 <body>
     <header>
-        <div class="search-wrap">
-            <div class="searchBox">
-                <div class="shadow"></div>
-                <input type="text" placeholder="Search for...">
-                <span class="iconfont icon-search"></span>
-            </div>
-        </div>
-    </header>
+<div class="search-wrap">
+    <div class="searchBox">
+        <div class="shadow"></div>
+        <input type="text" placeholder="Search for...">
+        <span class="iconfont icon-search"></span>
+    </div>
+</div>
+</header>
     <nav>
-        <div class="nav-wrap">
-            <div class="nav">
-                <a class="icon" href="https://fangtaluosi.top">
-                    <div class="icon-img"><img src="../image/icon/logo-bg.png" alt=""></div>
-                    <div class="icon-con">
-                        <p>Good day</p>
-                        <h2>芳塔洛斯</h2>
-                    </div>
-                </a>
-                <div class="nav-line"></div>
-                <div class="title">
-                    <p>Page</p>
+        <!-- 导航栏 -->
+<div class="nav-wrap">
+    <div class="nav">
+        <a class="icon" href="https://fangtaluosi.top">
+            <div class="icon-img"><img src="https://fangtaluosi.top/img/icon/logo-bg.png" alt=""></div>
+            <div class="icon-con">
+                <p>Good day</p>
+                <h2>芳塔洛斯</h2>
+            </div>
+        </a>
+        <div class="nav-line"></div>
+        <div class="title">
+            <p>Page</p>
+        </div>
+        <div class="menu">
+            <a class="item" href="https://fangtaluosi.top">
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-home_light"></span>
                 </div>
-                <div class="menu">
-                    <a class="item" href="https://fangtaluosi.top">
-                        <div class="light"></div>
-                        <div class="licon">
-                            <span class="iconfont icon-home_light"></span>
-                        </div>
-                        <div class="con">Home</div>
-                        <div class="ricon">
-                            <span class="iconfont icon-shezhi"></span>
-                        </div>
-                    </a>
-                    <a class="item" href="https://fangtaluosi.top/resource/">
-                        <div class="light"></div>
-                        <div class="licon">
-                            <span class="iconfont icon-resource"></span>
-                        </div>
-                        <div class="con">Resource</div>
-                        <div class="ricon"></div>
-                    </a>
-                    <a class="item" href="https://fangtaluosi.top/blog/">
-                        <div class="light"></div>
-                        <div class="licon">
-                            <span class="iconfont icon-ego-blog"></span>
-                        </div>
-                        <div class="con">Blog</div>
-                        <div class="ricon"></div>
-                    </a>
-                    <a class="item" href="https://fangtaluosi.top/about/">
-                        <div class="light"></div>
-                        <div class="licon">
-                            <span class="iconfont icon-about"></span>
-                        </div>
-                        <div class="con">About</div>
-                        <div class="ricon"></div>
-                    </a>
-                    <a class="item" href="https://fangtaluosi.top/contact/">
-                        <div class="light"></div>
-                        <div class="licon">
-                            <span class="iconfont icon-link"></span>
-                        </div>
-                        <div class="con">Contact</div>
-                        <div class="ricon"></div>
-                    </a>
+                <div class="con">Home</div>
+                <div class="ricon">
+                    <span class="iconfont icon-shezhi"></span>
                 </div>
+            </a>
+            <a class="item" href="https://fangtaluosi.top/resource/">
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-resource"></span>
+                </div>
+                <div class="con">Resource</div>
+                <div class="ricon"></div>
+            </a>
+            <a class="item" href="https://fangtaluosi.top/blog/">
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-ego-blog"></span>
+                </div>
+                <div class="con">Blog</div>
+                <div class="ricon"></div>
+            </a>
+            <a class="item" href="https://fangtaluosi.top/about/">
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-about"></span>
+                </div>
+                <div class="con">About</div>
+                <div class="ricon"></div>
+            </a>
+            <a class="item" href="https://fangtaluosi.top/contact/">
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-link"></span>
+                </div>
+                <div class="con">Contact</div>
+                <div class="ricon"></div>
+            </a>
+        </div>
 
-                <div class="nav-line"></div>
-                <div class="title">
-                    <p>sever</p>
+        <div class="nav-line"></div>
+        <div class="title">
+            <p>sever</p>
+        </div>
+        <div class="serve">
+            <div class="item">
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-home_light"></span>
                 </div>
-                <div class="serve">
-                    <div class="item">
-                        <div class="light"></div>
-                        <div class="licon">
-                            <span class="iconfont icon-home_light"></span>
-                        </div>
-                        <div class="con">test</div>
-                        <div class="ricon"></div>
-                    </div>
-                    <div class="item">
-                        <div class="light"></div>
-                        <div class="licon">
-                            <span class="iconfont icon-home_light"></span>
-                        </div>
-                        <div class="con">test</div>
-                        <div class="ricon"></div>
-                    </div>
-                    <div class="item">
-                        <div class="light"></div>
-                        <div class="licon">
-                            <span class="iconfont icon-home_light"></span>
-                        </div>
-                        <div class="con">test</div>
-                        <div class="ricon"></div>
-                    </div>
+                <div class="con">test</div>
+                <div class="ricon"></div>
+            </div>
+            <div class="item">
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-home_light"></span>
                 </div>
-
+                <div class="con">test</div>
+                <div class="ricon"></div>
+            </div>
+            <div class="item">
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-home_light"></span>
+                </div>
+                <div class="con">test</div>
+                <div class="ricon"></div>
             </div>
         </div>
-    </nav>
+
+    </div>
+</div>
+</nav>
     <aside>
 
     </aside>
     <main>
-        <link rel="stylesheet" href="../css/about.css">
-        <div class="about-card">
-            <div class="card" id="c0">
-                <div class="image" id="i0">
-                    <div class="city">
-                        <img src="image/塔.jpg" width="300px" height="300px">
-                        <!--图片插入处-->
-                    </div>
-                </div>
-                <div class="story" id="s0">
-                    <div class="info">
-                        <h3>NONE</h3>
-                        <p> Stationmaster's friend, spiritual pillar.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card" id="c1">
-                <div class="image" id="i1">
-                    <div class="city">
-                        <img src="image/洛.png" width="300px" height="300px">
-                        <!--图片插入处-->
-                    </div>
-                </div>
-                <div class="story" id="s1">
-                    <div class="info">
-                        <h3>NONE</h3>
-                        <p> Stationmaster's friend, spiritual pillar.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card" id="c2">
-                <div class="image" id="i2">
-                    <div class="city">
-                        <img src="image/芳.png" width="300px" height="300px">
-                    </div>
-                </div>
-                <div class="story" id="s2">
-                    <div class="info">
-                        <h3>芳塔洛斯</h3>
-                        <p> The establishment, operator and author of this site.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="page">
-                <h4>OUR TEAM</h4>
-                <ul>
-                    <li>
-                        <<< </li> <li> >>>
-                    </li>
-                </ul>
+<link rel="stylesheet" href="https://fangtaluosi.top/css/about.css">
+<div class="about-card">
+    <div class="card" id="c0">
+        <div class="image" id="i0">
+            <div class="city">
+                <img src="image/塔.jpg" width="300px" height="300px">
+                <!--图片插入处-->
             </div>
         </div>
+        <div class="story" id="s0">
+            <div class="info">
+                <h3>NONE</h3>
+                <p> Stationmaster's friend, spiritual pillar.</p>
+            </div>
+        </div>
+    </div>
+    <div class="card" id="c1">
+        <div class="image" id="i1">
+            <div class="city">
+                <img src="image/洛.png" width="300px" height="300px">
+                <!--图片插入处-->
+            </div>
+        </div>
+        <div class="story" id="s1">
+            <div class="info">
+                <h3>NONE</h3>
+                <p> Stationmaster's friend, spiritual pillar.</p>
+            </div>
+        </div>
+    </div>
+    <div class="card" id="c2">
+        <div class="image" id="i2">
+            <div class="city">
+                <img src="image/芳.png" width="300px" height="300px">
+            </div>
+        </div>
+        <div class="story" id="s2">
+            <div class="info">
+                <h3>芳塔洛斯</h3>
+                <p> The establishment, operator and author of this site.</p>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+        <h4>OUR TEAM</h4>
+        <ul>
+            <li>
+                <<< </li> <li> >>>
+            </li>
+        </ul>
+    </div>
+</div>
+
     </main>
     <!--snow雪花组件-->
     <div id="snow"></div>
     <!--loading组件-->
-    <div class="loading" id="loading"></div>
-    <!--加载动画组件-->
-    <script src="../js/template/loading.js"></script>
-    <footer>
-        <div class="footer-wrap">
-            <p>&copy;Powered by Github</p>
-            <div id="flying-fish" class="flying-fish"></div>
+<div class="loading" id="loading">
+    <div class="wrapper">
+        <div class="line line1">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
         </div>
-    </footer>
+        <div class="line line2">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line3">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line4">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line5">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line6">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line7">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line8">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line9">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line10">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line11">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+    </div>
+</div>
+<!--加载动画组件-->
+<script>
+    $(window).on("load", function () {
+        $(".loading").fadeOut("slow");
+        setTimeout(function () {
+            $(".loading").css("display", "none")
+        }, 2000);
+    });
+</script>
+<footer>
+<div class="footer-wrap">
+    <p>&copy;Powered by Zola</p>
+    <div id="flying-fish" class="flying-fish"></div>
+</div>
+</footer>
 </body>
 
 </html>

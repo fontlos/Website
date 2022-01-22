@@ -1,6 +1,6 @@
 /* 背景 */
 body {
-    background: url("../../image/background/basebg.jpg") no-repeat;
+    background: url("../../img/background/basebg.jpg") no-repeat;
     background-position: center center;
     /*悬浮*/
     background-attachment: fixed;
