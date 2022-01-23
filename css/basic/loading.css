@@ -4,9 +4,38 @@
 	position: fixed;/*悬浮*/
 	top: 0;
 	left: 0;
-	background-color: #fff;
 	z-index: 100;
+	background:#fff;
 }
+.loading .left ,.loading .right {
+	height: 100%;
+	width: 0;
+	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+
+}
+.loading .left{
+	float: left;
+}
+.loading .right{
+	float: right;
+}
+
+.loading.loaded .left,.loading.loaded .right{
+	animation: door 1.5s;
+}
+
+@keyframes door{
+	30%{
+		width: 50%;
+	}
+	70%{
+		width: 50%;
+	}
+	100%{
+		width: 0;
+	}
+}
+
 .loading .wrapper {
 	position: absolute;
 	left: calc(50% - 180px);

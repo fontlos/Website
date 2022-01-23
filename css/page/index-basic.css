@@ -5,6 +5,11 @@
     /* 防止padding撑大盒子 */
     box-sizing: border-box;
 }
+
+ul{
+    list-style:none
+}
+
 body {
     min-height: 100%;
     display: grid;
@@ -23,6 +28,7 @@ nav{
 }
 main {
     grid-area: main;
+    min-height: 560px;
 }
 aside {
     grid-area: aside;

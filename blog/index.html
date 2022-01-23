@@ -10,7 +10,7 @@
     <!--style-->
     <!-- 基本css -->
     <!-- 最基本的css -->
-    <link rel="stylesheet" href="https://fangtaluosi.top/css/basic/basic.css", trailing_slash=false)}}">
+    <link rel="stylesheet" href="https://fangtaluosi.top/css/basic/basic.css">
     <!--加载动画css-->
     <link rel="stylesheet" href="https://fangtaluosi.top/css/basic/loading.css">
     <!--背景css，包含snow组件-->
@@ -37,8 +37,10 @@
     <script src="https://fangtaluosi.top/lib/particles/particles.min.js"></script>
     <!--snow组件-->
     <script src="https://fangtaluosi.top/js/snow.js"></script>
+    <!-- 返回顶部 -->
+    <script src ="https://fangtaluosi.top/js/nav.js"></script>
     <!-- 页脚飞鱼 -->
-    <script src='https://fangtaluosi.top/js/fish.js'></script>
+    <script src="https://fangtaluosi.top/js/fish.js"></script>
 </head>
 
 <body>
@@ -101,47 +103,40 @@
                 <div class="con">About</div>
                 <div class="ricon"></div>
             </a>
-            <a class="item" href="https://fangtaluosi.top/contact/">
+        </div>
+
+        <div class="nav-line"></div>
+        <div class="title">
+            <p>Sever</p>
+        </div>
+        <div class="serve">
+            <div class="item">
                 <div class="light"></div>
                 <div class="licon">
                     <span class="iconfont icon-link"></span>
                 </div>
                 <div class="con">Contact</div>
                 <div class="ricon"></div>
+            </div>
+            <div class="item">
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-yinle"></span>
+                </div>
+                <div class="con">Music</div>
+                <div class="ricon"></div>
+            </div>
+            <a href="javascript:void(0)" id="to-top">
+                <div class="item">
+                    <div class="light"></div>
+                    <div class="licon">
+                        <span class="iconfont icon-shangchuan"></span>
+                    </div>
+                    <div class="con">ToTop</div>
+                    <div class="ricon"></div>
+                </div>
             </a>
         </div>
-
-        <div class="nav-line"></div>
-        <div class="title">
-            <p>sever</p>
-        </div>
-        <div class="serve">
-            <div class="item">
-                <div class="light"></div>
-                <div class="licon">
-                    <span class="iconfont icon-home_light"></span>
-                </div>
-                <div class="con">test</div>
-                <div class="ricon"></div>
-            </div>
-            <div class="item">
-                <div class="light"></div>
-                <div class="licon">
-                    <span class="iconfont icon-home_light"></span>
-                </div>
-                <div class="con">test</div>
-                <div class="ricon"></div>
-            </div>
-            <div class="item">
-                <div class="light"></div>
-                <div class="licon">
-                    <span class="iconfont icon-home_light"></span>
-                </div>
-                <div class="con">test</div>
-                <div class="ricon"></div>
-            </div>
-        </div>
-
     </div>
 </div>
 </nav>
@@ -170,6 +165,8 @@
     <div id="snow"></div>
     <!--loading组件-->
 <div class="loading" id="loading">
+    <div class="left"></div>
+    <div class="right"></div>
     <div class="wrapper">
         <div class="line line1">
             <span class="circle circle-top"></span>
@@ -286,16 +283,21 @@
 <!--加载动画组件-->
 <script>
     $(window).on("load", function () {
-        $(".loading").fadeOut("slow");
         setTimeout(function () {
-            $(".loading").css("display", "none")
-        }, 2000);
+            $(".loading").addClass("loaded")
+        });
+    });
+    $(window).on("load", function () {
+        setTimeout(function () {
+            $(".loading").fadeOut("slow");
+        }, 1000);
     });
 </script>
 <footer>
 <div class="footer-wrap">
     <p>&copy;Powered by Zola</p>
     <div id="flying-fish" class="flying-fish"></div>
+    <div class="back"></div>
 </div>
 </footer>
 </body>
