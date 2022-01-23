@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="https://fangtaluosi.top/css/page/nav.css">
     <!-- 搜索栏 -->
     <link rel="stylesheet" href="https://fangtaluosi.top/css/page/search.css">
+    <!-- 卡片 -->
+    <link rel="stylesheet" href="https://fangtaluosi.top/css/page/card.css">
+    <!-- tags -->
+    <link rel="stylesheet" href="https://fangtaluosi.top/css/page/tags.css">
     <!-- 页脚 -->
     <link rel="stylesheet" href="https://fangtaluosi.top/css/page/footer.css">
 
@@ -174,6 +178,77 @@
 <h2 id="contentmu-lu">content目录</h2>
 <h2 id="yu-fa-gao-liang">语法高亮</h2>
 <h2 id="fen-lei-xi-tong">分类系统</h2>
+<p>通过在config文件中写入以下内容来启用一个tags分类方式</p>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#bf616a;">taxonomies </span><span>= [</span><span>
+</span><span>    {</span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">tags</span><span>&quot;},</span><span>
+</span><span>]</span><span>
+</span></code></pre>
+<p>接下来，让我们创建一篇博客，并写入以下内容</p>
+<pre data-lang="md" style="background-color:#2b303b;color:#c0c5ce;" class="language-md "><code class="language-md" data-lang="md"><span>+++</span><span>
+</span><span>title = &quot;我的第二篇博客&quot;</span><span>
+</span><span>date = 2022-01-23</span><span>
+</span><span>
+</span><span>[taxonomies]</span><span>
+</span><span>tags = [&quot;tag1&quot;,&quot;tag2&quot;]</span><span>
+</span><span>+++</span><span>
+</span><span>这里是正文内容</span><span>
+</span></code></pre>
+<p>这样就为我们的博客打上了标签，接下来让我们在blog页面中显示这些tag，并为tags创建索引页面</p>
+<h3 id="xian-shi-tag">显示tag</h3>
+<p>先来完成第一件事，显示这些tag，进入blog的section文件</p>
+<pre data-lang="html" style="background-color:#2b303b;color:#c0c5ce;" class="language-html "><code class="language-html" data-lang="html"><span>{% extends &quot;base.html&quot; %}</span><span>
+</span><span>
+</span><span>{% block content %}</span><span>
+</span><span>&lt;</span><span style="color:#bf616a;">h1 </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">title</span><span>&quot;&gt;</span><span>
+</span><span>    {{ section.title }}</span><span>
+</span><span>&lt;/</span><span style="color:#bf616a;">h1</span><span>&gt;</span><span>
+</span><span>&lt;</span><span style="color:#bf616a;">ul</span><span>&gt;</span><span>
+</span><span>    {% for page in section.pages %}</span><span>
+</span><span>    &lt;</span><span style="color:#bf616a;">li</span><span>&gt;&lt;</span><span style="color:#bf616a;">a </span><span style="color:#d08770;">href</span><span>=&quot;</span><span style="color:#a3be8c;">{{ page.permalink | safe }}</span><span>&quot;&gt;{{ page.title }}&lt;/</span><span style="color:#bf616a;">a</span><span>&gt;&lt;/</span><span style="color:#bf616a;">li</span><span>&gt;</span><span>
+</span><span>    {% endfor %}</span><span>
+</span><span>&lt;/</span><span style="color:#bf616a;">ul</span><span>&gt;</span><span>
+</span><span>{% endblock content %}</span><span>
+</span></code></pre>
+<p>在for循环中即<code>li</code>标签下面添加以下内容</p>
+<pre data-lang="html" style="background-color:#2b303b;color:#c0c5ce;" class="language-html "><code class="language-html" data-lang="html"><span>{% if page.taxonomies.tags %}</span><span>
+</span><span>    &lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">tags</span><span>&quot;&gt;</span><span>
+</span><span>        {% for tag in page.taxonomies.tags %}</span><span>
+</span><span>            &lt;</span><span style="color:#bf616a;">a </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">tag</span><span>&quot; </span><span style="color:#d08770;">href</span><span>=&quot;</span><span style="color:#a3be8c;">{{ get_taxonomy_url(kind=</span><span>&quot;</span><span style="color:#d08770;">tags</span><span style="background-color:#bf616a;color:#2b303b;">&quot;</span><span style="color:#d08770;">, name</span><span>=</span><span style="color:#a3be8c;">tag) </span><span style="color:#d08770;">| safe }}</span><span style="background-color:#bf616a;color:#2b303b;">&quot;</span><span>&gt;#{{ tag }}&lt;/</span><span style="color:#bf616a;">a</span><span>&gt;</span><span>
+</span><span>        {% endfor %}</span><span>
+</span><span>    &lt;/</span><span style="color:#bf616a;">div</span><span>&gt;</span><span>
+</span><span>{% endif %}</span><span>
+</span></code></pre>
+<p>第一行的if用于判断这个page有没有tag，如果有，就在内部的for循环中遍历这些tag，<code>get_taxonomy_url</code>方法将获取这个tag的地址</p>
+<p>这时这些tag就显示出来了，但此时<code>a</code>标签指向的tag地址是不存在的，接下来让我们创建这个页面</p>
+<h3 id="chuang-jian-tagsuo-yin-ye-mian">创建tag索引页面</h3>
+<p>首先我们创建单独的tag的索引页面，对应每一个tag下有多少篇文章</p>
+<p>在模板文件夹下创建tags/single.html，并写入以下内容(去掉get_后面的空格，出于某种原因，这无法编译)</p>
+<pre data-lang="html" style="background-color:#2b303b;color:#c0c5ce;" class="language-html "><code class="language-html" data-lang="html"><span>{% extends &quot;base.html&quot; %}</span><span>
+</span><span>
+</span><span>{% block content %}</span><span>
+</span><span>&lt;</span><span style="color:#bf616a;">h1 </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">tag-name</span><span>&quot;&gt;Tag: #{{ term.name }}&lt;/</span><span style="color:#bf616a;">h1</span><span>&gt;</span><span>
+</span><span>&lt;</span><span style="color:#bf616a;">a </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">to-tags-list</span><span>&quot; </span><span style="color:#d08770;">href</span><span>=&quot;</span><span style="color:#a3be8c;">{{ get_ url(path=</span><span>&quot;/</span><span style="color:#d08770;">tags</span><span style="background-color:#bf616a;color:#2b303b;">&quot;</span><span style="color:#d08770;">) }}</span><span style="background-color:#bf616a;color:#2b303b;">&quot;</span><span>&gt;To all tags&lt;/</span><span style="color:#bf616a;">a</span><span>&gt;</span><span>
+</span><span>{% for page in term.pages %}</span><span>
+</span><span>    &lt;</span><span style="color:#bf616a;">a </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">link</span><span>&quot; </span><span style="color:#d08770;">href</span><span>=&quot;</span><span style="color:#a3be8c;">{{ page.permalink | safe }}</span><span>&quot; </span><span style="color:#d08770;">target</span><span>=&quot;</span><span style="color:#a3be8c;">_blank</span><span>&quot;&gt;{{ page.title }}&lt;/</span><span style="color:#bf616a;">a</span><span>&gt;</span><span>
+</span><span>{% endfor %}</span><span>
+</span><span>{% endblock content %}</span><span>
+</span></code></pre>
+<p><code>term</code>变量是分类中的特定组，在这里就只特定的tag，<code>h1</code>标签获取了这个term的名字，也就是这个tag的名字，<code>a</code>标签指向了一个tags列表页面，目前这个页面还不存在，我们稍后创建它，下面的for循环遍历了这个term下所有的page，并通过<code>a</code>标签显示出来，这个模板在编译后将生成[url]/tags/[tag名字]/index.html文件</p>
+<p>下面我们来创建tags列表页面，创建tags/list.html文件，并在其中写入以下内容</p>
+<pre data-lang="html" style="background-color:#2b303b;color:#c0c5ce;" class="language-html "><code class="language-html" data-lang="html"><span>{% extends &quot;base.html&quot; %}</span><span>
+</span><span>
+</span><span>{% block content %}</span><span>
+</span><span>&lt;</span><span style="color:#bf616a;">h1</span><span>&gt;Tags&lt;/</span><span style="color:#bf616a;">h1</span><span>&gt;</span><span>
+</span><span>&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">tags-list</span><span>&quot;&gt;</span><span>
+</span><span>    {% for term in terms %}</span><span>
+</span><span>        &lt;</span><span style="color:#bf616a;">a </span><span style="color:#d08770;">href</span><span>=&quot;</span><span style="color:#a3be8c;">{{ term.permalink }}</span><span>&quot;&gt;</span><span>
+</span><span>        #{{ term.name }}</span><span>
+</span><span>        &lt;/</span><span style="color:#bf616a;">a</span><span>&gt;</span><span>
+</span><span>    {% endfor %}</span><span>
+</span><span>&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;</span><span>
+</span><span>{% endblock content %}</span><span>
+</span></code></pre>
+<p>terms顾名思义，是term的集合，通过一个for循环遍历terms，并通过<code>a</code>标签指向先前提到的[url]/tags/[tag名字]/index.html文件。这个模板编译后，会生成[url]/tags/index.html文件，至此，一个简单的tag分类系统完成了，再经过亿点点美化就ok了</p>
 <h2 id="suo-yin">索引</h2>
 <h2 id="tu-pian-chu-li">图片处理</h2>
 
