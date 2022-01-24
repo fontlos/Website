@@ -23,10 +23,19 @@
     <script src=https://fangtaluosi.top/js/copy-code.js></script>
     <!-- 页脚飞鱼 -->
     <script src="https://fangtaluosi.top/js/fish.js"></script>
-<!-- 卡片 -->
-<link rel="stylesheet" href=https://fangtaluosi.top/css/page/card.css>
-<!-- tags -->
-<link rel="stylesheet" href=https://fangtaluosi.top/css/page/tags.css>
+<!-- 文章内容 -->
+<link rel="stylesheet" href=https://fangtaluosi.top/css/page/article-content.css>
+<!-- katex数学渲染 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+    integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"
+    integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous">
+</script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 </head>
 
 <body>
@@ -140,31 +149,84 @@
     <article> 
     </article>
     <main>
-<div class="tag-wrap">
-    <h1 class="tag-name">Tags</h1>
-    <div class="card-wrap">
-        <div class="box">
-            <span></span>
-            <div class="content">
-                <h2>#工具</h2>
-                <a class="link" href="https:&#x2F;&#x2F;fangtaluosi.top&#x2F;tags&#x2F;gong-ju&#x2F;" target="_blank">Check all</a>
-            </div>
-        </div>
-        <div class="box">
-            <span></span>
-            <div class="content">
-                <h2>#前端</h2>
-                <a class="link" href="https:&#x2F;&#x2F;fangtaluosi.top&#x2F;tags&#x2F;qian-duan&#x2F;" target="_blank">Check all</a>
-            </div>
-        </div>
-        <div class="box">
-            <span></span>
-            <div class="content">
-                <h2>#zola</h2>
-                <a class="link" href="https:&#x2F;&#x2F;fangtaluosi.top&#x2F;tags&#x2F;zola&#x2F;" target="_blank">Check all</a>
-            </div>
-        </div>
-    </div>
+<div class="article-page-wrap">
+    <h1 class="article-title">
+        Katex 轻量级数学排版工具
+    </h1>
+    <p class="article-date"><strong>2022-01-24</strong></p>
+    <h2 id="gai-shu">概述</h2>
+<p>html本身有一定的排版功能，比如上下标签</p>
+<pre data-lang="html" style="background-color:#eff1f5;color:#4f5b66;" class="language-html "><code class="language-html" data-lang="html"><span>H&lt;</span><span style="color:#bf616a;">sub</span><span>&gt;2&lt;/</span><span style="color:#bf616a;">sub</span><span>&gt;O</span><span>
+</span><span>
+</span><span>X&lt;</span><span style="color:#bf616a;">sup</span><span>&gt;n&lt;/</span><span style="color:#bf616a;">sup</span><span>&gt; + Y&lt;</span><span style="color:#bf616a;">sup</span><span>&gt;n&lt;/</span><span style="color:#bf616a;">sup</span><span>&gt; = Z&lt;</span><span style="color:#bf616a;">sup</span><span>&gt;n&lt;/</span><span style="color:#bf616a;">sup</span><span>&gt;</span><span>
+</span><span>
+</span><span>按 &lt;</span><span style="color:#bf616a;">kbd</span><span>&gt;&lt;</span><span style="color:#bf616a;">kbd</span><span>&gt;CTRL&lt;/</span><span style="color:#bf616a;">kbd</span><span>&gt;+&lt;</span><span style="color:#bf616a;">kbd</span><span>&gt;ALT&lt;/</span><span style="color:#bf616a;">kbd</span><span>&gt;+&lt;</span><span style="color:#bf616a;">kbd</span><span>&gt;Z&lt;/</span><span style="color:#bf616a;">kbd</span><span>&gt;&lt;/</span><span style="color:#bf616a;">kbd</span><span>&gt; 撤销</span><span>
+</span></code></pre>
+<p>比如以上内容会渲染成</p>
+<p>H<sub>2</sub>O</p>
+<p>X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup></p>
+<p>按 <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Z</kbd></kbd> 撤销</p>
+<p>更复杂的功能，就需要专业的排版工具了，最常用的工具之一就是Latex，可Latex太笨重了，那有什么替代品吗？</p>
+<h2 id="katexjian-jie">Katex简介</h2>
+<p>相比Latex，<a href="https://katex.org/">Katex</a>是一个更加轻量迅速的数学排版库，简单的API，没有依赖性，但在所有主流浏览器上运行都超快。</p>
+<h2 id="an-zhuang">安装</h2>
+<p>katex既可以用node.js安装，也可以在浏览器中使用，这里我们在浏览器中引用，在html文件中的head标签中加入如下内容</p>
+<pre data-lang="html" style="background-color:#eff1f5;color:#4f5b66;" class="language-html "><code class="language-html" data-lang="html"><span>&lt;</span><span style="color:#bf616a;">link </span><span style="color:#d08770;">rel</span><span>=&quot;</span><span style="color:#a3be8c;">stylesheet</span><span>&quot;</span><span>
+</span><span style="color:#d08770;">href</span><span>=&quot;</span><span style="color:#a3be8c;">https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css</span><span>&quot;&gt;</span><span>
+</span><span>&lt;</span><span style="color:#bf616a;">script</span><span>
+</span><span style="color:#d08770;">src</span><span>=&quot;</span><span style="color:#a3be8c;">https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js</span><span>&quot;&gt;</span><span>
+</span><span>&lt;/</span><span style="color:#bf616a;">script</span><span>&gt;</span><span>
+</span><span>&lt;</span><span style="color:#bf616a;">script</span><span>
+</span><span style="color:#d08770;">src</span><span>=&quot;</span><span style="color:#a3be8c;">https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js</span><span>&quot;</span><span>
+</span><span style="color:#d08770;">onload</span><span>=&quot;</span><span style="color:#bf616a;">renderMathInElement</span><span>(document.body);&quot;&gt;</span><span>
+</span><span>&lt;/</span><span style="color:#bf616a;">script</span><span>&gt;</span><span>
+</span></code></pre>
+<p>完成了，很简单，不是吗？</p>
+<p>jsdelivr是一个是一个免费的速度很快的公用CDN，并且其在中国也有服务器，Katex官网也建议我们用这种方式引入库</p>
+<p>接下来，让我们写几个试一试，直接在body标签中添加一个p标签</p>
+<pre data-lang="html" style="background-color:#eff1f5;color:#4f5b66;" class="language-html "><code class="language-html" data-lang="html"><span>&lt;</span><span style="color:#bf616a;">p</span><span>&gt;</span><span>
+</span><span>行内公式: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)</span><span>
+</span><span>&lt;/</span><span style="color:#bf616a;">p</span><span>&gt;</span><span>
+</span><span>&lt;</span><span style="color:#bf616a;">p</span><span>&gt;块公式:</span><span>
+</span><span>$$</span><span>
+</span><span>\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }</span><span>
+</span><span>$$&lt;/</span><span style="color:#bf616a;">p</span><span>&gt;</span><span>
+</span></code></pre>
+<p>上面的内容会被渲染成这样</p>
+<p>
+行内公式: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
+</p>
+<p>块公式:
+$$
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$</p>
+<p>接下来整个复杂的，直接上代码，注意Katex中的换行是<code>\newline</code>，而不是<code>\\</code></p>
+<pre data-lang="html" style="background-color:#eff1f5;color:#4f5b66;" class="language-html "><code class="language-html" data-lang="html"><span>&lt;</span><span style="color:#bf616a;">p</span><span>&gt;$$</span><span>
+</span><span>H&#39;&#39;(r)-aH&#39;(r)=0满足H&#39;(0)=\frac 1{p^2}，</span><span>
+</span><span>\newline H(0)=\frac{H&#39;(0)}a(1+\frac NYe^w)的特解</span><span>
+</span><span>\newline 解:\lambda^2+a\lambda=0,\lambda=a,\lambda=0</span><span>
+</span><span>\newline 通解H(r)=C_0+C_1e^{ar}.\therefore H(0)=C_0+C_1,</span><span>
+</span><span>\newline H&#39;(0)=aC</span><span>
+</span><span>\newline \therefore C_1=\frac1{ap^2},C_0=H(0)-C_1=\frac1{ap^2}\cdot\frac NYe^w</span><span>
+</span><span>\newline \therefore H=\frac1{ap^2}\cdot\frac NYe^w+\frac1{ap^2}e^{ar}</span><span>
+</span><span>\newline 即,Hap^2Y=Ne^w+Ye^{ar}</span><span>
+</span><span>\newline \Huge{\textcolor{red}{\mathscr{Happy\ New\ Year}}}</span><span>
+</span><span>$$&lt;/</span><span style="color:#bf616a;">p</span><span>&gt;</span><span>
+</span></code></pre>
+<p>会输出以下内容</p>
+<p>$$
+H''(r)-aH'(r)=0满足H'(0)=\frac 1{p^2}，
+\newline H(0)=\frac{H'(0)}a(1+\frac NYe^w)的特解
+\newline 解:\lambda^2+a\lambda=0,\lambda=a,\lambda=0
+\newline 通解H(r)=C_0+C_1e^{ar}.\therefore H(0)=C_0+C_1,
+\newline H'(0)=aC
+\newline \therefore C_1=\frac1{ap^2},C_0=H(0)-C_1=\frac1{ap^2}\cdot\frac NYe^w
+\newline \therefore H=\frac1{ap^2}\cdot\frac NYe^w+\frac1{ap^2}e^{ar}
+\newline 即,Hap^2Y=Ne^w+Ye^{ar}
+\newline \Huge{\textcolor{red}{\mathscr{Happy\ New\ Year}}}
+$$</p>
+<p>在这里提前祝大家新年快乐，更多Katex语法可以在官网查到。</p>
+
 </div>
 </main>
     <!-- 分页 --> <!--snow雪花组件-->
