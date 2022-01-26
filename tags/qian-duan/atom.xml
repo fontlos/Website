@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-	<title>芳塔洛斯</title>
+	<title>芳塔洛斯 - 前端</title>
 	<subtitle>个人博客</subtitle>
-	<link href="https://fangtaluosi.top/atom.xml" rel="self" type="application/atom+xml"/>
+	<link href="https://fangtaluosi.top/tags/qian-duan/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://fangtaluosi.top"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
 	<updated>2022-01-26T00:00:00+00:00</updated>
-	<id>https://fangtaluosi.top/atom.xml</id>
+	<id>https://fangtaluosi.top/tags/qian-duan/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Zola使用教程(3) templates</title>
 		<published>2022-01-26T00:00:00+00:00</published>

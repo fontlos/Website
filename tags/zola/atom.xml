@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-	<title>芳塔洛斯</title>
+	<title>芳塔洛斯 - zola</title>
 	<subtitle>个人博客</subtitle>
-	<link href="https://fangtaluosi.top/atom.xml" rel="self" type="application/atom+xml"/>
+	<link href="https://fangtaluosi.top/tags/zola/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://fangtaluosi.top"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
 	<updated>2022-01-26T00:00:00+00:00</updated>
-	<id>https://fangtaluosi.top/atom.xml</id>
+	<id>https://fangtaluosi.top/tags/zola/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Zola使用教程(3) templates</title>
 		<published>2022-01-26T00:00:00+00:00</published>
@@ -26,86 +26,6 @@
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;第二个参数表示多少个tag分一页，为了效果明显，这里设置为1，后面的参数是tags所在的文件夹&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;fen-lei-fa&quot;&gt;分类法&lt;&#x2F;h2&gt;
-</content>
-	</entry>
-	<entry xml:lang="en">
-		<title>Katex 轻量级数学排版工具</title>
-		<published>2022-01-24T00:00:00+00:00</published>
-		<updated>2022-01-24T00:00:00+00:00</updated>
-		<link href="https://fangtaluosi.top/blog/2022-01-24/" type="text/html"/>
-		<id>https://fangtaluosi.top/blog/2022-01-24/</id>
-		<content type="html">&lt;h2 id=&quot;gai-shu&quot;&gt;概述&lt;&#x2F;h2&gt;
-&lt;p&gt;html本身有一定的排版功能，比如上下标签&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;H&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sub&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;2&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sub&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;O&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;X&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sup&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;n&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sup&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt; + Y&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sup&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;n&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sup&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt; = Z&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sup&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;n&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sup&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;按 &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;kbd&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;kbd&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;CTRL&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;kbd&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;+&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;kbd&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;ALT&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;kbd&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;+&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;kbd&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;Z&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;kbd&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;kbd&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt; 撤销&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;比如以上内容会渲染成&lt;&#x2F;p&gt;
-&lt;p&gt;H&lt;sub&gt;2&lt;&#x2F;sub&gt;O&lt;&#x2F;p&gt;
-&lt;p&gt;X&lt;sup&gt;n&lt;&#x2F;sup&gt; + Y&lt;sup&gt;n&lt;&#x2F;sup&gt; = Z&lt;sup&gt;n&lt;&#x2F;sup&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;按 &lt;kbd&gt;&lt;kbd&gt;CTRL&lt;&#x2F;kbd&gt;+&lt;kbd&gt;ALT&lt;&#x2F;kbd&gt;+&lt;kbd&gt;Z&lt;&#x2F;kbd&gt;&lt;&#x2F;kbd&gt; 撤销&lt;&#x2F;p&gt;
-&lt;p&gt;更复杂的功能，就需要专业的排版工具了，最常用的工具之一就是Latex，可Latex太笨重了，那有什么替代品吗？&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;katexjian-jie&quot;&gt;Katex简介&lt;&#x2F;h2&gt;
-&lt;p&gt;相比Latex，&lt;a href=&quot;https:&#x2F;&#x2F;katex.org&#x2F;&quot;&gt;Katex&lt;&#x2F;a&gt;是一个更加轻量迅速的数学排版库，简单的API，没有依赖性，但在所有主流浏览器上运行都超快。&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;an-zhuang&quot;&gt;安装&lt;&#x2F;h2&gt;
-&lt;p&gt;katex既可以用node.js安装，也可以在浏览器中使用，这里我们在浏览器中引用，在html文件中的head标签中加入如下内容&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;link &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;rel&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;stylesheet&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;href&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;katex@0.15.2&#x2F;dist&#x2F;katex.min.css&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;script&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;katex@0.15.2&#x2F;dist&#x2F;katex.min.js&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;script&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;script&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;katex@0.15.2&#x2F;dist&#x2F;contrib&#x2F;auto-render.min.js&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;onload&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;renderMathInElement&lt;&#x2F;span&gt;&lt;span&gt;(document.body);&amp;quot;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;script&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;完成了，很简单，不是吗？&lt;&#x2F;p&gt;
-&lt;p&gt;jsdelivr是一个是一个免费的速度很快的公用CDN，并且其在中国也有服务器，Katex官网也建议我们用这种方式引入库&lt;&#x2F;p&gt;
-&lt;p&gt;接下来，让我们写几个试一试，直接在body标签中添加一个p标签&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;行内公式: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;块公式:&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;$$&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;$$&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;上面的内容会被渲染成这样&lt;&#x2F;p&gt;
-&lt;p&gt;
-行内公式: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
-&lt;&#x2F;p&gt;
-&lt;p&gt;块公式:
-$$
-\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
-$$&lt;&#x2F;p&gt;
-&lt;p&gt;接下来整个复杂的，直接上代码，注意Katex中的换行是&lt;code&gt;\newline&lt;&#x2F;code&gt;，而不是&lt;code&gt;\\&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;$$&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;H&amp;#39;&amp;#39;(r)-aH&amp;#39;(r)=0满足H&amp;#39;(0)=\frac 1{p^2}，&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;\newline H(0)=\frac{H&amp;#39;(0)}a(1+\frac NYe^w)的特解&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;\newline 解:\lambda^2+a\lambda=0,\lambda=a,\lambda=0&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;\newline 通解H(r)=C_0+C_1e^{ar}.\therefore H(0)=C_0+C_1,&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;\newline H&amp;#39;(0)=aC&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;\newline \therefore C_1=\frac1{ap^2},C_0=H(0)-C_1=\frac1{ap^2}\cdot\frac NYe^w&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;\newline \therefore H=\frac1{ap^2}\cdot\frac NYe^w+\frac1{ap^2}e^{ar}&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;\newline 即,Hap^2Y=Ne^w+Ye^{ar}&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;\newline \Huge{\textcolor{red}{\mathscr{Happy\ New\ Year}}}&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;$$&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;会输出以下内容&lt;&#x2F;p&gt;
-&lt;p&gt;$$
-H&#x27;&#x27;(r)-aH&#x27;(r)=0满足H&#x27;(0)=\frac 1{p^2}，
-\newline H(0)=\frac{H&#x27;(0)}a(1+\frac NYe^w)的特解
-\newline 解:\lambda^2+a\lambda=0,\lambda=a,\lambda=0
-\newline 通解H(r)=C_0+C_1e^{ar}.\therefore H(0)=C_0+C_1,
-\newline H&#x27;(0)=aC
-\newline \therefore C_1=\frac1{ap^2},C_0=H(0)-C_1=\frac1{ap^2}\cdot\frac NYe^w
-\newline \therefore H=\frac1{ap^2}\cdot\frac NYe^w+\frac1{ap^2}e^{ar}
-\newline 即,Hap^2Y=Ne^w+Ye^{ar}
-\newline \Huge{\textcolor{red}{\mathscr{Happy\ New\ Year}}}
-$$&lt;&#x2F;p&gt;
-&lt;p&gt;在这里提前祝大家新年快乐，更多Katex语法可以在官网查到。&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
