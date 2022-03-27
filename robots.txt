@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 Sitemap: https://fangtaluosi.top/sitemap.xml
 Disallow:/page/
+Disallow:/resource/

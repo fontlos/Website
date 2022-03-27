@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="个人博客，分享生活 &#9885;墨璃暮湮·芳塔洛斯&#10031;的个人博客 努力奔跑，为了追上那个曾被寄予厚望的自己">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=2.0">
+    <title>芳塔洛斯</title>
+    <link rel="Shortcut Icon" href=https://fangtaluosi.top/img/icon/logo.png>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href=https://fangtaluosi.top/atom.xml>
+    <!-- 基本css -->
+    <link rel="stylesheet" href=https://fangtaluosi.top/css/basic/basic.css>
+    <!-- 主页基本css -->
+    <link rel="stylesheet" href=https://fangtaluosi.top/css/page/index-basic.css>
+    <!--loading组件与background组件-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <!--snow组件-->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://fangtaluosi.top/js/snow.js"></script>
+    <!-- 返回顶部 -->
+    <script src="https://fangtaluosi.top/js/nav.js"></script>
+    <!-- 页脚飞鱼 -->
+    <script src="https://fangtaluosi.top/js/fish.js"></script>
+<!-- 文章内容 -->
+<link rel="stylesheet" href=https://fangtaluosi.top/css/page/article-content.css>
+<!-- 文章内容调整 -->
+<script src=https://fangtaluosi.top/js/article-content.js></script>
+<!-- katex数学渲染 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+    integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"
+    integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous">
+</script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body>
+    <header>
+<div class="search-wrap">
+    <div class="searchBox">
+        <div class="shadow"></div>
+        <input type="text" placeholder="Search for...">
+        <span class="iconfont icon-search"></span>
+    </div>
+</div>
+</header>
+    <nav>
+        <!-- 导航栏 -->
+<div class="nav-wrap">
+    <div class="nav">
+        <a class="icon" href=https://fangtaluosi.top/>
+            <div class="icon-img"><img src=https://fangtaluosi.top/img/icon/logo-bg.png alt=""></div>
+            <div class="icon-con">
+                <p>Good day</p>
+                <h2>芳塔洛斯</h2>
+            </div>
+        </a>
+        <div class="nav-line"></div>
+        <div class="title">
+            <p>Page</p>
+        </div>
+        <div class="menu">
+            <a class="item" href=https://fangtaluosi.top/>
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-home_light"></span>
+                </div>
+                <div class="con">Home</div>
+                <div class="ricon">
+                    <span class="iconfont icon-shezhi"></span>
+                </div>
+            </a>
+            <a class="item" href=https://fangtaluosi.top/resource>
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-resource"></span>
+                </div>
+                <div class="con">Resource</div>
+                <div class="ricon"></div>
+            </a>
+            <a class="item" href=https://fangtaluosi.top/blog>
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-ego-blog"></span>
+                </div>
+                <div class="con">Blog</div>
+                <div class="ricon"></div>
+            </a>
+            <a class="item" href=https://fangtaluosi.top/about>
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-about"></span>
+                </div>
+                <div class="con">About</div>
+                <div class="ricon"></div>
+            </a>
+            <a class="item" href=https://fangtaluosi.top/tags>
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-tag"></span>
+                </div>
+                <div class="con">Tags</div>
+                <div class="ricon"></div>
+            </a>
+        </div>
+
+        <div class="nav-line"></div>
+        <div class="title">
+            <p>Sever</p>
+        </div>
+        <div class="serve">
+            <div class="item">
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-link"></span>
+                </div>
+                <div class="con">Contact</div>
+                <div class="ricon"></div>
+            </div>
+            <div class="item">
+                <div class="light"></div>
+                <div class="licon">
+                    <span class="iconfont icon-yinle"></span>
+                </div>
+                <div class="con">Music</div>
+                <div class="ricon"></div>
+            </div>
+            <a href="javascript:void(0)" id="to-top">
+                <div class="item">
+                    <div class="light"></div>
+                    <div class="licon">
+                        <span class="iconfont icon-xiangshang"></span>
+                    </div>
+                    <div class="con">ToTop</div>
+                    <div class="ricon"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+    <aside>
+
+    </aside>
+    <main>
+<div class="article-page-wrap">
+    <h1 class="article-title">
+        基于Bevy的扫雷游戏2(长文警告)
+    </h1>
+    <p class="article-date"><strong>2022-03-27</strong></p>
+    <h2 id="zhi-zuo-mian-ban-xuan-xiang">制作面板选项</h2>
+<h3 id="mian-ban-xuan-xiang">面板选项</h3>
+<p>下面我们来添加一个面板选项 board_options模块，现在我们的文件树类似于下面这样</p>
+<pre data-lang="text" style="background-color:#eff1f5;color:#4f5b66;" class="language-text "><code class="language-text" data-lang="text"><span>│  lib.rs</span><span>
+</span><span>│  main.rs</span><span>
+</span><span>│</span><span>
+</span><span>├─components</span><span>
+</span><span>│      coordinates.rs</span><span>
+</span><span>│      mod.rs</span><span>
+</span><span>│</span><span>
+</span><span>└─resources</span><span>
+</span><span>        board_options.rs</span><span>
+</span><span>        mod.rs</span><span>
+</span><span>        tile.rs</span><span>
+</span><span>        tile_map.rs</span><span>
+</span></code></pre>
+<p>在mod文件中添加如下内容</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/resources/mod.rs</span><span>
+</span><span>
+</span><span style="color:#b48ead;">mod </span><span>board_options;</span><span>
+</span><span style="color:#b48ead;">pub use </span><span>board_options::*;</span><span>
+</span></code></pre>
+<p>在board_options文件中写入以下内容</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/resources/board_options.rs</span><span>
+</span><span>
+</span><span style="color:#b48ead;">use </span><span>bevy::prelude::Vec3;</span><span>
+</span><span style="color:#b48ead;">use </span><span>serde::{Deserialize, Serialize};</span><span>
+</span><span>
+</span><span style="color:#a7adba;">/// 格子大小设置</span><span>
+</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Clone, Serialize, Deserialize)]</span><span>
+</span><span style="color:#b48ead;">pub enum </span><span>TileSize {</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 固定大小格子</span><span>
+</span><span>    Fixed(</span><span style="color:#b48ead;">f32</span><span>),</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 窗口响应式格子</span><span>
+</span><span>    Adaptive { min: </span><span style="color:#b48ead;">f32</span><span>, max: </span><span style="color:#b48ead;">f32 </span><span>},</span><span>
+</span><span>}</span><span>
+</span><span>
+</span><span style="color:#a7adba;">/// 计分板位置设置</span><span>
+</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Clone, Serialize, Deserialize)]</span><span>
+</span><span style="color:#b48ead;">pub enum </span><span>BoardPosition {</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 居中</span><span>
+</span><span>    Centered { offset: Vec3 },</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 自定义位置</span><span>
+</span><span>    Custom(Vec3),</span><span>
+</span><span>}</span><span>
+</span><span>
+</span><span style="color:#a7adba;">/// 计分板生成选项 必须作为resource使用</span><span>
+</span><span style="color:#a7adba;">// 通过序列化保存和加载选项</span><span>
+</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Clone, Serialize, Deserialize)]</span><span>
+</span><span style="color:#b48ead;">pub struct </span><span>BoardOptions {</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 地图大小</span><span>
+</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">map_size</span><span>: (</span><span style="color:#b48ead;">u16</span><span>, </span><span style="color:#b48ead;">u16</span><span>),</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 地雷数量</span><span>
+</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">bomb_count</span><span>: </span><span style="color:#b48ead;">u16</span><span>,</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 计分板位置</span><span>
+</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">position</span><span>: BoardPosition,</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 格子大小</span><span>
+</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">tile_size</span><span>: TileSize,</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 格子间距</span><span>
+</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">tile_padding</span><span>: </span><span style="color:#b48ead;">f32</span><span>,</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 是否启用点开的第一个格子必然是安全格子</span><span>
+</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">safe_start</span><span>: </span><span style="color:#b48ead;">bool</span><span>,</span><span>
+</span><span>}</span><span>
+</span></code></pre>
+<p>下面为这些结构提供一些默认值</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/resources/board_options.rs</span><span>
+</span><span>
+</span><span style="color:#a7adba;">/// 格子大小默认值</span><span>
+</span><span style="color:#b48ead;">impl </span><span>Default </span><span style="color:#b48ead;">for </span><span>TileSize {</span><span>
+</span><span>    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">default</span><span>() -&gt; </span><span style="color:#b48ead;">Self </span><span>{</span><span>
+</span><span>        </span><span style="color:#b48ead;">Self</span><span>::Adaptive {</span><span>
+</span><span>            min: </span><span style="color:#d08770;">10.0</span><span>,</span><span>
+</span><span>            max: </span><span style="color:#d08770;">50.0</span><span>,</span><span>
+</span><span>        }</span><span>
+</span><span>    }</span><span>
+</span><span>}</span><span>
+</span><span>
+</span><span style="color:#a7adba;">/// 计分板位置默认值</span><span>
+</span><span style="color:#b48ead;">impl </span><span>Default </span><span style="color:#b48ead;">for </span><span>BoardPosition {</span><span>
+</span><span>    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">default</span><span>() -&gt; </span><span style="color:#b48ead;">Self </span><span>{</span><span>
+</span><span>        </span><span style="color:#b48ead;">Self</span><span>::Centered {</span><span>
+</span><span>            offset: Default::default(),</span><span>
+</span><span>        }</span><span>
+</span><span>    }</span><span>
+</span><span>}</span><span>
+</span><span>
+</span><span style="color:#a7adba;">/// 计分板选项默认值</span><span>
+</span><span style="color:#b48ead;">impl </span><span>Default </span><span style="color:#b48ead;">for </span><span>BoardOptions {</span><span>
+</span><span>    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">default</span><span>() -&gt; </span><span style="color:#b48ead;">Self </span><span>{</span><span>
+</span><span>        </span><span style="color:#b48ead;">Self </span><span>{</span><span>
+</span><span>            map_size: (</span><span style="color:#d08770;">15</span><span>, </span><span style="color:#d08770;">15</span><span>),</span><span>
+</span><span>            bomb_count: </span><span style="color:#d08770;">30</span><span>,</span><span>
+</span><span>            position: Default::default(),</span><span>
+</span><span>            tile_size: Default::default(),</span><span>
+</span><span>            tile_padding: </span><span style="color:#d08770;">0.</span><span>,</span><span>
+</span><span>            safe_start: </span><span style="color:#d08770;">false</span><span>,</span><span>
+</span><span>        }</span><span>
+</span><span>    }</span><span>
+</span><span>}</span><span>
+</span></code></pre>
+<p>下面把这些资源注册到我们的主程序中</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/main.rs</span><span>
+</span><span>
+</span><span style="color:#a7adba;">// 新添加</span><span>
+</span><span style="color:#b48ead;">use </span><span>minesweeper::resources::BoardOptions;</span><span>
+</span><span style="color:#a7adba;">// ..</span><span>
+</span><span>
+</span><span style="color:#a7adba;">// 此时的main函数</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span>() {</span><span>
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> app = App::new();</span><span>
+</span><span>    app.</span><span style="color:#96b5b4;">insert_resource</span><span>(WindowDescriptor {</span><span>
+</span><span>        title: &quot;</span><span style="color:#a3be8c;">Mine Sweeper</span><span>&quot;.</span><span style="color:#96b5b4;">to_string</span><span>(),</span><span>
+</span><span>        width: </span><span style="color:#d08770;">700.</span><span>,</span><span>
+</span><span>        height: </span><span style="color:#d08770;">800.</span><span>,</span><span>
+</span><span>        ..Default::default()</span><span>
+</span><span>    })</span><span>
+</span><span>    .</span><span style="color:#96b5b4;">add_plugins</span><span>(DefaultPlugins);</span><span>
+</span><span>    #[</span><span style="color:#bf616a;">cfg</span><span>(feature = &quot;</span><span style="color:#a3be8c;">debug</span><span>&quot;)]</span><span>
+</span><span>    app.</span><span style="color:#96b5b4;">add_plugin</span><span>(WorldInspectorPlugin::new());</span><span>
+</span><span>    </span><span style="color:#a7adba;">// 新加入内容 添加面板选项</span><span>
+</span><span>    app.</span><span style="color:#96b5b4;">insert_resource</span><span>(BoardOptions{</span><span>
+</span><span>        map_size:(</span><span style="color:#d08770;">20</span><span>,</span><span style="color:#d08770;">20</span><span>),</span><span>
+</span><span>        bomb_count:</span><span style="color:#d08770;">40</span><span>,</span><span>
+</span><span>        tile_padding:</span><span style="color:#d08770;">3.0</span><span>,</span><span>
+</span><span>        ..Default::default()</span><span>
+</span><span>    });</span><span>
+</span><span>    app.</span><span style="color:#96b5b4;">add_plugin</span><span>(BoardPlugin);</span><span>
+</span><span>    app.</span><span style="color:#96b5b4;">add_startup_system</span><span>(camera_setup);</span><span>
+</span><span>    app.</span><span style="color:#96b5b4;">run</span><span>();</span><span>
+</span><span>}</span><span>
+</span></code></pre>
+<h3 id="sheng-cheng-mian-ban-xuan-xiang">生成面板选项</h3>
+<p>还记得lib文件中BoardPlugin上的create_board方法吗，现在让我们修改一下它的函数签名</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/lib.rs</span><span>
+</span><span>
+</span><span style="color:#b48ead;">use </span><span>resources::BoardOptions;</span><span>
+</span><span>
+</span><span style="color:#a7adba;">// ..</span><span>
+</span><span style="color:#b48ead;">pub fn </span><span style="color:#8fa1b3;">create_board</span><span>(</span><span>
+</span><span>	</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">commands</span><span>: Commands,</span><span>
+</span><span>    </span><span style="color:#bf616a;">board_options</span><span>: Option&lt;Res&lt;BoardOptions&gt;&gt;,</span><span>
+</span><span>    </span><span style="color:#bf616a;">window</span><span>: Res&lt;WindowDescriptor&gt;,</span><span>
+</span><span>    ) {..}</span><span>
+</span></code></pre>
+<p>为上述函数添加以下内容</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span>		</span><span style="color:#a7adba;">// 生成选项是可选的，因此如果未设置可以选择直接返回默认值</span><span>
+</span><span>		  </span><span style="color:#b48ead;">let</span><span> options = </span><span style="color:#b48ead;">match</span><span> board_options {</span><span>
+</span><span>            None =&gt; BoardOptions::default(),</span><span>
+</span><span>            Some(o) =&gt; o.</span><span style="color:#96b5b4;">clone</span><span>(),</span><span>
+</span><span>        };</span><span>
+</span><span>
+</span><span>        </span><span style="color:#a7adba;">// 地图生成</span><span>
+</span><span>        </span><span style="color:#b48ead;">let mut</span><span> tile_map = TileMap::empty(options.map_size.</span><span style="color:#d08770;">0</span><span>, options.map_size.</span><span style="color:#d08770;">1</span><span>);</span><span>
+</span><span>        tile_map.</span><span style="color:#96b5b4;">set_bombs</span><span>(options.bomb_count);</span><span>
+</span><span>        #[</span><span style="color:#bf616a;">cfg</span><span>(feature = &quot;</span><span style="color:#a3be8c;">debug</span><span>&quot;)]</span><span>
+</span><span>        </span><span style="color:#a7adba;">// 地图调试选项</span><span>
+</span><span>        log::info!(&quot;</span><span style="color:#a3be8c;">{}</span><span>&quot;, tile_map.</span><span style="color:#96b5b4;">console_output</span><span>());</span><span>
+</span></code></pre>
+<h3 id="di-zhuan-da-xiao">地砖大小</h3>
+<p>地砖的大小不能是一成不变的，所以我们需要一个计算地砖大小与地图大小关系的方法。将如下内容添加到BoardPlugin的方法中</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span>	</span><span style="color:#a7adba;">/// 根据地图大小计算格子大小，自适应属性</span><span>
+</span><span>    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">adaptative_tile_size</span><span>(</span><span>
+</span><span>        </span><span style="color:#bf616a;">window</span><span>: Res&lt;WindowDescriptor&gt;,</span><span>
+</span><span>        (</span><span style="color:#bf616a;">min</span><span>, </span><span style="color:#bf616a;">max</span><span>): (</span><span style="color:#b48ead;">f32</span><span>, </span><span style="color:#b48ead;">f32</span><span>),      </span><span style="color:#a7adba;">// Tile size constraints</span><span>
+</span><span>        (</span><span style="color:#bf616a;">width</span><span>, </span><span style="color:#bf616a;">height</span><span>): (</span><span style="color:#b48ead;">u16</span><span>, </span><span style="color:#b48ead;">u16</span><span>), </span><span style="color:#a7adba;">// Tile map dimensions</span><span>
+</span><span>    ) -&gt; </span><span style="color:#b48ead;">f32 </span><span>{</span><span>
+</span><span>        </span><span style="color:#b48ead;">let</span><span> max_width = window.width / width as </span><span style="color:#b48ead;">f32</span><span>;</span><span>
+</span><span>        </span><span style="color:#b48ead;">let</span><span> max_heigth = window.height / height as </span><span style="color:#b48ead;">f32</span><span>;</span><span>
+</span><span>        max_width.</span><span style="color:#96b5b4;">min</span><span>(max_heigth).</span><span style="color:#96b5b4;">clamp</span><span>(min, max)</span><span>
+</span><span>    }</span><span>
+</span></code></pre>
+<p>接下来我们在create_board方法中调用此功能</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// 定义格子大小</span><span>
+</span><span>        </span><span style="color:#b48ead;">let</span><span> tile_size = </span><span style="color:#b48ead;">match</span><span> options.tile_size {</span><span>
+</span><span>            TileSize::Fixed(v) =&gt; v,</span><span>
+</span><span>            TileSize::Adaptive { min, max } =&gt; </span><span style="color:#b48ead;">Self</span><span>::adaptative_tile_size(</span><span>
+</span><span>                window,</span><span>
+</span><span>                (min, max),</span><span>
+</span><span>                (tile_map.</span><span style="color:#96b5b4;">width</span><span>(), tile_map.</span><span style="color:#96b5b4;">height</span><span>()),</span><span>
+</span><span>            ),</span><span>
+</span><span>        };</span><span>
+</span></code></pre>
+<h3 id="mian-ban-shu-xing">面板属性</h3>
+<p>接下来我们在create_board方法中添加如下内容</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span>		</span><span style="color:#a7adba;">// 计算完整面板大小</span><span>
+</span><span>        </span><span style="color:#b48ead;">let</span><span> board_size = Vec2::new(</span><span>
+</span><span>            tile_map.</span><span style="color:#96b5b4;">width</span><span>() as </span><span style="color:#b48ead;">f32 </span><span>* tile_size,</span><span>
+</span><span>            tile_map.</span><span style="color:#96b5b4;">height</span><span>() as </span><span style="color:#b48ead;">f32 </span><span>* tile_size,</span><span>
+</span><span>        );</span><span>
+</span><span>        log::info!(&quot;</span><span style="color:#a3be8c;">board size: {}</span><span>&quot;, board_size);</span><span>
+</span><span>        </span><span style="color:#a7adba;">// 面板板锚点位置（左下）</span><span>
+</span><span>        </span><span style="color:#b48ead;">let</span><span> board_position = </span><span style="color:#b48ead;">match</span><span> options.position {</span><span>
+</span><span>            BoardPosition::Centered { offset } =&gt; {</span><span>
+</span><span>                Vec3::new(-(board_size.x / </span><span style="color:#d08770;">2.</span><span>), -(board_size.y / </span><span style="color:#d08770;">2.</span><span>), </span><span style="color:#d08770;">0.</span><span>) + offset</span><span>
+</span><span>            }</span><span>
+</span><span>            BoardPosition::Custom(p) =&gt; p,</span><span>
+</span><span>        };</span><span>
+</span></code></pre>
+<blockquote>
+<p>注意：这里选择将面板锚定在左下角而不是中心，相当于坐标原点位于左下角，这样所有地砖的坐标相对就都是正数了 </p>
+</blockquote>
+<p>接下来就可以生成面板了
+继续加入以下内容</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// 生成面板</span><span>
+</span><span>        commands</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">spawn</span><span>()</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">insert</span><span>(Name::new(&quot;</span><span style="color:#a3be8c;">Board</span><span>&quot;))</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">insert</span><span>(Transform::from_translation(board_position))</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">insert</span><span>(GlobalTransform::default())</span><span>
+</span></code></pre>
+<p>这里添加名字是为了后期调试用的，这个名字将会被用于这个刚开始提到的社区调试插件中
+下面我们添加背景，用一些白色线条将地图切割成一个一个的小格子</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// ..</span><span>
+</span><span>
+</span><span>.</span><span style="color:#96b5b4;">with_children</span><span>(|</span><span style="color:#bf616a;">parent</span><span>| {</span><span>
+</span><span>                </span><span style="color:#a7adba;">// 以计分板中间为锚点生成计分板背景</span><span>
+</span><span>                parent</span><span>
+</span><span>                    .</span><span style="color:#96b5b4;">spawn_bundle</span><span>(SpriteBundle {</span><span>
+</span><span>                        sprite: Sprite {</span><span>
+</span><span>                            color: Color::</span><span style="color:#d08770;">WHITE</span><span>,</span><span>
+</span><span>                            custom_size: Some(board_size),</span><span>
+</span><span>                            ..Default::default()</span><span>
+</span><span>                        },</span><span>
+</span><span>                        transform: Transform::from_xyz(board_size.x / </span><span style="color:#d08770;">2.</span><span>, board_size.y / </span><span style="color:#d08770;">2.</span><span>, </span><span style="color:#d08770;">0.</span><span>),</span><span>
+</span><span>                        ..Default::default()</span><span>
+</span><span>                    })</span><span>
+</span><span>                    .</span><span style="color:#96b5b4;">insert</span><span>(Name::new(&quot;</span><span style="color:#a3be8c;">Background</span><span>&quot;));</span><span>
+</span><span>            })</span><span>
+</span></code></pre>
+<p>下面我们为每一个格子创建一个实体，名字属性同样是用于后期调试的</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// ..</span><span>
+</span><span>
+</span><span> .</span><span style="color:#96b5b4;">with_children</span><span>(|</span><span style="color:#bf616a;">parent</span><span>| {</span><span>
+</span><span>                </span><span style="color:#a7adba;">// 格子</span><span>
+</span><span>                </span><span style="color:#b48ead;">for </span><span>(y, line) in tile_map.</span><span style="color:#96b5b4;">iter</span><span>().</span><span style="color:#96b5b4;">enumerate</span><span>() {</span><span>
+</span><span>                            </span><span style="color:#b48ead;">for </span><span>(x, tile) in line.</span><span style="color:#96b5b4;">iter</span><span>().</span><span style="color:#96b5b4;">enumerate</span><span>() {</span><span>
+</span><span>                                parent</span><span>
+</span><span>                                    .</span><span style="color:#96b5b4;">spawn_bundle</span><span>(SpriteBundle {</span><span>
+</span><span>                                        sprite: Sprite {</span><span>
+</span><span>                                            color: Color::</span><span style="color:#d08770;">GRAY</span><span>,</span><span>
+</span><span>                                            custom_size: Some(Vec2::splat(</span><span>
+</span><span>                                                tile_size - options.tile_padding as </span><span style="color:#b48ead;">f32</span><span>,</span><span>
+</span><span>                                            )),</span><span>
+</span><span>                                            ..Default::default()</span><span>
+</span><span>                                        },</span><span>
+</span><span>                                        transform: Transform::from_xyz(</span><span>
+</span><span>                                            (x as </span><span style="color:#b48ead;">f32 </span><span>* tile_size) + (tile_size / </span><span style="color:#d08770;">2.</span><span>),</span><span>
+</span><span>                                            (y as </span><span style="color:#b48ead;">f32 </span><span>* tile_size) + (tile_size / </span><span style="color:#d08770;">2.</span><span>),</span><span>
+</span><span>                                            </span><span style="color:#d08770;">1.</span><span>,</span><span>
+</span><span>                                        ),</span><span>
+</span><span>                                        ..Default::default()</span><span>
+</span><span>                                    })</span><span>
+</span><span>                                    .</span><span style="color:#96b5b4;">insert</span><span>(Name::new(format!(&quot;</span><span style="color:#a3be8c;">Tile (</span><span style="color:#d08770;">{}</span><span style="color:#a3be8c;">, </span><span style="color:#d08770;">{}</span><span style="color:#a3be8c;">)</span><span>&quot;, x, y)))</span><span>
+</span><span>                                    </span><span style="color:#a7adba;">// 添加坐标组件到格子实体</span><span>
+</span><span>                                    .</span><span style="color:#96b5b4;">insert</span><span>(Coordinates {</span><span>
+</span><span>                                        x: x as </span><span style="color:#b48ead;">u16</span><span>,</span><span>
+</span><span>                                        y: y as </span><span style="color:#b48ead;">u16</span><span>,</span><span>
+</span><span>                                    });</span><span>
+</span><span>                            }</span><span>
+</span><span>                        }</span><span>
+</span><span>            });</span><span>
+</span></code></pre>
+<p>这次给lib文件添加了好多内容，在此给出lib文件现在全部内容</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/lib.rs</span><span>
+</span><span>
+</span><span style="color:#b48ead;">pub mod </span><span>components;</span><span>
+</span><span style="color:#b48ead;">pub mod </span><span>resources;</span><span>
+</span><span>
+</span><span style="color:#b48ead;">use </span><span>bevy::log;</span><span>
+</span><span style="color:#b48ead;">use </span><span>bevy::prelude::*;</span><span>
+</span><span>
+</span><span style="color:#b48ead;">use </span><span>resources::tile_map::TileMap;</span><span>
+</span><span style="color:#b48ead;">use </span><span>resources::BoardOptions;</span><span>
+</span><span style="color:#b48ead;">use </span><span>resources::BoardPosition;</span><span>
+</span><span style="color:#b48ead;">use </span><span>resources::TileSize;</span><span>
+</span><span>
+</span><span style="color:#b48ead;">use </span><span>components::Coordinates;</span><span>
+</span><span>
+</span><span style="color:#a7adba;">/// 面板插件</span><span>
+</span><span style="color:#b48ead;">pub struct </span><span>BoardPlugin;</span><span>
+</span><span>
+</span><span style="color:#b48ead;">impl </span><span>Plugin </span><span style="color:#b48ead;">for </span><span>BoardPlugin {</span><span>
+</span><span>    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">build</span><span>(&amp;</span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">app</span><span>: &amp;</span><span style="color:#b48ead;">mut</span><span> App) {</span><span>
+</span><span>        app.</span><span style="color:#96b5b4;">add_startup_system</span><span>(</span><span style="color:#b48ead;">Self</span><span>::create_board);</span><span>
+</span><span>        log::info!(&quot;</span><span style="color:#a3be8c;">Loaded Board Plugin</span><span>&quot;);</span><span>
+</span><span>    }</span><span>
+</span><span>}</span><span>
+</span><span>
+</span><span style="color:#b48ead;">impl </span><span>BoardPlugin {</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 生成面板</span><span>
+</span><span>    </span><span style="color:#b48ead;">pub fn </span><span style="color:#8fa1b3;">create_board</span><span>(</span><span>
+</span><span>        </span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">commands</span><span>: Commands,</span><span>
+</span><span>        </span><span style="color:#bf616a;">board_options</span><span>: Option&lt;Res&lt;BoardOptions&gt;&gt;,</span><span>
+</span><span>        </span><span style="color:#bf616a;">window</span><span>: Res&lt;WindowDescriptor&gt;,</span><span>
+</span><span>    ) {</span><span>
+</span><span>        </span><span style="color:#b48ead;">let mut</span><span> tile_map = TileMap::empty(</span><span style="color:#d08770;">20</span><span>, </span><span style="color:#d08770;">20</span><span>);</span><span>
+</span><span>        tile_map.</span><span style="color:#96b5b4;">set_bombs</span><span>(</span><span style="color:#d08770;">40</span><span>);</span><span>
+</span><span>        #[</span><span style="color:#bf616a;">cfg</span><span>(feature = &quot;</span><span style="color:#a3be8c;">debug</span><span>&quot;)]</span><span>
+</span><span>        log::info!(&quot;</span><span style="color:#a3be8c;">{}</span><span>&quot;, tile_map.</span><span style="color:#96b5b4;">console_output</span><span>());</span><span>
+</span><span>
+</span><span>        </span><span style="color:#a7adba;">// 生成选项是可选的，因此如果未设置可以选择直接返回默认值</span><span>
+</span><span>        </span><span style="color:#b48ead;">let</span><span> options = </span><span style="color:#b48ead;">match</span><span> board_options {</span><span>
+</span><span>            None =&gt; BoardOptions::default(),</span><span>
+</span><span>            Some(o) =&gt; o.</span><span style="color:#96b5b4;">clone</span><span>(),</span><span>
+</span><span>        };</span><span>
+</span><span>
+</span><span>        </span><span style="color:#a7adba;">// 地图生成</span><span>
+</span><span>        </span><span style="color:#b48ead;">let mut</span><span> tile_map = TileMap::empty(options.map_size.</span><span style="color:#d08770;">0</span><span>, options.map_size.</span><span style="color:#d08770;">1</span><span>);</span><span>
+</span><span>        tile_map.</span><span style="color:#96b5b4;">set_bombs</span><span>(options.bomb_count);</span><span>
+</span><span>        #[</span><span style="color:#bf616a;">cfg</span><span>(feature = &quot;</span><span style="color:#a3be8c;">debug</span><span>&quot;)]</span><span>
+</span><span>        </span><span style="color:#a7adba;">// 地图调试选项</span><span>
+</span><span>        log::info!(&quot;</span><span style="color:#a3be8c;">{}</span><span>&quot;, tile_map.</span><span style="color:#96b5b4;">console_output</span><span>());</span><span>
+</span><span>
+</span><span>        </span><span style="color:#a7adba;">// 定义格子大小</span><span>
+</span><span>        </span><span style="color:#b48ead;">let</span><span> tile_size = </span><span style="color:#b48ead;">match</span><span> options.tile_size {</span><span>
+</span><span>            TileSize::Fixed(v) =&gt; v,</span><span>
+</span><span>            TileSize::Adaptive { min, max } =&gt; </span><span style="color:#b48ead;">Self</span><span>::adaptative_tile_size(</span><span>
+</span><span>                window,</span><span>
+</span><span>                (min, max),</span><span>
+</span><span>                (tile_map.</span><span style="color:#96b5b4;">width</span><span>(), tile_map.</span><span style="color:#96b5b4;">height</span><span>()),</span><span>
+</span><span>            ),</span><span>
+</span><span>        };</span><span>
+</span><span>
+</span><span>        </span><span style="color:#a7adba;">// 计算完整面板大小</span><span>
+</span><span>        </span><span style="color:#b48ead;">let</span><span> board_size = Vec2::new(</span><span>
+</span><span>            tile_map.</span><span style="color:#96b5b4;">width</span><span>() as </span><span style="color:#b48ead;">f32 </span><span>* tile_size,</span><span>
+</span><span>            tile_map.</span><span style="color:#96b5b4;">height</span><span>() as </span><span style="color:#b48ead;">f32 </span><span>* tile_size,</span><span>
+</span><span>        );</span><span>
+</span><span>        log::info!(&quot;</span><span style="color:#a3be8c;">board size: {}</span><span>&quot;, board_size);</span><span>
+</span><span>        </span><span style="color:#a7adba;">// 面板板锚点位置（左下）</span><span>
+</span><span>        </span><span style="color:#b48ead;">let</span><span> board_position = </span><span style="color:#b48ead;">match</span><span> options.position {</span><span>
+</span><span>            BoardPosition::Centered { offset } =&gt; {</span><span>
+</span><span>                Vec3::new(-(board_size.x / </span><span style="color:#d08770;">2.</span><span>), -(board_size.y / </span><span style="color:#d08770;">2.</span><span>), </span><span style="color:#d08770;">0.</span><span>) + offset</span><span>
+</span><span>            }</span><span>
+</span><span>            BoardPosition::Custom(p) =&gt; p,</span><span>
+</span><span>        };</span><span>
+</span><span>
+</span><span>        </span><span style="color:#a7adba;">// 生成面板</span><span>
+</span><span>        commands</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">spawn</span><span>()</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">insert</span><span>(Name::new(&quot;</span><span style="color:#a3be8c;">Board</span><span>&quot;))</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">insert</span><span>(Transform::from_translation(board_position))</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">insert</span><span>(GlobalTransform::default())</span><span>
+</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">with_children</span><span>(|</span><span style="color:#bf616a;">parent</span><span>| {</span><span>
+</span><span>                </span><span style="color:#a7adba;">// 以计分板中间为锚点生成计分板背景</span><span>
+</span><span>                parent</span><span>
+</span><span>                    .</span><span style="color:#96b5b4;">spawn_bundle</span><span>(SpriteBundle {</span><span>
+</span><span>                        sprite: Sprite {</span><span>
+</span><span>                            color: Color::</span><span style="color:#d08770;">WHITE</span><span>,</span><span>
+</span><span>                            custom_size: Some(board_size),</span><span>
+</span><span>                            ..Default::default()</span><span>
+</span><span>                        },</span><span>
+</span><span>                        transform: Transform::from_xyz(board_size.x / </span><span style="color:#d08770;">2.</span><span>, board_size.y / </span><span style="color:#d08770;">2.</span><span>, </span><span style="color:#d08770;">0.</span><span>),</span><span>
+</span><span>                        ..Default::default()</span><span>
+</span><span>                    })</span><span>
+</span><span>                    .</span><span style="color:#96b5b4;">insert</span><span>(Name::new(&quot;</span><span style="color:#a3be8c;">Background</span><span>&quot;));</span><span>
+</span><span>            })</span><span>
+</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">with_children</span><span>(|</span><span style="color:#bf616a;">parent</span><span>| {</span><span>
+</span><span>                </span><span style="color:#a7adba;">// 格子</span><span>
+</span><span>                </span><span style="color:#b48ead;">for </span><span>(y, line) in tile_map.</span><span style="color:#96b5b4;">iter</span><span>().</span><span style="color:#96b5b4;">enumerate</span><span>() {</span><span>
+</span><span>                            </span><span style="color:#b48ead;">for </span><span>(x, tile) in line.</span><span style="color:#96b5b4;">iter</span><span>().</span><span style="color:#96b5b4;">enumerate</span><span>() {</span><span>
+</span><span>                                parent</span><span>
+</span><span>                                    .</span><span style="color:#96b5b4;">spawn_bundle</span><span>(SpriteBundle {</span><span>
+</span><span>                                        sprite: Sprite {</span><span>
+</span><span>                                            color: Color::</span><span style="color:#d08770;">GRAY</span><span>,</span><span>
+</span><span>                                            custom_size: Some(Vec2::splat(</span><span>
+</span><span>                                                tile_size - options.tile_padding as </span><span style="color:#b48ead;">f32</span><span>,</span><span>
+</span><span>                                            )),</span><span>
+</span><span>                                            ..Default::default()</span><span>
+</span><span>                                        },</span><span>
+</span><span>                                        transform: Transform::from_xyz(</span><span>
+</span><span>                                            (x as </span><span style="color:#b48ead;">f32 </span><span>* tile_size) + (tile_size / </span><span style="color:#d08770;">2.</span><span>),</span><span>
+</span><span>                                            (y as </span><span style="color:#b48ead;">f32 </span><span>* tile_size) + (tile_size / </span><span style="color:#d08770;">2.</span><span>),</span><span>
+</span><span>                                            </span><span style="color:#d08770;">1.</span><span>,</span><span>
+</span><span>                                        ),</span><span>
+</span><span>                                        ..Default::default()</span><span>
+</span><span>                                    })</span><span>
+</span><span>                                    .</span><span style="color:#96b5b4;">insert</span><span>(Name::new(format!(&quot;</span><span style="color:#a3be8c;">Tile (</span><span style="color:#d08770;">{}</span><span style="color:#a3be8c;">, </span><span style="color:#d08770;">{}</span><span style="color:#a3be8c;">)</span><span>&quot;, x, y)))</span><span>
+</span><span>                                    </span><span style="color:#a7adba;">// 添加坐标组件到格子实体</span><span>
+</span><span>                                    .</span><span style="color:#96b5b4;">insert</span><span>(Coordinates {</span><span>
+</span><span>                                        x: x as </span><span style="color:#b48ead;">u16</span><span>,</span><span>
+</span><span>                                        y: y as </span><span style="color:#b48ead;">u16</span><span>,</span><span>
+</span><span>                                    });</span><span>
+</span><span>                            }</span><span>
+</span><span>                        }</span><span>
+</span><span>            });</span><span>
+</span><span>
+</span><span>    }</span><span>
+</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 根据地图大小计算格子大小，自适应属性</span><span>
+</span><span>    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">adaptative_tile_size</span><span>(</span><span>
+</span><span>        </span><span style="color:#bf616a;">window</span><span>: Res&lt;WindowDescriptor&gt;,</span><span>
+</span><span>        (</span><span style="color:#bf616a;">min</span><span>, </span><span style="color:#bf616a;">max</span><span>): (</span><span style="color:#b48ead;">f32</span><span>, </span><span style="color:#b48ead;">f32</span><span>),      </span><span style="color:#a7adba;">// Tile size constraints</span><span>
+</span><span>        (</span><span style="color:#bf616a;">width</span><span>, </span><span style="color:#bf616a;">height</span><span>): (</span><span style="color:#b48ead;">u16</span><span>, </span><span style="color:#b48ead;">u16</span><span>), </span><span style="color:#a7adba;">// Tile map dimensions</span><span>
+</span><span>    ) -&gt; </span><span style="color:#b48ead;">f32 </span><span>{</span><span>
+</span><span>        </span><span style="color:#b48ead;">let</span><span> max_width = window.width / width as </span><span style="color:#b48ead;">f32</span><span>;</span><span>
+</span><span>        </span><span style="color:#b48ead;">let</span><span> max_heigth = window.height / height as </span><span style="color:#b48ead;">f32</span><span>;</span><span>
+</span><span>        max_width.</span><span style="color:#96b5b4;">min</span><span>(max_heigth).</span><span style="color:#96b5b4;">clamp</span><span>(min, max)</span><span>
+</span><span>    }</span><span>
+</span><span>}</span><span>
+</span><span>
+</span></code></pre>
+<p>接下来运行<code>cargo run --features debug</code>，将会看到类似于这样的窗口
+<img src="https://fangtaluosi.top/img/blog/2022-03-05/2.png" alt="" />
+调试窗口可以更改许多游戏数据</p>
+<h2 id="di-zhuan-zhi-zuo">地砖制作</h2>
+<h3 id="zi-yuan-wen-jian">资源文件</h3>
+<p>首先在根目录创建一个assets文件夹，bevy默认从此文件夹中寻找资源，所以编译完成后，也需要复制一份到二进制文件同级目录中，我们需要地雷的贴图，旗帜的贴图，和一个你喜欢的字体文件
+接下来让我们再次修改create_board方法的签名</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">pub fn </span><span style="color:#8fa1b3;">create_board</span><span>(</span><span>
+</span><span>        </span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">commands</span><span>: Commands,</span><span>
+</span><span>        </span><span style="color:#bf616a;">board_options</span><span>: Option&lt;Res&lt;BoardOptions&gt;&gt;,</span><span>
+</span><span>        </span><span style="color:#bf616a;">window</span><span>: Res&lt;WindowDescriptor&gt;,</span><span>
+</span><span>        </span><span style="color:#bf616a;">asset_server</span><span>: Res&lt;AssetServer&gt;, </span><span style="color:#a7adba;">// 新添加，允许我们从assets文件夹中加载资源</span><span>
+</span><span>    ) {</span><span>
+</span></code></pre>
+<p>接下来添加这两行内容</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/lib.rs</span><span>
+</span><span style="color:#a7adba;">// ..</span><span>
+</span><span>    </span><span style="color:#b48ead;">let</span><span> font = asset_server.</span><span style="color:#96b5b4;">load</span><span>(&quot;</span><span style="color:#a3be8c;">font.ttf</span><span>&quot;);</span><span style="color:#a7adba;">//将会加载assets/font.ttf文件</span><span>
+</span><span>    </span><span style="color:#b48ead;">let</span><span> bomb_image = asset_server.</span><span style="color:#96b5b4;">load</span><span>(&quot;</span><span style="color:#a3be8c;">img/bomb.png</span><span>&quot;);</span><span>
+</span><span style="color:#a7adba;">// ..</span><span>
+</span></code></pre>
+<h3 id="di-zhuan-zu-jian-sheng-ming">地砖组件声明</h3>
+<p>为了让ECS知道哪些地砖是空的，哪些有地雷，我们需要如下组件</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/components/mod.rs</span><span>
+</span><span>
+</span><span style="color:#b48ead;">mod </span><span>bomb;</span><span>
+</span><span style="color:#b48ead;">mod </span><span>bomb_neighbor;</span><span>
+</span><span style="color:#b48ead;">mod </span><span>uncover;</span><span>
+</span><span>
+</span><span style="color:#b48ead;">pub use </span><span>bomb::Bomb;</span><span>
+</span><span style="color:#b48ead;">pub use </span><span>bomb_neighbor::BombNeighbor;</span><span>
+</span><span style="color:#b48ead;">pub use </span><span>uncover::Uncover;</span><span>
+</span></code></pre>
+<p>其中每个文件的内容如下</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/components/bomb.rs</span><span>
+</span><span style="color:#b48ead;">use </span><span>bevy::prelude::Component;</span><span>
+</span><span>
+</span><span style="color:#a7adba;">/// 地雷组件</span><span>
+</span><span>#[</span><span style="color:#bf616a;">cfg_attr</span><span>(feature = &quot;</span><span style="color:#a3be8c;">debug</span><span>&quot;, </span><span style="color:#bf616a;">derive</span><span>(bevy_inspector_egui::Inspectable))]</span><span>
+</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Copy, Clone, Ord, PartialOrd, Eq, PartialEq, Hash, Component)]</span><span>
+</span><span style="color:#b48ead;">pub struct </span><span>Bomb;</span><span>
+</span></code></pre>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/components/bomb_neighbor.rs</span><span>
+</span><span>
+</span><span style="color:#b48ead;">use </span><span>bevy::prelude::Component;</span><span>
+</span><span>
+</span><span style="color:#a7adba;">/// 周围地雷组件</span><span>
+</span><span>#[</span><span style="color:#bf616a;">cfg_attr</span><span>(feature = &quot;</span><span style="color:#a3be8c;">debug</span><span>&quot;, </span><span style="color:#bf616a;">derive</span><span>(bevy_inspector_egui::Inspectable))]</span><span>
+</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Copy, Clone, Ord, PartialOrd, Eq, PartialEq, Hash, Component)]</span><span>
+</span><span style="color:#b48ead;">pub struct </span><span>BombNeighbor {</span><span>
+</span><span>    </span><span style="color:#a7adba;">/// 周围地雷数量</span><span>
+</span><span>    </span><span style="color:#b48ead;">pub </span><span style="color:#bf616a;">count</span><span>: </span><span style="color:#b48ead;">u8</span><span>,</span><span>
+</span><span>}</span><span>
+</span></code></pre>
+<p>下面这个暂时用不到</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/components/uncover.rs</span><span>
+</span><span>
+</span><span style="color:#b48ead;">use </span><span>bevy::prelude::Component;</span><span>
+</span><span>
+</span><span style="color:#a7adba;">/// 未开启的地砖组件</span><span>
+</span><span>#[</span><span style="color:#bf616a;">cfg_attr</span><span>(feature = &quot;</span><span style="color:#a3be8c;">debug</span><span>&quot;, </span><span style="color:#bf616a;">derive</span><span>(bevy_inspector_egui::Inspectable))]</span><span>
+</span><span>#[</span><span style="color:#bf616a;">derive</span><span>(Debug, Copy, Clone, Ord, PartialOrd, Eq, PartialEq, Hash, Component)]</span><span>
+</span><span style="color:#b48ead;">pub struct </span><span>Uncover;</span><span>
+</span></code></pre>
+<p>接下来把这些组件注册到我们的插件中</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/lib.rs</span><span>
+</span><span>#[</span><span style="color:#bf616a;">cfg</span><span>(feature = &quot;</span><span style="color:#a3be8c;">debug</span><span>&quot;)]</span><span>
+</span><span style="color:#b48ead;">use </span><span>bevy_inspector_egui::RegisterInspectable;</span><span style="color:#a7adba;">// 新添加</span><span>
+</span><span style="color:#b48ead;">use </span><span>components::*;</span><span style="color:#a7adba;">//更改成全部引入</span><span>
+</span><span>
+</span><span style="color:#b48ead;">impl </span><span>Plugin </span><span style="color:#b48ead;">for </span><span>BoardPlugin {</span><span>
+</span><span>    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">build</span><span>(&amp;</span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">app</span><span>: &amp;</span><span style="color:#b48ead;">mut</span><span> App) {</span><span>
+</span><span>        </span><span style="color:#a7adba;">// ..</span><span>
+</span><span>        #[</span><span style="color:#bf616a;">cfg</span><span>(feature = &quot;</span><span style="color:#a3be8c;">debug</span><span>&quot;)]</span><span style="color:#a7adba;">// 新添加</span><span>
+</span><span>        {</span><span>
+</span><span>            </span><span style="color:#a7adba;">// 将自定义组件注册到调试窗口</span><span>
+</span><span>            app.register_inspectable::&lt;Coordinates&gt;();</span><span>
+</span><span>            app.register_inspectable::&lt;BombNeighbor&gt;();</span><span>
+</span><span>            app.register_inspectable::&lt;Bomb&gt;();</span><span>
+</span><span>            app.register_inspectable::&lt;Uncover&gt;();</span><span>
+</span><span>        }</span><span>
+</span><span>    }</span><span>
+</span><span>}</span><span>
+</span></code></pre>
+<p>接下来为BoardPlugin创建一个生成 周围生成地雷数量 的方法</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/lib.rs</span><span>
+</span><span>
+</span><span style="color:#a7adba;">/// 周围生成地雷数</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">bomb_count_text_bundle</span><span>(</span><span style="color:#bf616a;">count</span><span>: </span><span style="color:#b48ead;">u8</span><span>, </span><span style="color:#bf616a;">font</span><span>: Handle&lt;Font&gt;, </span><span style="color:#bf616a;">size</span><span>: </span><span style="color:#b48ead;">f32</span><span>) -&gt; Text2dBundle {</span><span>
+</span><span>    </span><span style="color:#a7adba;">// We retrieve the text and the correct color</span><span>
+</span><span>    </span><span style="color:#b48ead;">let </span><span>(text, color) = (</span><span>
+</span><span>        count.</span><span style="color:#96b5b4;">to_string</span><span>(),</span><span>
+</span><span>        </span><span style="color:#b48ead;">match</span><span> count {</span><span>
+</span><span>            </span><span style="color:#d08770;">1 </span><span>=&gt; Color::</span><span style="color:#d08770;">WHITE</span><span>,</span><span>
+</span><span>            </span><span style="color:#d08770;">2 </span><span>=&gt; Color::</span><span style="color:#d08770;">GREEN</span><span>,</span><span>
+</span><span>            </span><span style="color:#d08770;">3 </span><span>=&gt; Color::</span><span style="color:#d08770;">YELLOW</span><span>,</span><span>
+</span><span>            </span><span style="color:#d08770;">4 </span><span>=&gt; Color::</span><span style="color:#d08770;">ORANGE</span><span>,</span><span>
+</span><span>            _ =&gt; Color::</span><span style="color:#d08770;">PURPLE</span><span>,</span><span>
+</span><span>        },</span><span>
+</span><span>    );</span><span>
+</span><span>    </span><span style="color:#a7adba;">// 生成一段文本</span><span>
+</span><span>    Text2dBundle {</span><span>
+</span><span>        text: Text {</span><span>
+</span><span>            sections: vec![TextSection {</span><span>
+</span><span>                value: text,</span><span>
+</span><span>                style: TextStyle {</span><span>
+</span><span>                    color,</span><span>
+</span><span>                    font,</span><span>
+</span><span>                    font_size: size,</span><span>
+</span><span>                },</span><span>
+</span><span>            }],</span><span>
+</span><span>            alignment: TextAlignment {</span><span>
+</span><span>                vertical: VerticalAlign::Center,</span><span>
+</span><span>                horizontal: HorizontalAlign::Center,</span><span>
+</span><span>            },</span><span>
+</span><span>        },</span><span>
+</span><span>        transform: Transform::from_xyz(</span><span style="color:#d08770;">0.</span><span>, </span><span style="color:#d08770;">0.</span><span>, </span><span style="color:#d08770;">1.</span><span>),</span><span>
+</span><span>        ..Default::default()</span><span>
+</span><span>    }</span><span>
+</span><span>}</span><span>
+</span></code></pre>
+<p>再为BoardPlugin创建一个生成生成地砖贴图的方法</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/lib.rs</span><span>
+</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">spawn_tiles</span><span>(</span><span>
+</span><span>        </span><span style="color:#bf616a;">parent</span><span>: &amp;</span><span style="color:#b48ead;">mut</span><span> ChildBuilder,</span><span>
+</span><span>        </span><span style="color:#bf616a;">tile_map</span><span>: &amp;TileMap,</span><span>
+</span><span>        </span><span style="color:#bf616a;">size</span><span>: </span><span style="color:#b48ead;">f32</span><span>,</span><span>
+</span><span>        </span><span style="color:#bf616a;">padding</span><span>: </span><span style="color:#b48ead;">f32</span><span>,</span><span>
+</span><span>        </span><span style="color:#bf616a;">color</span><span>: Color,</span><span>
+</span><span>        </span><span style="color:#bf616a;">bomb_image</span><span>: Handle&lt;Image&gt;,</span><span>
+</span><span>        </span><span style="color:#bf616a;">font</span><span>: Handle&lt;Font&gt;,</span><span>
+</span><span>    ) {</span><span>
+</span><span>        </span><span style="color:#a7adba;">// 地砖</span><span>
+</span><span>        </span><span style="color:#b48ead;">for </span><span>(y, line) in tile_map.</span><span style="color:#96b5b4;">iter</span><span>().</span><span style="color:#96b5b4;">enumerate</span><span>() {</span><span>
+</span><span>            </span><span style="color:#b48ead;">for </span><span>(x, tile) in line.</span><span style="color:#96b5b4;">iter</span><span>().</span><span style="color:#96b5b4;">enumerate</span><span>() {</span><span>
+</span><span>                </span><span style="color:#b48ead;">let</span><span> coordinates = Coordinates {</span><span>
+</span><span>                  x: x as </span><span style="color:#b48ead;">u16</span><span>,</span><span>
+</span><span>                  y: y as </span><span style="color:#b48ead;">u16</span><span>,</span><span>
+</span><span>                };</span><span>
+</span><span>                </span><span style="color:#b48ead;">let mut</span><span> cmd = parent.</span><span style="color:#96b5b4;">spawn</span><span>();</span><span>
+</span><span>                cmd.</span><span style="color:#96b5b4;">insert_bundle</span><span>(SpriteBundle {</span><span>
+</span><span>                    sprite: Sprite {</span><span>
+</span><span>                        color,</span><span>
+</span><span>                        custom_size: Some(Vec2::splat(size - padding)),</span><span>
+</span><span>                        ..Default::default()</span><span>
+</span><span>                    },</span><span>
+</span><span>                    transform: Transform::from_xyz(</span><span>
+</span><span>                        (x as </span><span style="color:#b48ead;">f32 </span><span>* size) + (size / </span><span style="color:#d08770;">2.</span><span>),</span><span>
+</span><span>                        (y as </span><span style="color:#b48ead;">f32 </span><span>* size) + (size / </span><span style="color:#d08770;">2.</span><span>),</span><span>
+</span><span>                        </span><span style="color:#d08770;">1.</span><span>,</span><span>
+</span><span>                    ),</span><span>
+</span><span>                    ..Default::default()</span><span>
+</span><span>                })</span><span>
+</span><span>                .</span><span style="color:#96b5b4;">insert</span><span>(Name::new(format!(&quot;</span><span style="color:#a3be8c;">Tile (</span><span style="color:#d08770;">{}</span><span style="color:#a3be8c;">, </span><span style="color:#d08770;">{}</span><span style="color:#a3be8c;">)</span><span>&quot;, x, y)))</span><span>
+</span><span>                .</span><span style="color:#96b5b4;">insert</span><span>(coordinates);</span><span>
+</span><span>            }</span><span>
+</span><span>        }</span><span>
+</span><span>    }</span><span>
+</span></code></pre>
+<p>接着我们可以调用该方法生成地砖，在create_board方法中，大概在下面这个位置上</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/lib</span><span>
+</span><span>
+</span><span>commands</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">spawn</span><span>()</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">insert</span><span>(Name::new(&quot;</span><span style="color:#a3be8c;">Board</span><span>&quot;))</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">insert</span><span>(Transform::from_translation(board_position))</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">insert</span><span>(GlobalTransform::default())</span><span>
+</span><span>            .</span><span style="color:#96b5b4;">with_children</span><span>(|</span><span style="color:#bf616a;">parent</span><span>| {</span><span>
+</span><span>                parent</span><span>
+</span><span>                    .</span><span style="color:#96b5b4;">spawn_bundle</span><span>(SpriteBundle {</span><span>
+</span><span>                        sprite: Sprite {</span><span>
+</span><span>                            color: Color::</span><span style="color:#d08770;">WHITE</span><span>,</span><span>
+</span><span>                            custom_size: Some(board_size),</span><span>
+</span><span>                            ..Default::default()</span><span>
+</span><span>                        },</span><span>
+</span><span>                        transform: Transform::from_xyz(board_size.x / </span><span style="color:#d08770;">2.</span><span>, board_size.y / </span><span style="color:#d08770;">2.</span><span>, </span><span style="color:#d08770;">0.</span><span>),</span><span>
+</span><span>                        ..Default::default()</span><span>
+</span><span>                    })</span><span>
+</span><span>                    .</span><span style="color:#96b5b4;">insert</span><span>(Name::new(&quot;</span><span style="color:#a3be8c;">Background</span><span>&quot;));</span><span>
+</span><span>                    </span><span style="color:#b48ead;">Self</span><span>::spawn_tiles(</span><span style="color:#a7adba;">//新添加</span><span>
+</span><span>                        parent,</span><span>
+</span><span>                        &amp;tile_map,</span><span>
+</span><span>                        tile_size,</span><span>
+</span><span>                        options.tile_padding,</span><span>
+</span><span>                        Color::</span><span style="color:#d08770;">GRAY</span><span>,</span><span>
+</span><span>                        bomb_image,</span><span>
+</span><span>                        font,</span><span>
+</span><span>                    );</span><span>
+</span><span>            })</span><span>
+</span></code></pre>
+<p>最后，完成上面那个生成贴图，在双循环中加入贴图与文本</p>
+<pre data-lang="rust" style="background-color:#eff1f5;color:#4f5b66;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#a7adba;">// src/lib.rs</span><span>
+</span><span>
+</span><span style="color:#b48ead;">use </span><span>resources::tile::Tile;</span><span>
+</span><span>
+</span><span style="color:#a7adba;">// ..</span><span>
+</span><span>    </span><span style="color:#b48ead;">match</span><span> tile {</span><span style="color:#a7adba;">// 放入spawn_tiles方法内层for循环下部</span><span>
+</span><span>                    </span><span style="color:#a7adba;">// 如果是地雷就添加对应组件和贴图</span><span>
+</span><span>                    Tile::Bomb =&gt; {</span><span>
+</span><span>                        cmd.</span><span style="color:#96b5b4;">insert</span><span>(Bomb);</span><span>
+</span><span>                        cmd.</span><span style="color:#96b5b4;">with_children</span><span>(|</span><span style="color:#bf616a;">parent</span><span>| {</span><span>
+</span><span>                            parent.</span><span style="color:#96b5b4;">spawn_bundle</span><span>(SpriteBundle {</span><span>
+</span><span>                                sprite: Sprite {</span><span>
+</span><span>                                    custom_size: Some(Vec2::splat(size - padding)),</span><span>
+</span><span>                                    ..Default::default()</span><span>
+</span><span>                                },</span><span>
+</span><span>                                transform: Transform::from_xyz(</span><span style="color:#d08770;">0.</span><span>, </span><span style="color:#d08770;">0.</span><span>, </span><span style="color:#d08770;">1.</span><span>),</span><span>
+</span><span>                                texture: bomb_image.</span><span style="color:#96b5b4;">clone</span><span>(),</span><span>
+</span><span>                                ..Default::default()</span><span>
+</span><span>                            });</span><span>
+</span><span>                        });</span><span>
+</span><span>                    }</span><span>
+</span><span>                    </span><span style="color:#a7adba;">// 如果是地雷周围的格子及空格子就添加对应文本的组件</span><span>
+</span><span>                    Tile::BombNeighbor(v) =&gt; {</span><span>
+</span><span>                        cmd.</span><span style="color:#96b5b4;">insert</span><span>(BombNeighbor { count: *v });</span><span>
+</span><span>                        cmd.</span><span style="color:#96b5b4;">with_children</span><span>(|</span><span style="color:#bf616a;">parent</span><span>| {</span><span>
+</span><span>                            parent.</span><span style="color:#96b5b4;">spawn_bundle</span><span>(</span><span style="color:#b48ead;">Self</span><span>::bomb_count_text_bundle(</span><span>
+</span><span>                                *v,</span><span>
+</span><span>                                font.</span><span style="color:#96b5b4;">clone</span><span>(),</span><span>
+</span><span>                                size - padding,</span><span>
+</span><span>                            ));</span><span>
+</span><span>                        });</span><span>
+</span><span>                    }</span><span>
+</span><span>                    Tile::Empty =&gt; (),</span><span>
+</span><span>                }</span><span>
+</span><span style="color:#a7adba;">// ..</span><span>
+</span></code></pre>
+<p>接下来运行<code>cargo run --features debug</code>，将会看到类似于这样的窗口
+<img src="https://fangtaluosi.top/img/blog/2022-03-05/3.png" alt="" /></p>
+
+</div>
+</main>
+    <!-- 分页 --> <!--snow雪花组件-->
+    <div id="snow"></div>
+    <!--loading组件-->
+    <div class="loading" id="loading">
+<div class="left"></div>
+<div class="right"></div>
+<script>
+    $(window).on("load", function () {
+        $(".loading").addClass("loaded")
+    });
+    $(window).on("load", function () {
+        setTimeout(function () {
+            $(".loading").fadeOut("slow");
+        }, 1000);
+    });
+</script>
+
+<!--加载动画组件-->
+<link rel="stylesheet" href=https://fangtaluosi.top/css/basic/loading-2.css>
+<div class="wrapper">
+    <div class="rocket">
+        <i class="iconfont icon-huojian"></i>
+        <i class="iconfont icon-yun" style = "--i:0;"></i>
+        <i class="iconfont icon-yun" style = "--i:1;"></i>
+        <i class="iconfont icon-yun" style = "--i:2;"></i>
+        <i class="iconfont icon-yun" style = "--i:3;"></i>
+    </div>
+    <span><i></i></span>
+</div>
+</div>
+    <footer>
+<div class="footer-wrap">
+    <p>&copy;芳塔洛斯 Powered by Zola</p>
+    <div id="flying-fish" class="flying-fish"></div>
+    <div class="back"></div>
+</div>
+</footer>
+</body>
+
+</html>
