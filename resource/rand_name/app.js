@@ -30,7 +30,7 @@ var arrs = [
     "崔韶元",
     "范雨恒",
     "郝毅",
-    "刘旭辉",
+    "柳旭辉",
     "宋欣宇",
     "王昊天",
     "许英帅",
@@ -72,6 +72,10 @@ btn.onclick = function () {
             }
             //留下当前颜色
             var random = parseInt(Math.random() * arrs.length);
+            // 避免抽到自己
+            // if (random == 27){
+            //     random++
+            // }
             outPut.innerHTML=arrs[random]+"<span></span><span></span><span></span><span></span>";
             boxNode.children[random].style.background = "rgba(255,255,255,0.7)";
         }, 20)//随机速度
