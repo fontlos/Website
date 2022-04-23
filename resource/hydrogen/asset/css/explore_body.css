@@ -1,0 +1,33 @@
+/* 条目横布局 */
+#main main .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px;
+    row-gap: 10px;
+}
+#main main .main .item{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    background: var(--element-background);
+    border-radius: 10px;
+    align-items: center;
+    height: 50px;
+}
+#main main .main .name{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 20px;
+}
+
+#main main .main .artist{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+#main main .main .button_wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

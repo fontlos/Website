@@ -1,0 +1,247 @@
+#main footer .footer {
+    margin-top: 10px;
+    width: 95%;
+    transform: translateX(-50%);
+    left: 50%;
+    position: relative;
+    transition: 0.5s;
+}
+
+/* 进度条 */
+#main footer .progress-bar {
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    column-gap: 20px;
+    transition: 0.5s;
+}
+
+/* 进度条两侧时间 */
+#main footer .progress-bar .time {
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    background: var(--element-background);
+}
+
+/* 进度条本条 */
+#main footer .progress-bar .progress {
+    border-radius: 10px;
+    background: var(--element-background);
+}
+
+/* 下方控制栏 */
+#main footer .control-bar {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 10px;
+    transition: 0.5s;
+}
+
+/* 歌曲详情，点击进入歌词等 */
+#main footer .control-bar .song-detail {
+    width: 100%;
+    height: 80px;
+    background: var(--element-background);
+    border-radius: 5px;
+}
+
+/* 播放相关按钮 */
+#main footer .control-bar .player {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: var(--element-background);
+    width: 200px;
+    height: 70px;
+    border-radius: 30px;
+}
+
+#main footer .control-bar .player button {
+    transition: 0.2s;
+}
+
+#main footer .control-bar .player button:hover {
+    background: var(--button-hover)
+}
+
+/* 两个用于切换的按钮的单独设置 */
+#main footer .player .switch {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+/* 播放键的单独设置 */
+#main footer .player .play {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--nav-logo-cricle);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+#main footer .player .play .iconfont {
+    font-size: 35px;
+}
+
+#main footer .control-bar .control {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--element-background);
+}
+
+#main footer .control-bar .control .iconfont {
+    font-size: 25px
+}
+
+#main footer .control-bar .control button {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+#main footer .control-bar .control button:hover {
+    background: var(--button-hover)
+}
+
+/* 使用小窗按钮翻转再翻回来 */
+.icon-shiyongxiaochuangbofang:before {
+    position: absolute;
+    transform: translate(-50%, -50%) rotateX(180deg);
+}
+
+.icon-shiyongxiaochuangbofang:before.back {
+    position: absolute;
+    transform: translate(-50%, -50%) rotateX(0deg);
+}
+
+/* 默认大小1200像素 当小于1000时 */
+@media (min-width: 750px) and (max-width: 1000px) {
+
+    /* footer占满，上距归零 */
+    #main footer .footer {
+        margin-top: 0;
+        width: 100%;
+        /* 除去上边框 */
+        height: calc(100% - 1px);
+        border-top: 1px solid var(--icon-line);
+    }
+
+    /* 进度条时间与进度条之间距离归零 */
+    #main footer .progress-bar {
+        column-gap: 0;
+    }
+
+    /* 取消进度条相关圆角 */
+    #main footer .progress-bar .time {
+        border-radius: 0;
+    }
+
+    #main footer .progress-bar .progress {
+        border-radius: 0;
+    }
+
+    /* 进度条下控制栏 高度减掉进度条 calc函数参数需要空格 */
+    #main footer .control-bar {
+        margin-top: 0;
+        /* 减掉进度条高度 */
+        height: calc(100% - 30px);
+    }
+
+    /* 一些放大去除圆角 */
+    #main footer .control-bar .song-detail {
+        height: 100%;
+        border-radius: 0;
+    }
+
+    #main footer .control-bar .player {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    #main footer .control-bar .control {
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+/* 窗口小于750的布局 最小大小为500 */
+@media (max-width: 750px) {
+    #main footer .footer {
+        margin-top: 0;
+        width: 100%;
+        /* 除去上边框 */
+        height: calc(100% - 1px);
+        border-top: 1px solid var(--icon-line);
+    }
+
+    #main footer .progress-bar {
+        column-gap: 0;
+    }
+
+    #main footer .progress-bar .time {
+        border-radius: 0;
+    }
+
+    #main footer .progress-bar .progress {
+        border-radius: 0;
+    }
+
+    /* 控制栏排版 */
+    #main footer .control-bar {
+        margin-top: 0;
+        height: calc(100% - 30px);
+        grid-template-columns: 1fr 150px 150px;
+    }
+
+    #main footer .control-bar .song-detail {
+        height: 100%;
+        border-radius: 0;
+    }
+
+    #main footer .control-bar .player {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    /* 播放按钮边框大小 */
+    #main footer .player .play {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* 播放按钮图标大小 */
+    #main footer .player .play .iconfont {
+        font-size: 25px;
+    }
+
+    #main footer .control-bar .control {
+        height: 100%;
+        border-radius: 0;
+    }
+
+    #main footer .control-bar .control .iconfont {
+        font-size: 20px
+    }
+
+    #main footer .control-bar .control button {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        transition: 0.2s;
+    }
+}

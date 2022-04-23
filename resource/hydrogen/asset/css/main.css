@@ -1,0 +1,44 @@
+#main main .main {
+    /* 高度为窗口高度减掉header与footer calc参数需要空格 */
+    height: calc(100vh - 250px);
+    /* 只保留横向滚动条 */
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 10px;
+    transition: 0.5s;
+}
+
+/* 默认大小1200像素 当小于1000时 */
+@media (min-width: 750px) and (max-width: 1000px) {
+    #main main .main {
+        height: calc(100vh - 170px);
+        background: var(--element-background);
+        padding-right: 0;
+    }
+}
+
+/* 窗口小于750的布局 最小大小为500 */
+@media (max-width: 750px) {
+    #main main .main {
+        height: calc(100vh - 150px);
+        background: var(--element-background);
+        padding-right: 0;
+    }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8;
+    background: var(--element-background);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 6;
+    background: var(--scrollbar);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover);
+}
